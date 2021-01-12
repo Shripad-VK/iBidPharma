@@ -1,6 +1,5 @@
 # iBidPharma
 ---
-<<<<<<< HEAD
 ## Project Description
 ***The objective of this project is to help Manufacturers to sell their products all over India through online bidding. Distributors can view the product listing details and can place a bid on the products. Manufacturer can see all bids on his product listing. Manufacturer choose best bid and fulfill the order.***
 ---
@@ -29,6 +28,3 @@
 	<img align="left" src="https://img.icons8.com/nolan/64/java-eclipse.png"/>
 	<img align="left" src="https://img.icons8.com/color/48/000000/git.png"/>
 </div>
-=======
-## Group No. 17
->>>>>>> 024aff68e3f29d507374b2f3eaa0bfe00b35a7a5

@@ -19,10 +19,10 @@
 	<img align="left" src="https://img.icons8.com/nolan/64/java-eclipse.png"/>
 	<img align="left" src="https://img.icons8.com/color/48/000000/git.png"/>
 </div>
----
+<br/>
 ### Project Mentor
 - Sayali Chougule
----
+<br/>
 ### Project Members
 1. Meghana Pagare ```PRN : 200243020040```
 2. Neha Swami ```PRN : 200243020045```

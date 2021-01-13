@@ -14,7 +14,13 @@ export class EmployeeService {
   createEmployee(employee : Object):Observable<Object>{
     return this.http.post(`${this.baseUrl}`+'/employees', employee);
   }
-  deleteEmployee(id:any):Observable<any>{
-    return this.http.post(`${this.baseUrl}`+'/employees',id);  
+  deleteEmployee(id:number):Observable<any>{
+    return this.http.delete(`${this.baseUrl}`+'/employees/'+id); 
+  }
+  updateEmployee(id : number, value : any):Observable <Object>{
+    return this.http.put(`${this.baseUrl}`+'/employees/'+id, value);
+  }
+  getEmployeeById(id : number):Observable<Object>{
+    return this.http.get(`${this.baseUrl}`+'/employees/'+id);
   }
 }

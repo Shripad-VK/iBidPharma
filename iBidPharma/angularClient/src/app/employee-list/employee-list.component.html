@@ -5,7 +5,8 @@
         <td>{{employee.firstName}}</td>
         <td>{{employee.lastName}}</td>
         <td>{{employee.emailID}}</td>
-        <td (onclick)="delete({{employee.id}})">Delete</td>
+        <td> <button (click)="delete(employee.id)">Delete </button> </td>
+        <td> <button (click)="update(employee.id)">Edit </button> </td>
     </tr>
 
 </table>

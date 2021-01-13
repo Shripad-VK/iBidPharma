@@ -24,7 +24,9 @@ export class EmployeeListComponent implements OnInit {
   }
   delete(id:number)
   {
-    console.log(id);
     this.employeeService.deleteEmployee(id).subscribe(data=>console.log(data),error=>console.error(error));
+  }
+  update(id : number) {
+    this.router.navigate(['update', id]);
   }
 }

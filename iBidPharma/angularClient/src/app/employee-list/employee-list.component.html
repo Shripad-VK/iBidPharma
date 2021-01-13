@@ -1,0 +1,11 @@
+<p>employee-list works!</p>
+<table>
+    <tr *ngFor="let employee of employees | async">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.emailID}}</td>
+        <td (onclick)="delete({{employee.id}})">Delete</td>
+    </tr>
+
+</table>

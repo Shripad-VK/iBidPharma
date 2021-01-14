@@ -1,0 +1,20 @@
+Step 1 : Download and Install Git Bash.
+Step 2 : Enter Command : ssh-keygen -t rsa -b 4096 -C "shripad.kshirsagar18@gmail.com"
+Step 3 : Enter Command : eval $(ssh-agent -s)
+Step 4 : Enter Command : ssh-add ~/.ssh/id_rsa
+Step 5 : Enter Command : clip < ~/.ssh/id_rsa.pub
+Step 6 : In Browser Login to Github > Go to Settings > SSH and GPG Keys > New SSH Key > Give Name to System > Key : Ctrl + V / Paste > Add SSH Key > Authorize > Done.
+Step 7 : Enter Command : cd /drive/folder (Where you want to save your project)
+Step 8 : Enter Command : git init
+Step 9 : Enter Command : git pull https://github.com/Shripad-VK/iBidPharma.git
+Step 10 : Check Project Folder will have project files.
+Step 11 : Make Changes to your local files.
+Step 12 : Enter Command : git status
+Step 13 : Enter Command : git add .
+Step 14 : Enter Command : git config --global user.email "shripad.kshirsagar18@gmail.com"
+Step 15 : Enter Command : git config --global user.name "Shripad-VK"
+Step 16 : Enter Command : git commit -m "Your Commit Message"
+Step 17 : Enter Command : git status
+Step 18 : Enter Command : git remote add origin https://github.com/Shripad-VK/iBidPharma.git
+Step 19 : Enter Command : git remote -v
+Step 20 : Enter Command : git push -u origin master

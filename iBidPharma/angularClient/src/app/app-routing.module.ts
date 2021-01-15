@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CreateEmployeeComponent } from './create-employee/create-employee.component';
-import { Employee } from './employee';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 
 const routes: Routes = [
-  {path:'employees', component : EmployeeListComponent}, 
-  {path:'add', component :CreateEmployeeComponent},
-  {path:'update/:id',component : UpdateEmployeeComponent} 
+  {path : 'products', component:ProductListComponent},
+  {path: 'addProduct', component:CreateProductComponent},
+  {path: 'updateProduct/:pid', component:UpdateProductComponent}
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ public class ProductController {
 		return productRepository.save(product);
 	}
 	
+<<<<<<< HEAD
 	@GetMapping("/products/{id}")
 	public Product getProductById(@PathVariable(value="id")Long pid)
 	{
@@ -45,6 +46,17 @@ public class ProductController {
 	
 	@PutMapping("/products/{id}")
 	public Product updateProduct(@PathVariable (value="id")Long pid,@RequestBody Product info)
+=======
+	@GetMapping("/products/{pid}")
+	public Product getProductById(@PathVariable(value="pid")Long pid)
+	{
+		System.out.println(pid);
+		return productRepository.findById(pid).orElse(null);
+	}
+	
+	@PutMapping("/products/{pid}")
+	public Product updateProduct(@PathVariable (value="pid")Long pid,@RequestBody Product info)
+>>>>>>> c47f7edbadc424956dc590063a02afe04ba1dc38
 	{
 		Product product=productRepository.findById(pid).orElse(null);
 		product.setPname(info.getPname());
@@ -58,8 +70,13 @@ public class ProductController {
 		return productRepository.save(product);
 	}
 	
+<<<<<<< HEAD
 	@DeleteMapping("/products/{id}")
 	public void deleteProduct(@PathVariable (value="id")Long pid)
+=======
+	@DeleteMapping("/products/{pid}")
+	public void deleteProduct(@PathVariable (value="pid")Long pid)
+>>>>>>> c47f7edbadc424956dc590063a02afe04ba1dc38
 	{
 		Product product =productRepository.getOne(pid);
 		productRepository.delete(product);

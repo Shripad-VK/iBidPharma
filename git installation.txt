@@ -18,3 +18,12 @@ Step 17 : Enter Command : git status
 Step 18 : Enter Command : git remote add origin https://github.com/Shripad-VK/iBidPharma.git
 Step 19 : Enter Command : git remote -v
 Step 20 : Enter Command : git push -u origin master
+
+Run Angular + Spring Boot Project 
+1. For execution policy error command : Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+2. For running imported angular project : npm install --save-dev @angular-devkit/build-angular
+3. Running angular Project : ng serve --proxy-config proxy.config.json
+
+Port Already in Use :
+1. netstat -ano | findstr 8080
+2. taskkill /F /PID <Process Id>

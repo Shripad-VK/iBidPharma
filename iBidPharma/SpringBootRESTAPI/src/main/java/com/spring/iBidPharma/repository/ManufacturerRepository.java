@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.spring.iBidPharma.models.Manufacturer;
 
 @Repository
-public interface ManufacturerRepositroy extends JpaRepository<Manufacturer, Long> {
+public interface ManufacturerRepository extends JpaRepository<Manufacturer, Long> {
 
 }

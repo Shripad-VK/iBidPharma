@@ -25,13 +25,13 @@ public class Address {
 	private String area;
 	
 	@Column
-	private long pincode;
-	
-	@Column
 	private String city;
 	
 	@Column
 	private String state;
+	
+	@Column
+	private long pincode;
 	
 	public Address() {
 		super();

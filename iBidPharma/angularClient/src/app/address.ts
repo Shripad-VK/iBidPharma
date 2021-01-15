@@ -4,7 +4,7 @@ export class Address
     line1:String;
     line2:String;
     area:String;
-    pincode:number;
     city:String;
     state:String;
+    pincode:number;
 }

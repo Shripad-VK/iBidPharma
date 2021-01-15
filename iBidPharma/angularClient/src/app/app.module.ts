@@ -9,6 +9,9 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
+import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
+import { UpdateManufacturerComponent } from './update-manufacturer/update-manufacturer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { UserLoginComponent } from './user-login/user-login.component';
     CreateProductComponent,
     ProductListComponent,
     UpdateProductComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    CreateManufacturerComponent,
+    ManufacturerListComponent,
+    UpdateManufacturerComponent
   ],
   imports: [
     BrowserModule,

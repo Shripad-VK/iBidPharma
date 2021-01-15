@@ -13,13 +13,12 @@ import javax.persistence.Table;
 public class Product {
 
 	@Id
-<<<<<<< HEAD
 	@GeneratedValue(strategy=GenerationType.AUTO )
 	private long id;
-=======
+
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long pid;
->>>>>>> c47f7edbadc424956dc590063a02afe04ba1dc38
+
 	@Column
 	private String pname;
 	
@@ -49,17 +48,14 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-<<<<<<< HEAD
-	public Product(long id, String pname, String pimage, String category, long min_bvalue, long max_bvalue, long stock,
-			long mid, long addr_id) {
-		super();
-		this.id = id;
-=======
+
+
+
 	public Product(String pname, String pimage, String category, long min_bvalue, long max_bvalue, long stock,
 			long mid, long addr_id) {
 		super();
 		
->>>>>>> c47f7edbadc424956dc590063a02afe04ba1dc38
+
 		this.pname = pname;
 		this.pimage = pimage;
 		this.category = category;
@@ -70,21 +66,21 @@ public class Product {
 		this.addr_id = addr_id;
 	}
 
-<<<<<<< HEAD
+
 	public long getId() {
 		return id;
 	}
 
 	public void setId(long id) {
 		this.id = id;
-=======
+	}
 	public long getPid() {
 		return pid;
 	}
 
 	public void setPid(long pid) {
 		this.pid = pid;
->>>>>>> c47f7edbadc424956dc590063a02afe04ba1dc38
+
 	}
 
 	public String getPname() {

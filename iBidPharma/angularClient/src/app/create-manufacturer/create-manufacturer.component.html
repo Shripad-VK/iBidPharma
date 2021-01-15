@@ -1,0 +1,17 @@
+<p>create-manufacturer works!</p>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="cname"> Company Name </label>
+        <input type="text" class="form-control" id="pname" required [(ngModel)]="manufacturer.cname" name="pname" />
+    </div>
+    <div class="form-group">
+        <label for="address"> Manufacturer Address </label>
+        <select [(ngModel)]="manufacturer.addr_id" name="address">
+            <option *ngFor="let a of addresses" [ngValue]="a.addr_id"> {{a.line1}} </option>
+         </select>
+    </div>
+  
+  
+   
+    <button type="submit" class="btn btn-success"> Submit </button> 
+</form>

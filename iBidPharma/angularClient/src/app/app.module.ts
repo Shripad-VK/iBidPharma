@@ -8,13 +8,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateProductComponent,
     ProductListComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

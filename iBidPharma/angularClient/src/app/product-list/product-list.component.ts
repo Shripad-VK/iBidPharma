@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-product-list',
@@ -21,7 +22,7 @@ export class ProductListComponent implements OnInit {
     { pname : "Injection"},
     { pname : "Capsule"}
   ];
-  constructor(private productService : ProductService, private router : Router) { }
+  constructor(private productService : ProductService, private router : Router, private userService : UserService) { }
 
   ngOnInit() {
     this.reloadProductList();
@@ -39,5 +40,10 @@ export class ProductListComponent implements OnInit {
   }
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
+  }
+
+  logOut() {
+    this.userService.logOutUser();
+    alert("Logged Out Successfully..!!");
   }
 }

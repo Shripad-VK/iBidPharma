@@ -11,6 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
 import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
 import { UpdateManufacturerComponent } from './update-manufacturer/update-manufacturer.component';
+import { CreateAddressComponent } from './create-address/create-address.component';
+import { AddressListComponent } from './address-list/address-list.component';
+import { UpdateAddressComponent } from './update-address/update-address.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { UpdateManufacturerComponent } from './update-manufacturer/update-manufa
     UpdateProductComponent,
     CreateManufacturerComponent,
     ManufacturerListComponent,
-    UpdateManufacturerComponent
+    UpdateManufacturerComponent,
+    CreateAddressComponent,
+    AddressListComponent,
+    UpdateAddressComponent,
+
   ],
   imports: [
     BrowserModule,

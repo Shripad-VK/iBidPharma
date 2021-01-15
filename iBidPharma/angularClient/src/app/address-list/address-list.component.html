@@ -1,0 +1,12 @@
+<table border="1">
+    <tr *ngFor="let address of addresses | async">
+        <td> {{address.line1}} </td>
+        <td> {{address.line2}} </td>
+        <td> {{address.city}} </td>
+        <td> {{address.area}} </td>
+        <td> {{address.state}} </td>
+        <td> {{address.pincode}} </td>
+        <td> <button (click)="update(address.pid)"> Update </button></td>
+        <td> <button (click)="delete(address.pid)"> Delete </button></td>
+    </tr>
+</table>

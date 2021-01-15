@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddressListComponent } from './address-list/address-list.component';
+import { CreateAddressComponent } from './create-address/create-address.component';
 import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
@@ -14,7 +16,9 @@ const routes: Routes = [
   {path: 'updateProduct/:pid', component:UpdateProductComponent},
   {path: 'manufacturers', component:ManufacturerListComponent},
   {path: 'addManufacturer',component:CreateManufacturerComponent},
-  {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent}
+  {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent},
+  {path: 'address', component:AddressListComponent},
+  {path: 'addAddress', component:CreateAddressComponent}
 ];
 
 @NgModule({

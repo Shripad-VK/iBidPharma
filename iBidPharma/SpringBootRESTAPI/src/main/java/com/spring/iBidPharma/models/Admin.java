@@ -31,27 +31,29 @@ public class Admin {
 	private String password;
 	
 	@Column
-	private long add_id;
+	private long addr_id;
 	
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Admin(String fname, String lname, String contact_no, String email, String password, long add_id) {
+	
+	public Admin(String fname, String lname, String contact_no, String password, long addr_id) {
 		super();
+		
+
 		this.fname = fname;
 		this.lname = lname;
 		this.contact_no = contact_no;
-		this.email = email;
 		this.password = password;
-		this.add_id = add_id;
+		this.addr_id = addr_id;
 	}
 
 	public long getAid() {
 		return aid;
 	}
 
+	
 	public String getFname() {
 		return fname;
 	}
@@ -92,18 +94,12 @@ public class Admin {
 		this.password = password;
 	}
 
-	public long getAdd_id() {
-		return add_id;
+	public long getAddr_id() {
+		return addr_id;
 	}
 
-	public void setAdd_id(long add_id) {
-		this.add_id = add_id;
-	}
-
-	@Override
-	public String toString() {
-		return "Admin [aid=" + aid + ", fname=" + fname + ", lname=" + lname + ", contact_no=" + contact_no + ", email="
-				+ email + ", password=" + password + ", add_id=" + add_id + "]";
+	public void setAddr_id(long addr_id) {
+		this.addr_id = addr_id;
 	}
 	
 }

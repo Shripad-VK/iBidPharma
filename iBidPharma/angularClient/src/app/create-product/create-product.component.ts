@@ -11,25 +11,19 @@ import { ProductService } from '../product.service';
 export class CreateProductComponent implements OnInit {
 
   product : Product;
-  //categories : any;
+  categories : any;
   selectedLevel:any;
   
   constructor(private productService : ProductService) { 
-  //  this.categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
+    this.categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   }
-  categories: Array<Object> = [
-    {id: 0, name: "Vaccine"},
-    {id: 1, name: "Syrup"}
-];
+  
   ngOnInit() {
     this.newProduct();
   }
 
   newProduct():void {
     this.product = new Product();
-  }
-  selected(){
-    console.log(this.selectedLevel);
   }
   save(){
     this.productService.createProduct(this.product).subscribe(data=>console.log(data),error=>console.error(error));

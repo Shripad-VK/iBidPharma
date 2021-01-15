@@ -8,6 +8,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user-login/user-login.component';
 import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
 import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
 import { UpdateManufacturerComponent } from './update-manufacturer/update-manufacturer.component';
@@ -22,6 +23,7 @@ import { UpdateAddressComponent } from './update-address/update-address.componen
     CreateProductComponent,
     ProductListComponent,
     UpdateProductComponent,
+    UserLoginComponent,
     CreateManufacturerComponent,
     ManufacturerListComponent,
     UpdateManufacturerComponent,

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.iBidPharma.models.Manufacturer;
-import com.spring.iBidPharma.repository.ManufacturerRepositroy;
+import com.spring.iBidPharma.repository.ManufacturerRepository;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
@@ -22,7 +22,7 @@ import com.spring.iBidPharma.repository.ManufacturerRepositroy;
 public class ManufacturerController {
 	
 	@Autowired
-	private ManufacturerRepositroy manufacturerRepositroy;
+	private ManufacturerRepository manufacturerRepositroy;
 	
 	@GetMapping("/manufacturers")
 	public List<Manufacturer> getAllManufacturer()

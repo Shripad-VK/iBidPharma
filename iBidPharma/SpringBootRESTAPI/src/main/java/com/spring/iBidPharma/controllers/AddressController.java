@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring.iBidPharma.models.Address;
 import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.repository.AddressRepository;
-import com.spring.iBidPharma.repository.ManufacturerRepositroy;
+import com.spring.iBidPharma.repository.ManufacturerRepository;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")

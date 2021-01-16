@@ -31,21 +31,21 @@ public class Address {
 	private String state;
 	
 	@Column
-	private long pincode;
-	
+	private long pin_code;
+
 	public Address() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(String line1, String line2, String area, long pincode, String city, String state) {
+	public Address(String line1, String line2, String area, String city, String state, long pin_code) {
 		super();
 		this.line1 = line1;
 		this.line2 = line2;
 		this.area = area;
-		this.pincode = pincode;
 		this.city = city;
 		this.state = state;
+		this.pin_code = pin_code;
 	}
 
 	public long getAddr_id() {
@@ -76,14 +76,6 @@ public class Address {
 		this.area = area;
 	}
 
-	public long getPincode() {
-		return pincode;
-	}
-
-	public void setPincode(long pincode) {
-		this.pincode = pincode;
-	}
-
 	public String getCity() {
 		return city;
 	}
@@ -100,10 +92,18 @@ public class Address {
 		this.state = state;
 	}
 
+	public long getPin_code() {
+		return pin_code;
+	}
+
+	public void setPin_code(long pin_code) {
+		this.pin_code = pin_code;
+	}
+
 	@Override
 	public String toString() {
-		return "Address [addr_id=" + addr_id + ", line1=" + line1 + ", line2=" + line2 + ", area=" + area + ", pincode="
-				+ pincode + ", city=" + city + ", state=" + state + "]";
+		return "Address [addr_id=" + addr_id + ", line1=" + line1 + ", line2=" + line2 + ", area=" + area + ", city="
+				+ city + ", state=" + state + ", pin_code=" + pin_code + "]";
 	}
 	
 }

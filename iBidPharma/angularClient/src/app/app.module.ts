@@ -15,6 +15,11 @@ import { UpdateManufacturerComponent } from './update-manufacturer/update-manufa
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
+import { DistributorListComponent } from './distributor-list/distributor-list.component';
+import { CreateDistributorComponent } from './create-distributor/create-distributor.component';
+
+import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
+import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
 
 
 @NgModule({
@@ -30,6 +35,11 @@ import { UpdateAddressComponent } from './update-address/update-address.componen
     CreateAddressComponent,
     AddressListComponent,
     UpdateAddressComponent,
+    
+    ViewOrderHistoryComponent,
+    ManufacturerHomeComponent,
+    DistributorListComponent,
+    CreateDistributorComponent
 
   ],
   imports: [

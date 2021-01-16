@@ -22,38 +22,24 @@ public class Admin {
 	private String lname;
 	
 	@Column
-	private String contact_no;
-	
-	@Column
-	private String email;
-	
-	@Column
-	private String password;
-	
-	@Column
-	private long addr_id;
+	private long uid;
 	
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Admin(String fname, String lname, String contact_no, String password, long addr_id) {
-		super();
-		
 
+	public Admin(String fname, String lname, long uid) {
+		super();
 		this.fname = fname;
 		this.lname = lname;
-		this.contact_no = contact_no;
-		this.password = password;
-		this.addr_id = addr_id;
+		this.uid = uid;
 	}
 
 	public long getAid() {
 		return aid;
 	}
 
-	
 	public String getFname() {
 		return fname;
 	}
@@ -70,36 +56,17 @@ public class Admin {
 		this.lname = lname;
 	}
 
-	public String getContact_no() {
-		return contact_no;
+	public long getUid() {
+		return uid;
 	}
 
-	public void setContact_no(String contact_no) {
-		this.contact_no = contact_no;
+	public void setUid(long uid) {
+		this.uid = uid;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public long getAddr_id() {
-		return addr_id;
-	}
-
-	public void setAddr_id(long addr_id) {
-		this.addr_id = addr_id;
+	@Override
+	public String toString() {
+		return "Admin [aid=" + aid + ", fname=" + fname + ", lname=" + lname + ", uid=" + uid + "]";
 	}
 	
 }

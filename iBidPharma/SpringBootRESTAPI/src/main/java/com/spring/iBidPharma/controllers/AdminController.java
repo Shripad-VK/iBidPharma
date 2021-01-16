@@ -50,10 +50,7 @@ public class AdminController {
 		Admin admin=adminRepository.findById(aid).orElse(null);
 		admin.setFname(info.getFname());
 		admin.setLname(info.getLname());
-		admin.setContact_no(info.getContact_no());
-		admin.setEmail(info.getEmail());
-		admin.setPassword(info.getPassword());
-		admin.setAddr_id(info.getAddr_id());
+		admin.setUid(info.getUid());
 		return adminRepository.save(admin);
 	}
 	

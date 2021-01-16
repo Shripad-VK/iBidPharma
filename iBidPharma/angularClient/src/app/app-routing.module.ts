@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddressListComponent } from './address-list/address-list.component';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { CreateDistributorComponent } from './create-distributor/create-distributor.component';
 import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'address', component:AddressListComponent},
   {path: 'addAddress', component:CreateAddressComponent},
   {path: 'distributors', component:DistributorListComponent},
-  {path: 'addDistributor',component:CreateDistributorComponent}
+  {path: 'addDistributor',component:CreateDistributorComponent},
+  {path: 'adminHome',component:AdminHomeComponent}
 ];
 
 @NgModule({

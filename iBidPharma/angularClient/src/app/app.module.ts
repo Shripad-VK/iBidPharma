@@ -17,6 +17,13 @@ import { AddressListComponent } from './address-list/address-list.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
 import { DistributorListComponent } from './distributor-list/distributor-list.component';
 import { CreateDistributorComponent } from './create-distributor/create-distributor.component';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+import { UpdateAccountComponent } from './Admin/update-account/update-account.component';
+import { ReportGenerationComponent } from './Admin/report-generation/report-generation.component';
+import { RevenueManagementComponent } from './Admin/revenue-management/revenue-management.component';
+import { SearchManufacturerComponent } from './Distributor/search-manufacturer/search-manufacturer.component';
+import { SearchProductComponent } from './Distributor/search-product/search-product.component';
+import { ViewTransactionHistoryComponent } from './Distributor/view-transaction-history/view-transaction-history.component';
 
 
 @NgModule({
@@ -33,8 +40,21 @@ import { CreateDistributorComponent } from './create-distributor/create-distribu
     AddressListComponent,
     UpdateAddressComponent,
     DistributorListComponent,
-    CreateDistributorComponent
-
+    CreateDistributorComponent,
+   
+    AdminHomeComponent,
+   
+    UpdateAccountComponent,
+   
+    ReportGenerationComponent,
+   
+    RevenueManagementComponent,
+   
+    SearchManufacturerComponent,
+   
+    SearchProductComponent,
+   
+    ViewTransactionHistoryComponent
   ],
   imports: [
     BrowserModule,

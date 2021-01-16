@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Manufacturer } from 'src/manufacturer';
 import { Address } from '../address';
 import { AddressService } from '../address.service';
+import { ManufacturerService } from '../manufacturer.service';
 
 @Component({
   selector: 'app-create-address',
@@ -11,8 +13,10 @@ import { AddressService } from '../address.service';
 })
 export class CreateAddressComponent implements OnInit {
 
-  address:Address;
-  constructor(private addressService:AddressService,private router:Router,private http:HttpClient) { }
+  address:any;
+  mid:number;
+  manufacturer:any;
+  constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService) { }
 
   ngOnInit() {
     this.newAddress();
@@ -21,10 +25,16 @@ export class CreateAddressComponent implements OnInit {
   newAddress():void
   {
     this.address=new Address();
+    this.mid=this.route.snapshot.params['mid'];
+    console.log(this.mid);
   }
   onSubmit()
   {
-    this.addressService.createAddress(this.address).subscribe(data=>console.log(data),error=>console.error(error));
+    this.addressService.createAddress(this.address).subscribe(data=>{this.address=data;
+    this.manufacturer=new Manufacturer();
+    this.manufacturer.addr_id=this.address.addr_id;
+    this.manufacturerService.updateManufacturer(this.mid,this.manufacturer).subscribe(data=>console.log(data),error=>console.log(error));
+    },error=>console.error(error));
     
   }
 }

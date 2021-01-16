@@ -13,7 +13,11 @@ import javax.persistence.Table;
 public class Product {
 
 	@Id
+<<<<<<< HEAD
+	@GeneratedValue(strategy=GenerationType.AUTO)
+=======
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+>>>>>>> a68f56fc2f990699e3720241d245f499f302e4be
 	private long pid;
 
 	@Column
@@ -64,6 +68,10 @@ public class Product {
 	}
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> a68f56fc2f990699e3720241d245f499f302e4be
 	public long getPid() {
 		return pid;
 	}

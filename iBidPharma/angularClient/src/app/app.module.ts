@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,9 @@ import { SearchManufacturerComponent } from './Distributor/search-manufacturer/s
 import { SearchProductComponent } from './Distributor/search-product/search-product.component';
 import { ViewTransactionHistoryComponent } from './Distributor/view-transaction-history/view-transaction-history.component';
 
+import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
+import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { ViewTransactionHistoryComponent } from './Distributor/view-transaction-
     CreateAddressComponent,
     AddressListComponent,
     UpdateAddressComponent,
+    
+    ViewOrderHistoryComponent,
+    ManufacturerHomeComponent,
     DistributorListComponent,
     CreateDistributorComponent,
    
@@ -62,6 +68,9 @@ import { ViewTransactionHistoryComponent } from './Distributor/view-transaction-
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]

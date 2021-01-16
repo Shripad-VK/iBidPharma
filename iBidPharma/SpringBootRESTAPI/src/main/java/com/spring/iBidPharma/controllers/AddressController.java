@@ -36,8 +36,12 @@ public class AddressController {
 	@PostMapping("/addresses")
 	public Address createAddress( @RequestBody Address address)
 	{
+<<<<<<< HEAD
+	
+=======
 		
 		System.out.println(address.getPin_code());
+>>>>>>> a68f56fc2f990699e3720241d245f499f302e4be
 		return addressRepositroy.save(address);
 		
 	}

@@ -15,6 +15,8 @@ import { UpdateManufacturerComponent } from './update-manufacturer/update-manufa
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
+import { DistributorListComponent } from './distributor-list/distributor-list.component';
+import { CreateDistributorComponent } from './create-distributor/create-distributor.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { UpdateAddressComponent } from './update-address/update-address.componen
     CreateAddressComponent,
     AddressListComponent,
     UpdateAddressComponent,
+    DistributorListComponent,
+    CreateDistributorComponent
 
   ],
   imports: [

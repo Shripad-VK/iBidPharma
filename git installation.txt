@@ -23,6 +23,7 @@ Run Angular + Spring Boot Project
 1. For execution policy error command : Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 2. For running imported angular project : npm install --save-dev @angular-devkit/build-angular
 3. Running angular Project : ng serve --proxy-config proxy.config.json
+4. For running our project : npm start
 
 Port Already in Use :
 1. netstat -ano | findstr 8080

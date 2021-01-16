@@ -13,10 +13,7 @@ import javax.persistence.Table;
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO )
-	private long id;
-
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long pid;
 
 	@Column
@@ -67,13 +64,6 @@ public class Product {
 	}
 
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 	public long getPid() {
 		return pid;
 	}

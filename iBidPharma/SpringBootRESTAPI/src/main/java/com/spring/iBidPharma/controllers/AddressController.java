@@ -37,7 +37,7 @@ public class AddressController {
 	public Address createAddress( @RequestBody Address address)
 	{
 		
-		
+		System.out.println(address.getPin_code());
 		return addressRepositroy.save(address);
 		
 	}
@@ -57,7 +57,8 @@ public class AddressController {
 		address.setCity(info.getArea());
 		address.setLine1(info.getLine1());
 		address.setLine2(info.getLine2());
-		address.setPincode(info.getPincode());
+		
+		address.setPin_code(info.getPin_code());
 		address.setState(info.getState());
 		
 		return addressRepositroy.save(address);

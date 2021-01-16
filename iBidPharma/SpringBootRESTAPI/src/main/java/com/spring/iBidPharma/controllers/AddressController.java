@@ -36,8 +36,7 @@ public class AddressController {
 	@PostMapping("/addresses")
 	public Address createAddress( @RequestBody Address address)
 	{
-		
-		System.out.println(address.getPincode());
+	
 		return addressRepositroy.save(address);
 		
 	}

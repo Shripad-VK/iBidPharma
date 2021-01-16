@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddressListComponent } from './address-list/address-list.component';
 import { CreateAddressComponent } from './create-address/create-address.component';
@@ -18,7 +18,8 @@ const routes: Routes = [
   {path: 'addManufacturer',component:CreateManufacturerComponent},
   {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent},
   {path: 'address', component:AddressListComponent},
-  {path: 'addAddress', component:CreateAddressComponent}
+  {path: 'addAddress', component:CreateAddressComponent},
+  {path: 'addAddress/:mid', component:CreateAddressComponent}
 ];
 
 @NgModule({

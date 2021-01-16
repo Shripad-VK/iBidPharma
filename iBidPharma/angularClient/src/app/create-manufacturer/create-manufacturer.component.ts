@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Manufacturer } from 'src/manufacturer';
 import { Address } from '../address';
@@ -12,8 +13,8 @@ import { ManufacturerService } from '../manufacturer.service';
 })
 export class CreateManufacturerComponent implements OnInit {
 addresses:Observable<Address[]>;
-manufacturer:Manufacturer;
-  constructor(private manufacturerService:ManufacturerService,private addressService:AddressService) { }
+manufacturer:any;
+  constructor(private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router) { }
 
   ngOnInit() {
     this.newManufacturer();
@@ -26,12 +27,15 @@ manufacturer:Manufacturer;
 
   onSubmit()
   {
-    console.log(this.manufacturer.addr_id);
-    this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>console.log(data),error=>console.log(error));
+    
+    this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>{this.manufacturer=data;
+      this.router.navigate(['addAddress',this.manufacturer.mid]);
+    },error=>console.log(error));
+   
   }
   getAddressList()
   {
-    
+
   this.addressService.getAddresList().subscribe(res=>this.addresses=res);
    console.log(this.addresses);
   }

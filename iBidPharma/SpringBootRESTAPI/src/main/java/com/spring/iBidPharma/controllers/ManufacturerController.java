@@ -34,6 +34,8 @@ public class ManufacturerController {
 	@PostMapping("/manufacturers")
 	public Manufacturer createManufacturer( @RequestBody Manufacturer manufacturer)
 	{
+		if(manufacturer.getAddr_id()==0)
+			manufacturer.setAddr_id(1);
 		manufacturer.setUid(1);
 		return manufacturerRepositroy.save(manufacturer);
 		
@@ -51,8 +53,15 @@ public class ManufacturerController {
 		Manufacturer manufacturer=getManufacturerById(mid);
 		
 		manufacturer.setAddr_id(info.getAddr_id());
-		manufacturer.setCname(info.getCname());
-		manufacturer.setUid(info.getUid());
+		System.out.println(info.getAddr_id());
+		if(info.getCname()==null)
+			manufacturer.setCname(manufacturer.getCname());
+		else
+			manufacturer.setCname(info.getCname());
+		if(info.getUid()==0)
+			manufacturer.setUid(manufacturer.getUid());
+		else
+			manufacturer.setUid(info.getUid());
 		return manufacturerRepositroy.save(manufacturer);
 		
 	}

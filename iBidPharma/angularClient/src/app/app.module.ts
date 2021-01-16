@@ -15,10 +15,12 @@ import { UpdateManufacturerComponent } from './update-manufacturer/update-manufa
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
+import { DistributorListComponent } from './distributor-list/distributor-list.component';
+import { CreateDistributorComponent } from './create-distributor/create-distributor.component';
 
-import { ViewOrderHistoryComponent } from './manufacturer-home/view-order-history/view-order-history.component';
-import { ReporGenerationComponent } from './manufacturer-home/repor-generation/repor-generation.component';
-import { ManufacturerHomeComponent } from './manucturer/manufacturer-home/manufacturer-home.component';
+import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
+import { ReporGenerationComponent } from './manufacturer/report-generation/report-generation.component';
+import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { ManufacturerHomeComponent } from './manucturer/manufacturer-home/manufa
     ViewOrderHistoryComponent,
     ReporGenerationComponent,
     ManufacturerHomeComponent,
+    DistributorListComponent,
+    CreateDistributorComponent
 
   ],
   imports: [

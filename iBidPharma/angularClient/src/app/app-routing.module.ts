@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddressListComponent } from './address-list/address-list.component';
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
+import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { UpdateManufacturerComponent } from './update-manufacturer/update-manufacturer.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
@@ -18,7 +19,9 @@ const routes: Routes = [
   {path: 'addManufacturer',component:CreateManufacturerComponent},
   {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent},
   {path: 'address', component:AddressListComponent},
-  {path: 'addAddress', component:CreateAddressComponent}
+  {path: 'addAddress', component:CreateAddressComponent},
+  {path:'manufacturer',component:ProductListComponent},
+  {path:'manufacturer',component:ManufacturerHomeComponent}
 ];
 
 @NgModule({

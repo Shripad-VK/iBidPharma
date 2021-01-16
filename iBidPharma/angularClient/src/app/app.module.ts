@@ -16,6 +16,10 @@ import { CreateAddressComponent } from './create-address/create-address.componen
 import { AddressListComponent } from './address-list/address-list.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
 
+import { ViewOrderHistoryComponent } from './manufacturer-home/view-order-history/view-order-history.component';
+import { ReporGenerationComponent } from './manufacturer-home/repor-generation/repor-generation.component';
+import { ManufacturerHomeComponent } from './manucturer/manufacturer-home/manufacturer-home.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { UpdateAddressComponent } from './update-address/update-address.componen
     CreateAddressComponent,
     AddressListComponent,
     UpdateAddressComponent,
+    
+    ViewOrderHistoryComponent,
+    ReporGenerationComponent,
+    ManufacturerHomeComponent,
 
   ],
   imports: [

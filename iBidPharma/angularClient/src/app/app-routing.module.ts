@@ -12,6 +12,7 @@ import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manu
 import { ProductListComponent } from './product-list/product-list.component';
 import { UpdateManufacturerComponent } from './update-manufacturer/update-manufacturer.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'manufacturer',component:ManufacturerHomeComponent},
   {path: 'distributors', component:DistributorListComponent},
   {path: 'addDistributor',component:CreateDistributorComponent},
-  {path: 'adminHome',component:AdminHomeComponent}
+  {path: 'adminHome',component:AdminHomeComponent},
+  {path: 'login',component:UserLoginComponent}
 ];
 
 @NgModule({

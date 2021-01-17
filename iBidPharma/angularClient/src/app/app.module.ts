@@ -27,6 +27,8 @@ import { ViewTransactionHistoryComponent } from './Distributor/view-transaction-
 
 import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
 import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -60,7 +62,11 @@ import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manu
    
     SearchProductComponent,
    
-    ViewTransactionHistoryComponent
+    ViewTransactionHistoryComponent,
+   
+    HeaderComponent,
+   
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
-<form [formGroup]="loginForm">
-    <input type="text" name="email" id="email" class="form-control" placeholder="Enter Email ID" formControlName="email" required/> <br/><br/>
-    <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" formControlName="password" required/> <br/><br/>
-    <button (click)="checkLogin()" style="margin-right: 10px;"> Log In </button>
-    <input type="reset" value="Clear"/>    
-</form>
+<div class="jumbotron">
+    <form [formGroup]="loginForm">
+        <input type="text" name="email" id="email" class="form-control" placeholder="Enter Email ID" formControlName="email" required/> <br/><br/>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" formControlName="password" required/> <br/><br/>
+        <button class="btn btn-success btn-lg" (click)="checkLogin()" style="margin-left: 15%;"> Log In </button>
+        <input class="btn btn-danger btn-lg" type="reset" value="Clear" style="margin-left: 25%;"/>    
+    </form>
+</div>

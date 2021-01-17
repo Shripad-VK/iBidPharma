@@ -16,14 +16,14 @@ export class DistributorService {
   {
     return this.http.post(`${this.baseUrl}`+'/distributors',distributor);
   }
-  deleteDistributor(mid:number):Observable<any>
+  deleteDistributor(d_id:number):Observable<any>
   {
-    return this.http.delete(`${this.baseUrl}`+'/distributors/'+mid);
+    return this.http.delete(`${this.baseUrl}`+'/distributors/'+d_id);
   }
-  getDistributorrById(mid:number):Observable<Object>{
-    return this.http.get(`${this.baseUrl}`+'/distributors/'+mid);
+  getDistributorrById(d_id:number):Observable<Object>{
+    return this.http.get(`${this.baseUrl}`+'/distributors/'+d_id);
   }
-  updateDistributor(mid:number,value:any):Observable<Object>{
-    return this.http.put(`${this.baseUrl}`+'/distributors/'+mid,value);
+  updateDistributor(d_id:number,value:any):Observable<Object>{
+    return this.http.put(`${this.baseUrl}`+'/distributors/'+d_id,value);
   }
 }

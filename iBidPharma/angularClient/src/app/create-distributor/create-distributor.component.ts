@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Address } from '../address';
 import { AddressService } from '../address.service';
 import { Distributor } from '../Distributor';
 import { DistributorService } from '../distributor.service';
+
 
 @Component({
   selector: 'app-create-distributor',
@@ -12,8 +14,8 @@ import { DistributorService } from '../distributor.service';
 })
 export class CreateDistributorComponent implements OnInit {
   addresses:Observable<Address[]>;
-  distributor:Distributor;
-  constructor(private distributorService:DistributorService,private addressService:AddressService) { }
+  distributor:any;
+  constructor(private distributorService:DistributorService,private addressService:AddressService,private router:Router) { }
 
   ngOnInit() {
     this.newDistributor();
@@ -25,13 +27,16 @@ export class CreateDistributorComponent implements OnInit {
 
   onSubmit()
   {
-    console.log(this.distributor.addr_id);
-    this.distributorService.createDistributor(this.distributor).subscribe(data=>console.log(data),error=>console.log(error));
+    this.distributorService.createDistributor(this.distributor).subscribe(data=>{this.distributor=data;
+      this.router.navigate(['addAddress',this.distributor.d_id]);
+    },error=>console.log(error));
   }
   getAddressList()
   {
     
   this.addressService.getAddresList().subscribe(res=>this.addresses=res);
    console.log(this.addresses);
+
+   
   }
 }

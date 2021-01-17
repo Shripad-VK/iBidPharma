@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.iBidPharma.models.Distributor;
+import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.repository.DistributorRepository;
 
 @RestController
@@ -33,22 +34,32 @@ public class DistributorController {
 	@PostMapping("/distributors")
 	public Distributor createDistributor( @RequestBody Distributor distributor)
 	{
+		if(distributor.getAddr_id()==0)
+			distributor.setAddr_id(1);
 		distributor.setUid(1);
 		return distributorRepository.save(distributor);
 		
 	}
 	@GetMapping("/distributors/{mid}")
-	public Distributor getDistributorById(@PathVariable (value="mid")Long mid)
+	public Distributor getDistributorById(@PathVariable (value="d_id")Long d_id)
 	{
-		return distributorRepository.findById(mid).orElse(null);
+		return distributorRepository.findById(d_id).orElse(null);
 	}
 	@PutMapping("/distributors/{mid}")
-	public Distributor updateDistributor(@PathVariable (value="mid")Long mid,@RequestBody Distributor info )
+	public Distributor updateDistributor(@PathVariable (value="d_id")Long d_id,@RequestBody Distributor info )
 	{
-		Distributor distributor=getDistributorById(mid);
+		Distributor distributor=getDistributorById(d_id);
+		
 		distributor.setAddr_id(info.getAddr_id());
-		distributor.setCname(info.getCname());
-		distributor.setUid(info.getUid());
+		System.out.println(info.getAddr_id());
+		if(info.getCname()==null)
+			distributor.setCname(distributor.getCname());
+		else
+			distributor.setCname(info.getCname());
+		if(info.getUid()==0)
+			distributor.setUid(distributor.getUid());
+		else
+			distributor.setUid(info.getUid());
 		return distributorRepository.save(distributor);
 		
 	}

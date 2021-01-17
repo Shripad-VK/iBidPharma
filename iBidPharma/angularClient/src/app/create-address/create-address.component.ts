@@ -5,6 +5,9 @@ import { Manufacturer } from 'src/manufacturer';
 import { Address } from '../address';
 import { AddressService } from '../address.service';
 import { ManufacturerService } from '../manufacturer.service';
+import { Distributor } from '../Distributor';
+import { DistributorService } from '../distributor.service';
+
 
 @Component({
   selector: 'app-create-address',
@@ -15,8 +18,10 @@ export class CreateAddressComponent implements OnInit {
 
   address:any;
   mid:number;
+  d_id:number;
   manufacturer:any;
-  constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService) { }
+  distributor:any;
+  constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService,private distributorService: DistributorService) { }
 
   ngOnInit() {
     this.newAddress();
@@ -33,6 +38,7 @@ export class CreateAddressComponent implements OnInit {
     this.addressService.createAddress(this.address).subscribe(data=>{this.address=data;
     this.manufacturer=new Manufacturer();
     this.manufacturer.addr_id=this.address.addr_id;
+    
     this.manufacturerService.updateManufacturer(this.mid,this.manufacturer).subscribe(data=>console.log(data),error=>console.log(error));
     },error=>console.error(error));
     

@@ -22,14 +22,14 @@ export class DistributorListComponent implements OnInit {
     
   }
  
-  delete(mid:number)
+  delete(d_id:number)
   {
-    this.distributorService.deleteDistributor(mid).subscribe(data=>console.log(data),error=>console.log(error));
+    this.distributorService.deleteDistributor(d_id).subscribe(data=>console.log(data),error=>console.log(error));
   }
 
-  update(mid:number)
+  update(d_id:number)
   {
-    this.router.navigate(['updateDistributor',mid]);
+    this.router.navigate(['updateDistributor',d_id]);
   }
 
 }

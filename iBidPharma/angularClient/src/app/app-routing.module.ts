@@ -25,6 +25,7 @@ const routes: Routes = [
   {path: 'address', component:AddressListComponent},
   {path: 'addAddress', component:CreateAddressComponent},
   {path: 'addAddress/:mid', component:CreateAddressComponent},
+  {path: 'addAddress/:d_id', component:CreateAddressComponent},
   {path:'manufacturer',component:ProductListComponent},
   {path:'manufacturer',component:ManufacturerHomeComponent},
   {path: 'distributors', component:DistributorListComponent},

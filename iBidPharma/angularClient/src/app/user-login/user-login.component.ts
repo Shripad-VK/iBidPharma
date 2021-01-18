@@ -36,11 +36,16 @@ export class UserLoginComponent implements OnInit {
             sessionStorage.setItem('userLog',this.user.email);
             this.currentUser = JSON.stringify(this.user);
             sessionStorage.setItem('currentUser', this.currentUser);
-            this.router.navigate(['products']);
+            if(this.user.utype.equals("Manufacturer"))
+              this.router.navigate(['manufacturerHome']);
+            if(this.user.utype.equals("Distributor"))
+              this.router.navigate(['distributorHome']);
           }
       }
+      else if(this.user.utype.equals("Admin"))
+      this.router.navigate(['adminHome']);
       else
-        this.router.navigate(['addProduct']);
+        this.router.navigate(['login']);
     },
       error=>console.error(error)
     

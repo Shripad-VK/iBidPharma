@@ -1,17 +1,15 @@
 
-<!-- <app-header> </app-header> -->
-<!-- <div class="vertical-menu">
-    <a href="#" class="active">Home</a>
-    <a href="#">Account</a>
-    <a href="#">report Generation</a>
-    <a href="#">Revenue Management</a>
-</div> -->
 <app-header> </app-header> 
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<button id = "toggle"> Toggle </button>
 <div class="wrapper">
   <div class="sidebar">
+   
     <ul>
-      <li><a href="#"><i class="fa fa-bars"></i>MENU</a></li>
+      <li><a href="#" (click)="onClick()"><i class="fa fa-bars"></i>MENU</a></li>
       <li><a href="#"><i class="fa fa-fw fa-home"></i>Home</a></li>
       <li><div class="dropdown">
         <button class="dropbtn"><i class="fa fa-cog fa-spin"></i>Account</button>

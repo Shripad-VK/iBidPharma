@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Manufacturer } from 'src/manufacturer';
-import { ManufacturerService } from '../manufacturer.service';
+import { ManufacturerService } from '../../manufacturer.service';
 
 @Component({
   selector: 'app-manufacturer-list',

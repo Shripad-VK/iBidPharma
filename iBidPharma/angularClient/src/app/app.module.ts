@@ -1,34 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateProductComponent } from './create-product/create-product.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { UpdateProductComponent } from './update-product/update-product.component';
+import { CreateProductComponent } from './product/create-product/create-product.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user-login/user-login.component';
-import { CreateManufacturerComponent } from './create-manufacturer/create-manufacturer.component';
-import { ManufacturerListComponent } from './manufacturer-list/manufacturer-list.component';
-import { UpdateManufacturerComponent } from './update-manufacturer/update-manufacturer.component';
-import { CreateAddressComponent } from './create-address/create-address.component';
-import { AddressListComponent } from './address-list/address-list.component';
-import { UpdateAddressComponent } from './update-address/update-address.component';
-import { DistributorListComponent } from './distributor-list/distributor-list.component';
-import { CreateDistributorComponent } from './create-distributor/create-distributor.component';
-import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
-import { UpdateAccountComponent } from './Admin/update-account/update-account.component';
-import { ReportGenerationComponent } from './Admin/report-generation/report-generation.component';
-import { RevenueManagementComponent } from './Admin/revenue-management/revenue-management.component';
-import { SearchManufacturerComponent } from './Distributor/search-manufacturer/search-manufacturer.component';
-import { SearchProductComponent } from './Distributor/search-product/search-product.component';
-import { ViewTransactionHistoryComponent } from './Distributor/view-transaction-history/view-transaction-history.component';
-
+import { CreateManufacturerComponent } from './manufacturer/create-manufacturer/create-manufacturer.component';
+import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
+import { UpdateManufacturerComponent } from './manufacturer/update-manufacturer/update-manufacturer.component';
+import { CreateAddressComponent } from './address/create-address/create-address.component';
+import { AddressListComponent } from './address/address-list/address-list.component';
+import { UpdateAddressComponent } from './address/update-address/update-address.component';
+import { DistributorListComponent } from './distributor/distributor-list/distributor-list.component';
+import { CreateDistributorComponent } from './distributor/create-distributor/create-distributor.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { UpdateAccountComponent } from './admin/update-account/update-account.component';
+import { ReportGenerationComponent } from './admin/report-generation/report-generation.component';
+import { RevenueManagementComponent } from './admin/revenue-management/revenue-management.component';
+import { SearchManufacturerComponent } from './distributor/search-manufacturer/search-manufacturer.component';
+import { SearchProductComponent } from './distributor/search-product/search-product.component';
+import { ViewTransactionHistoryComponent } from './distributor/view-transaction-history/view-transaction-history.component';
 import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
 import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
 
 
 @NgModule({
@@ -44,29 +43,20 @@ import { FooterComponent } from './footer/footer.component';
     CreateAddressComponent,
     AddressListComponent,
     UpdateAddressComponent,
-    
     ViewOrderHistoryComponent,
     ManufacturerHomeComponent,
     DistributorListComponent,
     CreateDistributorComponent,
-   
     AdminHomeComponent,
-   
     UpdateAccountComponent,
-   
     ReportGenerationComponent,
-   
     RevenueManagementComponent,
-   
     SearchManufacturerComponent,
-   
     SearchProductComponent,
-   
     ViewTransactionHistoryComponent,
-   
     HeaderComponent,
-   
-    FooterComponent
+    FooterComponent,
+    DistributorHomeComponent
   ],
   imports: [
     BrowserModule,

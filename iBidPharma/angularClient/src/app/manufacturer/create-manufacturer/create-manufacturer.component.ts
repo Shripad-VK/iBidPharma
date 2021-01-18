@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Manufacturer } from 'src/manufacturer';
-import { Address } from '../address';
-import { AddressService } from '../address.service';
-import { ManufacturerService } from '../manufacturer.service';
+import { Address } from '../../address';
+import { AddressService } from '../../address.service';
+import { ManufacturerService } from '../../manufacturer.service';
 
 @Component({
   selector: 'app-create-manufacturer',

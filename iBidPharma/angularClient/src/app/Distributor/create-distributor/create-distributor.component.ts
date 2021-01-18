@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Address } from '../address';
-import { AddressService } from '../address.service';
-import { Distributor } from '../Distributor';
-import { DistributorService } from '../distributor.service';
+import { Address } from '../../address';
+import { AddressService } from '../../address.service';
+import { Distributor } from '../../Distributor';
+import { DistributorService } from '../../distributor.service';
 
 
 @Component({

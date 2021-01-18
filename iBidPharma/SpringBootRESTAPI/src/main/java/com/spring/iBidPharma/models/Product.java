@@ -64,7 +64,6 @@ public class Product {
 	}
 
 
-
 	public long getPid() {
 		return pid;
 	}

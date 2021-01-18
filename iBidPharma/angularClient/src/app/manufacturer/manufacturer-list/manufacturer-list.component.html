@@ -1,0 +1,9 @@
+<table border="1">
+<tr *ngFor="let manufacturer of manufacturers | async">
+    <td>{{manufacturer.mid}}</td>
+    <td>{{manufacturer.cname}}</td>
+    <td></td>
+    <td> <button (click)="update(manufacturer.mid)"> Update </button></td>
+    <td> <button (click)="delete(manufacturer.mid)"> Delete </button></td>
+</tr>    
+</table>

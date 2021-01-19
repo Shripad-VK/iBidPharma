@@ -28,6 +28,7 @@ import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manu
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
+import { MailComponent } from './mail/mail.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { DistributorHomeComponent } from './distributor/distributor-home/distrib
     ViewTransactionHistoryComponent,
     HeaderComponent,
     FooterComponent,
-    DistributorHomeComponent
+    DistributorHomeComponent,
+    MailComponent
   ],
   imports: [
     BrowserModule,

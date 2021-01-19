@@ -6,5 +6,5 @@ export class Address
     area:String;
     city:String;
     state:String;
-    pincode:number;
+    pin_code:number;
 }

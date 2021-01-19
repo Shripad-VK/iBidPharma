@@ -46,8 +46,6 @@ public class Product {
 	}
 
 
-
-
 	public Product(String pname, String pimage, String category, long min_bvalue, long max_bvalue, long stock,
 			long mid, long addr_id) {
 		super();

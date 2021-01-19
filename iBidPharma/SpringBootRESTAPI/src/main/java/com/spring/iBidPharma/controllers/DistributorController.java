@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.iBidPharma.models.Distributor;
-import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.repository.DistributorRepository;
 
 @RestController
@@ -45,7 +44,7 @@ public class DistributorController {
 	{
 		return distributorRepository.findById(d_id).orElse(null);
 	}
-	@PutMapping("/distributors/{mid}")
+	@PutMapping("/distributors/{d_id}")
 	public Distributor updateDistributor(@PathVariable (value="d_id")Long d_id,@RequestBody Distributor info )
 	{
 		Distributor distributor=getDistributorById(d_id);

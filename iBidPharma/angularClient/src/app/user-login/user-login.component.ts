@@ -36,10 +36,17 @@ export class UserLoginComponent implements OnInit {
             sessionStorage.setItem('userLog',this.user.email);
             this.currentUser = JSON.stringify(this.user);
             sessionStorage.setItem('currentUser', this.currentUser);
-            if(this.user.utype.equals("Manufacturer"))
-              this.router.navigate(['manufacturerHome']);
-            if(this.user.utype.equals("Distributor"))
-              this.router.navigate(['distributorHome']);
+            if(this.user.utype=="Manufacturer")
+            {
+              console.log(this.user.utype);
+              this.router.navigate(['manufacturerHome',this.user.utype]);
+            }
+              if(this.user.utype=="Distributor")
+            {
+              console.log(this.user.utype);
+              this.router.navigate(['distributorHome',this.user.utype]);
+          
+            }
           }
       }
       else if(this.user.utype.equals("Admin"))

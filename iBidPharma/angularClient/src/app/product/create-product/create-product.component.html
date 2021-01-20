@@ -1,14 +1,14 @@
-    <div class="productForm">
+<div class="productForm">
     <div class="heading">
         Add Product
     </div> 
-        <div class="another">
-    <form (ngSubmit)="onSubmit()">
+    <div class="another">
+    <form (ngSubmit)="onSubmit()" name="addProductForm">
        
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                 <label for="pname" > Product Name </label>
+                    <label for="pname" > Product Name </label>
                 </div>
                 <div class="col"> 
                 <input type="text" class="form-control form-control-sm" id="pname" required [(ngModel)]="product.pname" name="pname" />
@@ -19,7 +19,7 @@
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="category" > Product Category </label>
+                    <label for="category" > Product Category </label>
                 </div>
                 <div class="col">
                 <select [(ngModel)]="product.category" name="category">
@@ -32,32 +32,32 @@
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="stock"> Product Stock </label>
+                    <label for="stock"> Product Stock </label>
                 </div>
-                 <div class="col">  
-                 <input type="number" class="form-control form-control-sm" id="stock" required [(ngModel)]="product.stock" name="stock" style="float:right"/>
-                 </div>
+                <div class="col">  
+                    <input type="number" class="form-control form-control-sm" id="stock" required [(ngModel)]="product.stock" name="stock" style="float:right"/>
+                </div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="min_bvalue"> Minimum Bid Value </label>
+                    <label for="min_bvalue"> Minimum Bid Value </label>
                 </div>
                 <div class="col">
-                <input type="number" class="form-control form-control-sm" id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
-                 </div>   
+                    <input type="number" class="form-control form-control-sm" id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
+                </div>   
             </div>
         </div>
    
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="max_bvalue"> Maximum Bid Value </label>
+                    <label for="max_bvalue"> Maximum Bid Value </label>
                 </div>
                 <div class="col">
-                 <input type="number" class="form-control form-control-sm" id="max_bvalue" required [(ngModel)]="product.max_bvalue" name="max_bvalue" />
+                    <input type="number" class="form-control form-control-sm" id="max_bvalue" required [(ngModel)]="product.max_bvalue" name="max_bvalue" />
                 </div> 
             </div>
         </div>
@@ -65,21 +65,21 @@
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="pimage">Upload Product Image </label>
-                 </div>
+                    <label for="pimage">Upload Product Image </label>
+                </div>
                 <div class="col">
-                 <input type="file" class="form-control " id="pimage" required [(ngModel)]="product.pimage" name="pimage" (change)="handleFileInput($event.target.files)" />
-                 </div>
+                    <input type="file" class="form-control " id="pimage" name="pimage" (change)="handleFileInput($event)" />
+                </div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="mid"> mid </label>
+                    <label for="mid"> mid </label>
                 </div>
                 <div class="col">
-                 <input type="number" class="form-control form-control-sm" id="mid" required [(ngModel)]="product.mid" name="mid" />
+                    <input type="number" class="form-control form-control-sm" id="mid" required [(ngModel)]="product.mid" name="mid" />
                 </div> 
             </div>
         </div>
@@ -87,32 +87,31 @@
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                <label for="addr_id">addr_id </label>
+                    <label for="addr_id">addr_id </label>
                 </div>
                 <div class="col">
-                 <input type="number" class="form-control form-control-sm" id="addr_id" required [(ngModel)]="product.addr_id" name="addr_id" />
+                    <input type="number" class="form-control form-control-sm" id="addr_id" required [(ngModel)]="product.addr_id" name="addr_id" />
                 </div> 
             </div>
         </div>
     
-    <!-- <tr>
-        <div class="form-group">
-            <td> <label for="mid" class="control-label col-sm-2"> MID </label></td>
-            <td> <input type="number" class="form-control" id="mid" required [(ngModel)]="product.mid" name="mid"  /></td>
-        </div></tr> -->
+        <!-- <div class="form-group">
+            <label for="mid" class="control-label col-sm-2"> MID </label>
+            <input type="number" class="form-control" id="mid" required [(ngModel)]="product.mid" name="mid"  />
+        </div> -->
         <!-- <tr>
         <td><button type="submit" class="btn btn-success"> Submit </button> </td>
     <td> <input class="btn btn-primary" type="reset" value="Reset"></td>
     </tr> -->
     <div class="form-row">
         <div class="col">
-        <button type="submit" class="btn btn-success" style="float: right;"> Submit </button>
+            <button type="submit" class="btn btn-success" style="float: right;"> Submit </button>
         </div>
         <div class="col">
-        <input class="btn btn-primary" type="reset" value="Reset">
+            <input class="btn btn-primary" type="reset" value="Reset">
         </div>
     </div>
    </form>
-    </div>
-    </div>
+</div>
+</div>
    

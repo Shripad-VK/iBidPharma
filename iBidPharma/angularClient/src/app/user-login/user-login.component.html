@@ -1,8 +1,45 @@
-<div class="jumbotron">
+<!--<div class="jumbotron">
     <form [formGroup]="loginForm">
-        <input type="text" name="email" id="email" class="form-control" placeholder="Enter Email ID" formControlName="email" required/> <br/><br/>
+        <input type="text" name="email" id="email" class="form-control" placeholder="Enter Email ID"  formControlName="email" required/> <br/><br/>
         <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" formControlName="password" required/> <br/><br/>
         <button class="btn btn-success btn-lg" (click)="checkLogin()" style="margin-left: 15%;"> Log In </button>
         <input class="btn btn-danger btn-lg" type="reset" value="Clear" style="margin-left: 25%;"/>    
     </form>
-</div>
+</div>-->
+
+
+<div class="jumbotron">
+    <form [formGroup]="loginForm" (ngSubmit)="login()"  >
+  
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.primaryEmail.errors }">
+            <input type="email" placeholder="Email" formControlName="primaryEmail" class="form-control" [(ngModel)]="user.email">
+          </p>
+  
+      <span *ngIf="isSubmitted && formControls.primaryEmail.errors" class="help-block">
+        <span *ngIf="formControls.primaryEmail.errors.required">Email is required</span>
+      </span>
+      <span *ngIf="primaryEmail.errors?.email">
+        Primary Email not valid.
+     </span> 
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" name="password" id="password" placeholder="Password" formControlName="password" class="form-control" [(ngModel)]="user.password" minlength="5" maxLength="10"/>
+      </p>
+      <span *ngIf="password.errors?.minlength">
+        Name must be at least 5 characters long.
+      </span> 
+      <span *ngIf="password.errors?.maxLength">
+        Name must be at least 10 characters long.
+      </span> 
+    
+      <span *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <span *ngIf="formControls.password.errors.required">Password is required</span>
+      </span>
+  
+      <p>
+        <input type="submit" value="Log in">
+      </p>
+    </form>
+  </div>
+
+
+ 

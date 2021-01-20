@@ -33,13 +33,16 @@ export class CreateProductComponent implements OnInit {
   }
   onSubmit(){
     const uploadData = new FormData();
-    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost:8080/api/products/image?imageFile', uploadData).subscribe(data=>console.log(data),error=>console.error(error));
+    uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    this.product.pimage = this.selectedFile.name;
+    this.http.post('http://localhost:8080/api/products/image', uploadData).subscribe(data=>console.log(data),error=>console.error(error));
     this.save();
   }
 
   handleFileInput(event){
     this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+    
   }
 
 }

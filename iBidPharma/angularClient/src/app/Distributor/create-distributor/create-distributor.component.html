@@ -1,10 +1,21 @@
-<p>create-distributor works!</p>
 
+<div class="distributorForm">
+    <div class="heading">
+       DISTRIBUTOR
+    </div> 
+        <div class="name">
 <form (ngSubmit)="onSubmit()">
+
     <div class="form-group">
-        <label for="cname"> Company Name </label>
-        <input type="text" class="form-control" id="pname" required [(ngModel)]="distributor.cname" name="pname" />
-    </div>
+        <div class="form-row">
+            <div class="col">
+             <label for="cname"> Company Name </label>
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="pname" required [(ngModel)]="distributor.cname" name="pname" />
+             </div>
+         </div>
+     </div>
     
     
     <button type="submit" class="btn btn-success"> Submit </button> 

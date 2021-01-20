@@ -1,8 +1,19 @@
-<p>create-manufacturer works!</p>
+<div class="manufacturerForm">
+    <div class="heading">
+      MANUFACTURER
+    </div> 
+        <div class="name">
 <form (ngSubmit)="onSubmit()">
+
     <div class="form-group">
-        <label for="cname"> Company Name </label>
-        <input type="text" class="form-control" id="pname" required [(ngModel)]="manufacturer.cname" name="pname" />
+        <div class="form-row">
+            <div class="col">
+            <label for="cname"> Company Name </label>
+            </div>
+            <div class="col">
+             <input type="text" class="form-control" id="pname" required [(ngModel)]="manufacturer.cname" name="pname" />
+             </div>
+        </div>
     </div>
    <!-- <div class="form-group">
         <label for="address"> Manufacturer Address </label>

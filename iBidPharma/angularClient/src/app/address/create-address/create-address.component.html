@@ -1,28 +1,86 @@
-<form (ngSubmit)="onSubmit()">
+<div class="AddressForm">
+    <div class="heading">
+        Add Address
+    </div> 
+        <div class="addr">
+    <form (ngSubmit)="onSubmit()">
+   
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+                 <label for="line1"> Line1 </label>
+                 </div>
+                 <div class="col">
+                <input type="text" class="form-control" id="line1" required [(ngModel)]="address.line1" name="line1" />
+                  </div>
+            </div>
+        </div>   
+
     <div class="form-group">
-        <label for="line1"> Line1</label>
-        <input type="text" class="form-control" id="line1" required [(ngModel)]="address.line1" name="line1" />
-    </div>
+        <div class="form-row">
+            <div class="col">
+             <label for="line2"> Line2 </label>
+             </div>
+             <div class="col">
+            <input type="text" class="form-control" id="line2" required [(ngModel)]="address.line2" name="line2" />
+              </div>
+        </div>
+    </div>   
+
+
     <div class="form-group">
-        <label for="line2"> Line2 </label>
-        <input type="text" class="form-control" id="line2" required [(ngModel)]="address.line2" name="line2" />
-    </div>
-    <div class="form-group">
-        <label for="area"> Area </label>
-        <input type="text" class="form-control" id="area" required [(ngModel)]="address.area" name="area" />
-    </div>
-    <div class="form-group">
-        <label for="pin_code"> Pincode </label>
-        <input type="number" class="form-control" id="pin_code" required [(ngModel)]="address.pin_code" name="pin_code" />
-    </div>
-    <div class="form-group">
-        <label for="city"> City </label>
-        <input type="text" class="form-control" id="city" required [(ngModel)]="address.city" name="city" />
-    </div>
-    <div class="form-group">
-        <label for="state"> State </label>
-        <input type="text" class="form-control" id="state" required [(ngModel)]="address.state" name="state" />
+        <div class="form-row">
+            <div class="col">
+            <label for="area"> Area </label>
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="area" required [(ngModel)]="address.area" name="area" />
+             </div>
+        </div>
     </div>
 
-    <button type="submit" class="btn btn-success"> Submit </button> 
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="pin_code"> Pincode </label>
+            </div>
+            <div class="col">
+              <input type="number" class="form-control" id="pin_code" required [(ngModel)]="address.pin_code" name="pin_code" />
+             </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="city"> City </label>
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" id="city" required [(ngModel)]="address.city" name="city" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+             <label for="state"> State </label>
+             </div>
+             <div class="col">
+             <input type="text" class="form-control" id="state" required [(ngModel)]="address.state" name="state" />
+            </div>
+         </div>
+     </div>
+
+     <div class="form-row">
+        <div class="col">
+        <button type="submit" class="btn btn-success" style="float: right;"> Submit </button>
+        </div>
+        <div class="col">
+        <input class="btn btn-primary" type="reset" value="Reset">
+        </div>
+    </div>
 </form>

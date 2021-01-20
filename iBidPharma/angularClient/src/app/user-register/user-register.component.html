@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="registerForm">
+    <div class="heading">
+     REGISTER
+    </div> 
+        <div class="name">
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="cname"> Email Address </label>
+            </div>
+            <div class="col">
+             <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email" />
+             </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="cname"> Password </label>
+            </div>
+            <div class="col">
+             <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" />
+             </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="cname">Confirm Password </label>
+            </div>
+            <div class="col">
+             <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" />
+             </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="cname">Contact Number </label>
+            </div>
+            <div class="col">
+             <input type="number" class="form-control" id="contact_no" required [(ngModel)]="user.contact_no" name="contact_no" />
+             </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="cname">User Type</label>
+            </div>
+            <div class="col">
+                <select [(ngModel)]="user.utype" name="utype">
+                    <option *ngFor="let u of utype" [ngValue]="u"> {{u}} </option>
+                </select>
+             </div>
+        </div>
+    </div>
+   
+    <button type="submit" class="btn btn-success"> Submit </button> 
+</form>

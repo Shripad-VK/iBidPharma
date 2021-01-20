@@ -19,7 +19,7 @@
         <span *ngIf="formControls.primaryEmail.errors.required">Email is required</span>
       </span>
       <span *ngIf="primaryEmail.errors?.email">
-        Primary Email not valid.
+         Email not valid.
      </span> 
       <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
         <input type="password" name="password" id="password" placeholder="Password" formControlName="password" class="form-control" [(ngModel)]="user.password" minlength="5" maxLength="10"/>

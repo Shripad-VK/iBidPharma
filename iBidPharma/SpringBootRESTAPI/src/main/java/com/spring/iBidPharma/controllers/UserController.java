@@ -20,7 +20,7 @@ public class UserController {
 
 	@GetMapping("/login")
 	public User userLogin(@RequestParam String email, @RequestParam String password) {
-		User user = userRepository.userLogin(email);
+		User user = userRepository.userLogin(email,password);
 		if(user != null)
 			return user;
 		else 

@@ -84,7 +84,11 @@ export class UserLoginComponent implements OnInit {
       else if(this.user.utype=="Admin")
       this.router.navigate(['adminHome']);
       else
+      {
+        alert("Login Failed.. Invalid Credentials...");
         this.router.navigate(['login']);
+        
+      }
     },
       error=>console.error(error)
     

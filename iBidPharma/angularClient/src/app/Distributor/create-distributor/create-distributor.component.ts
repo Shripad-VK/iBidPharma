@@ -31,7 +31,7 @@ export class CreateDistributorComponent implements OnInit {
   onSubmit()
   {
     this.distributorService.createDistributor(this.distributor).subscribe(data=>{this.distributor=data;
-      this.router.navigate(['addAddress',this.distributor.d_id,this.utype]);
+      this.router.navigate(['addAddress',this.distributor.d_id]);
     },error=>console.log(error));
   }
   getAddressList()

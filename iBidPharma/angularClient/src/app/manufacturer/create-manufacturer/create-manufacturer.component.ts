@@ -31,7 +31,7 @@ utype:any;
   {
     
     this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>{this.manufacturer=data;
-      this.router.navigate(['addAddressManufacturer',this.manufacturer.mid,this.utype]);
+      this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);
     },error=>console.log(error));
    
   }

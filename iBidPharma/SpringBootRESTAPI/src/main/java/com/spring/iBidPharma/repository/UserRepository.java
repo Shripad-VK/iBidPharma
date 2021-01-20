@@ -10,8 +10,8 @@ import com.spring.iBidPharma.models.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	@Query(value = "SELECT * FROM user WHERE email = :email", nativeQuery = true)
-	public User userLogin(@Param("email") String email);
+	@Query(value = "SELECT * FROM user WHERE email = :email and password = :password", nativeQuery = true)
+	public User userLogin(@Param("email") String email,@Param("password") String password);
 	
 	
 }

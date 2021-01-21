@@ -40,17 +40,17 @@ public class Product {
 	@Column
 	private long addr_id;
 
+	@Column
+	private String state;
+
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Product(String pname, String pimage, String category, long min_bvalue, long max_bvalue, long stock,
-			long mid, long addr_id) {
+	public Product(String pname, String pimage, String category, long min_bvalue, long max_bvalue, long stock, long mid,
+			long addr_id, String state) {
 		super();
-		
-
 		this.pname = pname;
 		this.pimage = pimage;
 		this.category = category;
@@ -59,16 +59,11 @@ public class Product {
 		this.stock = stock;
 		this.mid = mid;
 		this.addr_id = addr_id;
+		this.state = state;
 	}
-
 
 	public long getPid() {
 		return pid;
-	}
-
-	public void setPid(long pid) {
-		this.pid = pid;
-
 	}
 
 	public String getPname() {
@@ -134,7 +129,14 @@ public class Product {
 	public void setAddr_id(long addr_id) {
 		this.addr_id = addr_id;
 	}
-	
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 	
 	
 }

@@ -76,4 +76,11 @@ public class ProductController {
 		fo.write(file.getBytes());
 		fo.close();
 	}
+	
+	
+	@GetMapping("/products/bidValue/{bvalue}")
+	public List<Product> getAllProductsWithBidValue(@PathVariable(value="bvalue") Long bvalue){
+		return productRepository.getProductByBidValue(bvalue);
+	}
+	
 }

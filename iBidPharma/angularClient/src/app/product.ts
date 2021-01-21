@@ -8,4 +8,5 @@ export class Product{
     pimage:string;
     addr_id:number;
     mid:number;
+    state:string;
 }

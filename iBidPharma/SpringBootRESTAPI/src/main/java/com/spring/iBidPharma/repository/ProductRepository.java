@@ -15,6 +15,9 @@ import com.spring.iBidPharma.models.User;
 	@Repository
 	public interface ProductRepository extends JpaRepository<Product, Long> {
 
+		@Query(value = "SELECT * FROM product WHERE min_bvalue <= :bvalue AND max_bvalue >= :bvalue", nativeQuery = true)
+		public List<Product> getProductByBidValue(@Param("bvalue") Long bvalue);
+		
 		//Optional<Product> findAllById(Long mid);
 		@Query(value = "SELECT * FROM product WHERE mid = :mid", nativeQuery = true)
 		public List<Product> getProducts(@Param("mid") Long mid);

@@ -30,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
 import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { TableFilterPipe } from './table-filter.pipe';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     FooterComponent,
     DistributorHomeComponent,
     MailComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    TableFilterPipe
   ],
   imports: [
     BrowserModule,

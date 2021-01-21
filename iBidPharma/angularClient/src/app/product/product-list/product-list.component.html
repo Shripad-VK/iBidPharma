@@ -1,15 +1,77 @@
-<div class="jumbotron">
-<table border="1">
-    <tr *ngFor="let product of products | async">
-        <td> {{product.pid}} </td>
-        <td> {{product.pname}} </td>
-        <td> {{product.category}} </td>
-        <td> {{product.stock}} </td>
-        <td> {{product.min_bvalue}} </td>
-        <td> {{product.max_bvalue}} </td>
-        <td> <button (click)="update(product.pid)"> Update </button></td>
-        <td> <button (click)="delete(product.pid)"> Delete </button></td>
-    </tr>
-</table>
-<br/>
+<div class="row container-fluid">
+    <div class="col-2 mt-2"><br/> 
+        <a routerLink = "/list"> Update Account </a> <br/><br/>
+        <a routerLink = "/entry"> Browse Bids </a> <br/><br/>
+        <a routerLink = "/update"> Report Generation </a> <br/>
+        <button (click)="logOut()"> Log Out </button>            
+    </div>
+    <div class="col ml-2">
+        <div class="row container-fluid"><br/>
+            <!-- <div class="col-3 form-group" style="width: 200px;">
+                <strong>Minimum Bid Value</strong>
+                <input type="number" class="form-control" id="min_bvalue" required [(ngModel)]="min_bvalue" name="min_bvalue" (change)="handleMinBidInput()"/>
+            </div>
+            <div class="col-3 form-group" style="width: 200px;">
+                <strong>Maximum Bid Value</strong>              
+                <input type="number" class="form-control " id="max_bvalue" required [(ngModel)]="max_bvalue" name="max_bvalue" (change)="handleMaxBidInput()"/>
+            </div> -->
+            <div class="col-3 form-group" style="width: 200px;">
+                <strong>Bid Value</strong>              
+                <input type="number" class="form-control " id="bvalue" required [(ngModel)]="bvalue" name="bvalue" (change)="handleBidInput()"/>
+            </div>
+            <form novalidate #form="ngForm">
+          
+              <div class="col-3 form-group" style="width: 200px;">
+                <strong>Category</strong>
+                <select class="form-control"
+                        name="category"
+                        [(ngModel)]="category">
+                  <option></option>      
+                  <option *ngFor="let category of categories"
+                          [value]="category">{{ category }}</option>
+                </select>
+              </div>  
+          <div class="col-3 form-group">
+                <strong>State</strong>
+                <select class="form-control"
+                        name="state"
+                        [(ngModel)]="state">
+                <option></option> 
+                <option *ngFor="let state of states"
+                        [value]="state">{{ state }}</option>
+                </select>
+              </div>  
+              <br/><br/>
+          
+              
+              <table class="table table-bordered">
+                <thead>
+                  <th>Product ID</th>
+                  <th>Product Name</th>
+                  <th>Product Category</th>
+                  <th>Product Stock</th>
+                  <th>Minimum Bid Value</th>
+                  <th>Maximum Bid Value</th>
+                  <th>Location</th>
+                  <th>Update Product</th>
+                  <th>Delete Product</th>
+                </thead>
+          
+                <tbody>
+                    <tr *ngFor="let product of products | async  | tableFilter: form.value">
+                        <td> {{product.pid}} </td>
+                        <td> {{product.pname}} </td>
+                        <td> {{product.category}} </td>
+                        <td> {{product.stock}} </td>
+                        <td> {{product.min_bvalue}} </td>
+                        <td> {{product.max_bvalue}} </td>
+                        <td> {{product.state}} </td>
+                        <td> <button (click)="update(product.pid)"> Update </button></td>
+                        <td> <button (click)="delete(product.pid)"> Delete </button></td>
+                    </tr>
+                </tbody>
+              </table>
+            </form>         
+        </div>   
+    </div>
 </div>

@@ -27,4 +27,7 @@ export class ManufacturerService {
   updateManufacturer(mid:number,value:any):Observable<Object>{
     return this.http.put(`${this.baseUrl}`+'/manufacturers/'+mid,value);
   }
+  getProductsById(uid:number):Observable<any>{
+    return this.http.get(`${this.baseUrl}`+'/manufacturersbyid/'+uid);
+  }
 }

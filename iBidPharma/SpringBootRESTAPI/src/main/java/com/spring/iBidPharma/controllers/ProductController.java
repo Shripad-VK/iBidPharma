@@ -78,8 +78,8 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("/products/manufacturer")
-	public List<Product> getProductByManufactureId(@RequestParam Long mid)
+	@GetMapping("/products/manufacturer/{mid}")
+	public List<Product> getProductByManufactureId(@PathVariable (value="mid")Long mid)
 	{
 		return  productRepository.getProducts(mid);
 	}

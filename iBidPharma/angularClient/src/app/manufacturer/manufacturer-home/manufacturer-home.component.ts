@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Product } from '../../product';
 import { ProductService } from '../../product.service';
 import { UserService } from '../../user.service';
+import { ManufacturerService } from 'src/app/manufacturer.service';
+
 @Component({
   selector: 'app-manufacturer-home',
   templateUrl: './manufacturer-home.component.html',
@@ -12,17 +14,39 @@ import { UserService } from '../../user.service';
 })
 export class ManufacturerHomeComponent implements OnInit {
   products : Observable<Product[]>;
-  constructor(private productService : ProductService,private router : Router) { 
-  //  let myproduct = new ProductListComponent( ProductService,  Router,  UserService);
+  mid:number;
+  user : any;
+  currentUser:any;
+  uid:number;
+  constructor(private productService : ProductService,private router : Router,private manufacturerService:ManufacturerService) { 
+ 
   }
 
   ngOnInit() 
   {
-    // productService.getProductByManufacturerId(5);
-   this.ProductByManufacturerId(2);
-  }
+   // this.newAddress();
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+    //this.uid=this.currentUser.uid;
+    console.log(this.currentUser.uid);
+   // alert(this.currentUser.uid);
+    this.getMid(this.currentUser.uid);
+  } 
+    
+  
+
 ProductByManufacturerId(mid:number){
-alert(mid);
   this.products = this.productService.getProductByManufacturerId(mid);
 }
+
+getMid(uid:number)
+{
+  this.manufacturerService.getProductsById(uid).subscribe(data=>
+    {
+     // console.log(data);
+      this.mid=data;
+      this.ProductByManufacturerId(this.mid);
+    });
+   
+}
+
 }

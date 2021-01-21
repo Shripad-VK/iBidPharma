@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.iBidPharma.models.Manufacturer;
@@ -22,12 +23,12 @@ import com.spring.iBidPharma.repository.ManufacturerRepository;
 public class ManufacturerController {
 	
 	@Autowired
-	private ManufacturerRepository manufacturerRepositroy;
+	private ManufacturerRepository manufacturerRepository;
 	
 	@GetMapping("/manufacturers")
 	public List<Manufacturer> getAllManufacturer()
 	{
-		return manufacturerRepositroy.findAll();
+		return manufacturerRepository.findAll();
 		
 	}
 	
@@ -35,16 +36,16 @@ public class ManufacturerController {
 	public Manufacturer createManufacturer( @RequestBody Manufacturer manufacturer)
 	{
 		if(manufacturer.getAddr_id()==0)
-			manufacturer.setAddr_id(1);
+		manufacturer.setAddr_id(1);
 		manufacturer.setUid(1);
-		return manufacturerRepositroy.save(manufacturer);
+		return manufacturerRepository.save(manufacturer);
 		
 	}
 
 	@GetMapping("/manufacturers/{mid}")
 	public Manufacturer getManufacturerById(@PathVariable (value="mid")Long mid)
 	{
-		return manufacturerRepositroy.findById(mid).orElse(null);
+		return manufacturerRepository.findById(mid).orElse(null);
 	}
 	
 	@PutMapping("/manufacturers/{mid}")
@@ -62,14 +63,20 @@ public class ManufacturerController {
 			manufacturer.setUid(manufacturer.getUid());
 		else
 			manufacturer.setUid(info.getUid());
-		return manufacturerRepositroy.save(manufacturer);
+		return manufacturerRepository.save(manufacturer);
 		
 	}
 	
 	@DeleteMapping("/manufacturers/{mid}")
 	public void deleteManufacturer(@PathVariable (value="mid")Long mid)
 	{
-		Manufacturer manufacturer=manufacturerRepositroy.getOne(mid);
-		manufacturerRepositroy.delete(manufacturer);
+		Manufacturer manufacturer=manufacturerRepository.getOne(mid);
+		manufacturerRepository.delete(manufacturer);
+	}
+	@GetMapping("/manufacturersbyid/{uid}")
+	public Long getProductsById(@PathVariable (value="uid")Long uid)
+	{
+	    System.out.println(uid);	
+		return manufacturerRepository.findByuid(uid);
 	}
 }

@@ -4,7 +4,7 @@
        DISTRIBUTOR
     </div> 
         <div class="name">
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="distributorLoginForm"(ngSubmit)="onSubmit()">
 
     <div class="form-group">
         <div class="form-row">
@@ -12,8 +12,11 @@
              <label for="cname"> Company Name </label>
             </div>
             <div class="col">
-            <input type="text" class="form-control" id="pname" required [(ngModel)]="distributor.cname" name="pname" />
+            <input type="text" class="form-control" id="cname" name="cname" [(ngModel)]="distributor.cname" formControlName="cname" />
              </div>
+             <span *ngIf="isSubmitted && formControls.cname.errors"class="help-block">
+             <span *ngIf="formControls.cname.errors.required">Company name can't be blank</span>
+             </span>
          </div>
      </div>
     

@@ -6,6 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DistributorService {
+  checkValidPname(pname: any) {
+    throw new Error('Method not implemented.');
+  }
+  checkValidUser(pname: any) {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl='/api';
   constructor(private http:HttpClient ) { }
   getDistributorList():Observable<any>

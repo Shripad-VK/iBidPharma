@@ -76,4 +76,15 @@ public class ProductController {
 		fo.write(file.getBytes());
 		fo.close();
 	}
+	
+	
+	@GetMapping("/products/manufacturer")
+	public List<Product> getProductByManufactureId(@RequestParam Long mid)
+	{
+		return  productRepository.getProducts(mid);
+	}
+	
+	
+	
+	
 }

@@ -13,6 +13,10 @@ getProductList():Observable<any>
 {
   return this.http.get(`${this.baseUrl}`+'/products');
 }
+getProductByManufacturerId(mid:number):Observable<any>
+{
+  return this.http.get(`${this.baseUrl}`+'/products/manufacturer/'+mid);
+}
 
 createProduct(product:Object):Observable<Object>{
   return this.http.post(`${this.baseUrl}`+'/products',product);
@@ -26,7 +30,9 @@ updateProduct(pid:number,value:any):Observable<Object>{
 getProductById(pid:number):Observable<Object>{
   return this.http.get(`${this.baseUrl}`+'/products/'+pid);
 }
-
+// getProductByManufacturerId(mid:number):Observable<Object>{
+//   return this.http.get(`${this.baseUrl}`+'/products/'+pid);
+// }
 
 
 }

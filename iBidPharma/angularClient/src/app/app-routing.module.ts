@@ -34,7 +34,8 @@ const routes: Routes = [
   {path: 'addDistributor',component:CreateDistributorComponent},
   {path: 'adminHome',component:AdminHomeComponent},
   {path: 'login',component:UserLoginComponent},
-  {path:'register',component:UserRegisterComponent}
+  {path:'register',component:UserRegisterComponent},
+  {path:'manufacturer',component:ManufacturerHomeComponent}
 ];
 
 @NgModule({

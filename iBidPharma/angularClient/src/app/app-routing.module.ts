@@ -25,17 +25,18 @@ const routes: Routes = [
   {path: 'addManufacturer',component:CreateManufacturerComponent},
   {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent},
   {path: 'address', component:AddressListComponent},
-  {path: 'addAddress/:d_id/:utype', component:CreateAddressComponent},
-  {path: 'addAddressManufacturer/:mid/:utype', component:CreateAddressComponent},
+  {path: 'addAddressManufacturer/:mid', component:CreateAddressComponent},
   {path: 'addAddress/:d_id', component:CreateAddressComponent},
-  {path: 'manufacturerHome/:utype',component:CreateManufacturerComponent},
-  {path:'distributorHome/:utype',component:CreateDistributorComponent},
+  {path: 'manufacturerHome',component:CreateManufacturerComponent},
+  {path:  'distributorHome',component:CreateDistributorComponent},
   {path: 'distributors', component:DistributorListComponent},
   {path: 'addDistributor',component:CreateDistributorComponent},
   {path: 'adminHome',component:AdminHomeComponent},
   {path: 'login',component:UserLoginComponent},
   {path:'register',component:UserRegisterComponent},
-  {path:'manufacturer',component:ManufacturerHomeComponent}
+  {path:'manufacturer',component:ManufacturerHomeComponent},
+  {path:'distributor',component:DistributorHomeComponent}
+
 ];
 
 @NgModule({

@@ -28,6 +28,7 @@ import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manu
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
+import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 
 
@@ -58,6 +59,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     HeaderComponent,
     FooterComponent,
     DistributorHomeComponent,
+    MailComponent,
     UserRegisterComponent
   ],
   imports: [

@@ -1,28 +1,56 @@
-<app-header> </app-header>
+<!-- <app-header> </app-header> -->
+<div class="container-fluid" id="pageBody">
+  <div class="card text-center">
+    <div id="welcomeHeader" class="card-header"> 
+      <button type="button" class="btn btn-outline-info btn-lg" style="float: left;" (click)="someFunc()">Go Back</button>
+      <p>Welcome to Indian Pharmaceutical Bidding System</p>
+        <img src="../../assets/images/logo.jpg">
+    </div>
+    <div id="welcomeBody" class="row card-body mt-5">
+      <router-outlet> </router-outlet>     
+    
+      <!-- <div class="col-2 mt-2"><br/> 
+        <a href="#" (click) = "welcome = false" routerLink = "/list"> Book List </a> <br/><br/>
+        <a href="#" (click) = "welcome = false" routerLink = "/entry"> Book Entry </a> <br/><br/>
+        <a href="#" (click) = "welcome = false" routerLink = "/update"> Book Update </a>            
+      </div>
+      <div class="col ml-2">
+               <h1 class = "display-1" *ngIf = "welcome"> Welcome </h1>
+              <h1 class = "display-4 float-left pl-5" *ngIf = "welcome"> Hi !! </h1> 
+      </div> -->
+           
+    </div>
+    <br/>
+    <div id="welcomeFooter"  class="card-footer">
+      <p style="text-align:right; font-family:monospace">© Group 17 : PG-DAC, February 2020.</p>
+    </div>
+  </div>
+</div>
 
+<!-- <app-footer> </app-footer> -->
 <!--<a routerLink = "address"> Show Address </a> <br/>
 <a routerLink = "addAddress"> Create Address </a> <br/>
 <router-outlet> </router-outlet> 
 
 
 <a routerLink = "address"> Show Address </a> <br/>
-<a routerLink = "addAddress"> Create Address </a> <br/>
-<router-outlet> </router-outlet> -->
+<a routerLink = "addAddress"> Create Address </a> <br/>-->
 
 
-<router-outlet> </router-outlet> 
 
 
 
 
 
  
-<!-- <app-user-login> </app-user-login> -->
-<!-- <app-user-login> </app-user-login> -->
-<!-- <div style="text-align: center; margin: 10%;">
+<!--<app-mail> </app-mail>--> 
+ 
+
+<!--<div style="text-align: center; margin: 10%;">
   <app-user-login> </app-user-login>
-</div> 
-<router-outlet> </router-outlet>  -->
+  <router-outlet> </router-outlet>  
+</div> -->
+
 
 
 <!-- <a routerLink = "manufacturers"> Show Manufacturer </a> <br/>
@@ -54,4 +82,3 @@
 
 
 
-<app-footer> </app-footer>

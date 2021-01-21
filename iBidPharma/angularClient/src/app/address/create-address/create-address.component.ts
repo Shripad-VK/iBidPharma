@@ -22,10 +22,13 @@ export class CreateAddressComponent implements OnInit {
   utype:any;
   manufacturer:any;
   distributor:any;
+  currentUser:any;
   constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService,private distributorService: DistributorService) { }
 
   ngOnInit() {
     this.newAddress();
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+    console.log(this.currentUser.utype);
   }
 
   newAddress():void
@@ -40,14 +43,14 @@ export class CreateAddressComponent implements OnInit {
   {
     this.addressService.createAddress(this.address).subscribe(data=>{this.address=data;
     
-    if(this.mid!=0 && this.utype=="Manufacturer")
+    if(this.mid!=0 && this.currentUser.utype=="Manufacturer")
     {
       console.log(this.mid);
     this.manufacturer=new Manufacturer();
     this.manufacturer.addr_id=this.address.addr_id;  
     this.manufacturerService.updateManufacturer(this.mid,this.manufacturer).subscribe(data=>console.log(data),error=>console.log(error));
     }
-    if(this.d_id!=0 && this.utype=="Distributor")
+    if(this.d_id!=0 && this.currentUser.utype=="Distributor")
     {
         this.distributor=new Distributor();
         this.distributor.addr_id=this.address.addr_id;

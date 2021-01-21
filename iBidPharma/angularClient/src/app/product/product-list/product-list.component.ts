@@ -30,12 +30,14 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.reloadProductList();
+   // this.ProductByManufacturerId();
   }
 
   reloadProductList(){
     this.products = this.productService.getProductList();
     this.products.subscribe((v) => console.log('Product List: ', v));
   }
+  
 
   delete(pid:number){
     this.productService.deleteProduct(pid).subscribe(data=>console.log(data), error=>console.error(error));    

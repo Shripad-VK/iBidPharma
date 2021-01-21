@@ -7,6 +7,8 @@
         <img src="../../assets/images/logo.jpg">
     </div>
     <div id="welcomeBody" class="row card-body mt-5">
+      <router-outlet> </router-outlet>     
+    
       <!-- <div class="col-2 mt-2"><br/> 
         <a href="#" (click) = "welcome = false" routerLink = "/list"> Book List </a> <br/><br/>
         <a href="#" (click) = "welcome = false" routerLink = "/entry"> Book Entry </a> <br/><br/>
@@ -16,8 +18,9 @@
                <h1 class = "display-1" *ngIf = "welcome"> Welcome </h1>
               <h1 class = "display-4 float-left pl-5" *ngIf = "welcome"> Hi !! </h1> 
       </div> -->
-      <router-outlet> </router-outlet>            
+           
     </div>
+    <br/>
     <div id="welcomeFooter"  class="card-footer">
       <p style="text-align:right; font-family:monospace">© Group 17 : PG-DAC, February 2020.</p>
     </div>

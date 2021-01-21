@@ -25,7 +25,10 @@ export class ProductService {
   getProductById(pid:number):Observable<Object> {
     return this.http.get(`${this.baseUrl}`+'/products/'+pid);
   }
-
+  getProductByManufacturerId(mid:number):Observable<any>
+{
+  return this.http.get(`${this.baseUrl}`+'/products/manufacturer/'+mid);
+  }
   getProductListWithBidValue(bid : number):Observable<any> {
     return this.http.get(`${this.baseUrl}`+'/products/bidValue/'+bid);
   }

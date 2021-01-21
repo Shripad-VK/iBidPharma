@@ -83,4 +83,13 @@ public class ProductController {
 		return productRepository.getProductByBidValue(bvalue);
 	}
 	
+	@GetMapping("/products/manufacturer")
+	public List<Product> getProductByManufactureId(@RequestParam Long mid)
+	{
+		return  productRepository.getProducts(mid);
+	}
+	
+	
+	
+	
 }

@@ -1,1 +1,19 @@
 <p>manufacturer-home works!</p>
+<div class="jumbotron">
+    <table border="1">
+        <tr *ngFor="let product of products | async">
+            <td> {{product.pid}} </td>
+            <td> {{product.pname}} </td>
+            <td> {{product.category}} </td>
+            <td> {{product.stock}} </td>
+            <td> {{product.min_bvalue}} </td>
+            <td> {{product.max_bvalue}} </td>
+            <td> <button (click)="update(product.pid)"> Update </button></td>
+            <td> <button (click)="delete(product.pid)"> Delete </button></td>
+        </tr>
+    </table>
+    <br/>
+    <button (click)="logOut()"> Log Out </button>
+    </div>
+
+    <!-- <app-product-list></app-product-list> -->

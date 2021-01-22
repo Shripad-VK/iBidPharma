@@ -1,12 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Manufacturer } from 'src/manufacturer';
 import { Address } from '../../address';
 import { AddressService } from '../../address.service';
 import { ManufacturerService } from '../../manufacturer.service';
-
 @Component({
   selector: 'app-create-manufacturer',
   templateUrl: './create-manufacturer.component.html',
@@ -18,19 +18,34 @@ manufacturer:any;
 utype:any;
 manufacturerLoginForm:any;
 isSubmitted:boolean;
-  constructor(private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router,private route:ActivatedRoute,private formBuilder:FormBuilder) { }
+  constructor ( private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router,private route:ActivatedRoute,private formBuilder:FormBuilder){
+   
+}
 
   ngOnInit() {
-    this.newManufacturer();
+    this.manufacturer=new Manufacturer();
     this.getAddressList();
     this.utype=this.route.snapshot.params['utype'];
     this.manufacturerLoginForm=this.formBuilder.group({
       cname:['',Validators.required]
     });
+    cname: new FormControl('', Validators.minLength(4));
+    cname: new FormControl('', Validators.maxLength(20));
+  
   }
 
+  get formControls()
+  {
+    return this.manufacturerLoginForm.controls;
+  }
+  
+  get cname() {
+    return this.manufacturerLoginForm.get('cname');
+  } 
   newManufacturer():void { 
     this.manufacturer=new Manufacturer();
+   /* this.manufacturer.cname=undefined;
+    console.log(this.manufacturer);*/
   }
 
   onSubmit()

@@ -1,7 +1,12 @@
-div {
-    opacity: 0.8;
-    height: 400px;
-    width: 700px;
-    margin-top: 10%;
-    margin-left: 30%;
+a {
+    background-color:orangered;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;    
+}
+#pageBody {
+    background-color: teal;
+    min-height: 660px;
+    max-width: 1380px;
 }

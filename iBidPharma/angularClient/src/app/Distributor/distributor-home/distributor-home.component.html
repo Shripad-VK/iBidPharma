@@ -7,32 +7,38 @@
         <a routerLink = "/login" (click)="logOut()"> Log Out </a>            
     </div>
     <div class="col ml-2">
-        <app-product-list> </app-product-list>
+        
     </div>
 </div>
 
 <div class="jumbotron">
     <table border="1">
+        <thead>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Stock</th>
+            <th>Minimum Bid Value</th>
+            <th>Maximum Bid Value</th>
+            <!-- <th>Location</th> -->
+            <th>Product Image</th>
+
+          </thead>
+          <tbody>
         <tr *ngFor="let product of products | async">
-            <!-- <td> {{product.pid}} </td> -->
-            <!-- <td> {{product.pname}} </td>
+           <td> {{product.pname}} </td>
             <td> {{product.category}} </td>
             <td> {{product.stock}} </td>
             <td> {{product.min_bvalue}} </td>
             <td>  {{product.min_bvalue}} </td>
-            <td>{{product.pimage}}</td> -->
-            <div class="info">
-               <label class="information"> PRODUCT NAME:</label> {{product.pname}}<hr/>
-               <label class="information">CATEGORY:</label> {{product.category}} <br/>
-                <label class="information">STOCK: </label> {{product.stock}} <br/>
-                <label class="information">BID RANGE:</label> {{product.min_bvalue}} -  {{product.max_bvalue}}
- <!-- <div class="pimage"> <img ng-src="{{file.Path}}" alt="{{file.Name}}.jpg" style="height: 100px; width: 100px" /></div> --><br/><br/>
-            </div>
-            <td> <button class="e-info" (click)="placeBid()" style="background-color:skyblue"> Place Bid </button></td>
+            <td>{{product.pimage}}</td>
            
-        </tr>
+           
+ <!-- <div class="pimage"> <img ng-src="{{file.Path}}" alt="{{file.Name}}.jpg" style="height: 100px; width: 100px" /></div> --><br/><br/>
+           
+            <td> <button class="e-info" (click)="placeBid()" style="background-color:skyblue"> Place Bid </button></td>
+        </tbody>
     </table>
     <br/>
     <button (click)="logOut()"> Log Out </button>
-    </div>
+   
 </div>

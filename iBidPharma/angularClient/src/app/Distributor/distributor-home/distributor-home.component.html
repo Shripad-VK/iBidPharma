@@ -1,4 +1,4 @@
-<div id="pageBody" class="row container-fluid-100">
+<!-- <div id="pageBody" class="row container-fluid-100">
     <div class="col-3 mt-2 text-center"><br/><br/><br/>
         <button type="button" class="btn btn-dark btn-lg" (click)="someFunc()">Go Back</button><br/><br/>
         <a routerLink = "/list"> Update Account </a> <br/><br/><br/>
@@ -6,10 +6,16 @@
         <a routerLink = "/update"> Report Generation </a> <br/><br/><br/>
         <a routerLink = "/login" (click)="logOut()"> Log Out </a>            
     </div>
-    <div class="col ml-2">
+    <div class="col ml-2"> -->
         
+
+<div class="row container-fluid" id="nav">
+    <div class="col-4 mt-4"><br/> 
+        <a routLink="/productList" routerLinkActive="active">Product List</a>
+        <a routerLink = "/distributorsList"> Distributor List </a> <br/><br/>
+        <a routerLink = "/addDistributor"> Create Distributor</a> <br/><br/>
+        <a routerLink = "/reportDistributor"> Report Generation </a>            
     </div>
-</div>
 
 <div class="jumbotron">
     <table border="1">
@@ -42,3 +48,4 @@
     <button (click)="logOut()"> Log Out </button>
    
 </div>
+

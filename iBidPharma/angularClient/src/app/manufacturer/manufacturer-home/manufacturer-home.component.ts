@@ -29,8 +29,7 @@ export class ManufacturerHomeComponent implements OnInit {
     this.getMid(this.currentUser.uid);
    
   } 
-    
-  
+
 
 ProductByManufacturerId(mid:number){
   this.products = this.productService.getProductByManufacturerId(mid);

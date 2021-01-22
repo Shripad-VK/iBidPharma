@@ -1,4 +1,46 @@
-<div class="row container-fluid">
+<!-- <div id="pageBody" class="row container-fluid-100">
+    <div class="col-3 mt-2 text-center"><br/><br/><br/><br/>
+        <button type="button" class="btn btn-dark btn-lg" (click)="someFunc()">Go Back</button><br/><br/><br/>
+        <a routerLink = "/list"> Update Account </a> <br><br><br>
+        <a routerLink = "/entry"> Browse Bids </a> <br><br><br>
+        <a routerLink = "/update"> Report Generation </a><br><br><br>
+        <a routerLink = "/login" (click)="logOut()"> Log Out </a>         
+    </div>
+    <div class="col ml-2">
+
+        <div>
+        <table class="table table-bordered">
+            <thead>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Product Category</th>
+              <th>Product Stock</th>
+              <th>Minimum Bid Value</th>
+              <th>Maximum Bid Value</th>
+              <th>Location</th>
+              <th>Update Product</th>
+              <th>Delete Product</th>
+            </thead>
+      
+            <tbody>
+                <tr *ngFor="let product of products | async">
+                        <td> {{product.pid}} </td>
+                        <td> {{product.pname}} </td>
+                        <td> {{product.category}} </td>
+                        <td> {{product.stock}} </td>
+                        <td> {{product.min_bvalue}} </td>
+                        <td> {{product.max_bvalue}} </td>
+                        <td> <button (click)="update(product.pid)"> Update </button></td>
+                        <td> <button (click)="delete(product.pid)"> Delete </button></td>
+                   
+                </tr>
+            </tbody>
+          </table>
+        </div>
+
+    </div>
+</div> -->
+<!-- <div class="row container-fluid">
     <div class="col-4 mt-4"><br/> 
         <a routerLink="/productMaufacturerList" routerLinkActive="active">Product List</a><br/><br/>
         <a routerLink = "/addManufacturer"> Create Maufacturer</a> <br/><br/>
@@ -7,7 +49,45 @@
     <div class="col ml-4">
       <h1 class = "display-2"> Welcome </h1>
     </div>
-</div>
+</div> -->
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="col-3 mt-2 text-center"><br/><br/><br/><br/>
+            <button type="button" class="btn btn-dark btn-lg" (click)="someFunc()">Go Back</button><br/><br/><br/>
+            <a routerLink="/productMaufacturerList" routerLinkActive="active">Product List</a><br/><br/>
+            <a routerLink = "/addManufacturer"> Create Maufacturer</a> <br/><br/>
+             <a routerLink = "/reportMaufacturer"> Report Generation </a><br/><br/>   
+            <a routerLink = "/login" (click)="logOut()"> Log Out </a>         
+        </div>
+    </div>
+    <div class ="col-md-8">
+        <table class="table table-bordered">
+            <thead>
+              
+              <th>Product Name</th>
+              <th>Product Category</th>
+              <th>Product Stock</th>
+              <th>Minimum Bid Value</th>
+              <th>Maximum Bid Value</th>
+              <th>Update Product</th>
+              <th>Delete Product</th>
+            </thead>
+      
+            <tbody>
+                <tr *ngFor="let product of products | async">
+                        <td> {{product.pname}} </td>
+                        <td> {{product.category}} </td>
+                        <td> {{product.stock}} </td>
+                        <td> {{product.min_bvalue}} </td>
+                        <td> {{product.max_bvalue}} </td>
+                        <td> <button (click)="update(product.pid)"> Update </button></td>
+                        <td> <button (click)="delete(product.pid)"> Delete </button></td>
+                   
+                </tr>
+            </tbody>
+          </table>
+
 
 
 

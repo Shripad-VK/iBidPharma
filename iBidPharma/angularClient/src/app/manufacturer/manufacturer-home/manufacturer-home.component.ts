@@ -24,16 +24,12 @@ export class ManufacturerHomeComponent implements OnInit {
 
   ngOnInit() 
   {
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+   // console.log(this.currentUser.uid);
+    this.getMid(this.currentUser.uid);
+   
+  } 
 
-  this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-  //this.uid=this.currentUser.uid;
-  console.log(this.currentUser.uid);
- // alert(this.currentUser.uid);
-  this.getMid(this.currentUser.uid);
-  }
-
-    
-  
 
 ProductByManufacturerId(mid:number){
   this.products = this.productService.getProductByManufacturerId(mid);
@@ -41,9 +37,9 @@ ProductByManufacturerId(mid:number){
 
 getMid(uid:number)
 {
-  this.manufacturerService.getProductsById(uid).subscribe(data=>
+  this.manufacturerService.getManufactureByUId(uid).subscribe(data=>
     {
-     // console.log(data);
+      console.log(data);
       this.mid=data;
       this.ProductByManufacturerId(this.mid);
     });

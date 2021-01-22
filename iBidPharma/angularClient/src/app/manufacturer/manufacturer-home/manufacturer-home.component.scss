@@ -8,12 +8,23 @@
 a {
     background-color:orangered;
     color: white;
-    padding: 1em 1.5em;
+   // padding: 1em 1.5em;
     text-decoration: none;
     text-transform: uppercase;    
 }
 #pageBody {
     background-color: teal;
-    min-height: 660px;
+    min-height: 60px;
     max-width: 1380px;
 }
+table {
+    margin-top: 20%;
+    background-color:teal;
+    color: white;
+    padding: 1em 1.5em;
+    //     text-decoration: none;
+    //     text-transform: uppercase;  
+}
+// .row{
+//     margin-top: 10%;
+// }

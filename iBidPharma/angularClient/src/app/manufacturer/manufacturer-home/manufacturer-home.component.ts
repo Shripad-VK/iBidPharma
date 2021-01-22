@@ -26,9 +26,9 @@ export class ManufacturerHomeComponent implements OnInit {
   {
 
   this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-  //this.uid=this.currentUser.uid;
+ 
   console.log(this.currentUser.uid);
- // alert(this.currentUser.uid);
+
   this.getMid(this.currentUser.uid);
   }
 
@@ -43,7 +43,6 @@ getMid(uid:number)
 {
   this.manufacturerService.getProductsById(uid).subscribe(data=>
     {
-     // console.log(data);
       this.mid=data;
       this.ProductByManufacturerId(this.mid);
     });

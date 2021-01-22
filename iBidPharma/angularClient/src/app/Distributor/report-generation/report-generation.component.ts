@@ -24,20 +24,27 @@ export class ReportGenerationComponent implements OnInit {
     this.currentList=new bid();
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
     console.log(this.currentUser.uid);
-   this.getDid();
-   this.getBid();
+    this.getDid();
+    this.getBid();
     
   }
  getDid()
  {
-  this.distributorService.getDistributorByUId(this.currentUser.uid).subscribe(data=>{console.log(data);this.currentDistributor=data as Distributor,console.log(this.currentDistributor.d_id); this.d_id=this.currentDistributor.d_id as number;},
+  this.distributorService.getDistributorByUId(this.currentUser.uid)
+  .subscribe(data=>{console.log(data);
+            this.currentDistributor = JSON.stringify(data);
+            sessionStorage.setItem('currentDistributor', this.currentDistributor);
+          },
     error=>console.log(error));
     
  }
 getBid()
 {
-  console.log(this.d_id);
- this.bidservice.getDistributorBidById(this.d_id).subscribe(data=>this.currentList=data,error=>console.log(error));
+  this.currentDistributor=JSON.parse(sessionStorage.getItem('currentDistributor'));
+  console.log(this.currentDistributor.d_id);
+ this.bidservice.getDistributorBidById(this.currentDistributor.d_id).subscribe(data=>this.currentList=data,error=>console.log(error));
+  
+
 }
 
 

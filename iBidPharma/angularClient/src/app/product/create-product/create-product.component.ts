@@ -3,6 +3,7 @@ import { Product } from '../../product';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { ProductService } from '../../product.service';
 import { HttpClient } from '@angular/common/http';
+import { ManufacturerService } from 'src/app/manufacturer.service';
 
 @Component({
   selector: 'app-create-product',
@@ -15,14 +16,34 @@ export class CreateProductComponent implements OnInit {
   categories : any;
   selectedLevel:any;
   selectedFile: File;
+  currentUser:any;
+  mid:any;
+  
 
-  constructor(private productService : ProductService, private http : HttpClient) { 
+  constructor(private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService) { 
     this.categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   }
   
   ngOnInit() {
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+    console.log(this.currentUser.uid);
+    this.getMid(this.currentUser.uid);
     this.newProduct();
   }
+
+  getMid(uid:number)
+  {
+    console.log(uid);
+    this.manufacturerService.getProductsById(uid).subscribe(data=>console.log(data));
+    // this.manufacturerService.getProductsById(uid).subscribe(data=>
+    //   {
+    //     this.mid=data;
+    //     console.log(this.mid);
+    //     this.manufacturerService.getManufacturerById(this.mid).subscribe(data=>console.log(data));
+    //   });
+     
+  }
+
 
   newProduct():void {
     this.product = new Product();

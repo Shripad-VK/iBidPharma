@@ -79,4 +79,6 @@ public class ManufacturerController {
 	    System.out.println(uid);	
 		return manufacturerRepository.findByuid(uid);
 	}
+	
+	
 }

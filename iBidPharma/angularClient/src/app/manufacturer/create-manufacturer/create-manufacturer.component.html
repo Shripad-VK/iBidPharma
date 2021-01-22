@@ -10,11 +10,19 @@
             <div class="col">
             <label for="cname"> Company Name </label>
             </div>
-            <div class="col">
-             <input type="text" class="form-control" id="pname" required [(ngModel)]="manufacturer.pname" name="pname" />
-             </div>
-             <span *ngIf="isSubmitted && formControls.pname.errors" class="help-block">
-                 <span *ngIf="formControls.pname.errors.required">Please enter the company name!!</span>
+            <div *ngIf="manufacturer"class="col">
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.cname.errors }">
+             <input type="text" class="form-control" id="cname"  [(ngModel)]="manufacturer.cname"  formControlName="cname" name="cname" minlength="5" maxLength="10"required/>
+            </p>
+            <span *ngIf="cname.errors?.minlength">
+                Name must be at least 4 characters long.
+              </span> 
+              <span *ngIf="cname.errors?.maxLength">
+                Name must be at least 20 characters long.
+              </span>
+         </div>
+             <span *ngIf="isSubmitted && formControls.cname.invalid && formControls.cname.touched" class="help-block">
+                 <span *ngIf="formControls.cname.errors.required">Please enter the company name!!</span>
              </span>
         </div>
     </div>

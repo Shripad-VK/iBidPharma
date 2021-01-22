@@ -1,7 +1,7 @@
 export class Distributor{
 
 d_id:number;
-cname:string;
+cname:String;
 addr_id:number;
 uid:number;
 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,7 +21,7 @@ export class CreateDistributorComponent implements OnInit {
   utype:any;
   distributorLoginForm: any;
   isSubmitted:boolean;
-  constructor(private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder) {
+  constructor(private http=HttpClient, private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder,private formGroup:FormGroup) {
     this.distributorLoginForm=new FormGroup({
       cname:new FormControl()
     });
@@ -28,13 +29,21 @@ export class CreateDistributorComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.newDistributor();
+    this.distributor=new Distributor();
     this.getAddressList();
     this.utype=this.route.snapshot.params['utype'];
     this.distributorLoginForm=this.formBuilder.group({
       cname:['',Validators.required]
     });
+    cname: new FormControl('', Validators.minLength(4));
+    cname: new FormControl('', Validators.maxLength(20));
   }
+
+  get formControls()
+  {
+    return this.distributorLoginForm.controls;
+  }
+  
   newDistributor():void { 
     this.distributor=new Distributor();
     

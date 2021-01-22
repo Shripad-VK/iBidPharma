@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { User } from 'src/app/user';
 import { Address } from '../../address';
 import { AddressService } from '../../address.service';
 import { Distributor } from '../../Distributor';
@@ -21,43 +21,34 @@ export class CreateDistributorComponent implements OnInit {
   utype:any;
   distributorLoginForm: any;
   isSubmitted:boolean;
-  constructor( private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder) {
-  
+  constructor(private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder) {
+    this.distributorLoginForm=new FormGroup({
+      cname:new FormControl()
+    });
+   
    }
 
   ngOnInit() {
-    this.distributorLoginForm = new FormGroup({
-    cname: new FormControl(this.distributorLoginForm.name, [
-    Validators.required
-  ]),
-  alterEgo: new FormControl(this.distributorLoginForm.alterEgo),
-  power: new FormControl(this.distributorLoginForm.power, Validators.required)
-});
-  }
-  get cname() { return this.distributorLoginForm.get('cname'); }
-  get power() { return this.distributorLoginForm.get('power'); }
-   /* this.distributor=new Distributor();
+    this.distributor=new Distributor();
     this.getAddressList();
     this.utype=this.route.snapshot.params['utype'];
     this.distributorLoginForm=this.formBuilder.group({
       cname:['',Validators.required]
     });
-    cname: new FormControl('', Validators.minLength(4));
-    cname: new FormControl('', Validators.maxLength(20));
-  }*/
+  }
 
-  /*get formControls()
+  get formControls()
   {
     return this.distributorLoginForm.controls;
-  }*/
+  }
   
- /* newDistributor():void { 
+  newDistributor():void { 
     this.distributor=new Distributor();
     
-  }*/
-  /*get cname() {
+  }
+  get cname() {
     return this.distributorLoginForm.get('cname');
-  } */
+  } 
   onSubmit()
   {
     this.isSubmitted=true;

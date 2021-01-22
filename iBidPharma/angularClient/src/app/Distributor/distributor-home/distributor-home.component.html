@@ -1,13 +1,35 @@
 
-<div class="row container-fluid">
+<div class="row container-fluid" id="nav">
     <div class="col-4 mt-4"><br/> 
         <a routLink="/productList" routerLinkActive="active">Product List</a>
         <a routerLink = "/distributorsList"> Distributor List </a> <br/><br/>
         <a routerLink = "/addDistributor"> Create Distributor</a> <br/><br/>
         <a routerLink = "/reportDistributor"> Report Generation </a>            
     </div>
-    <div class="col ml-4">
-        <h1 class = "display-2"> Welcome </h1>
+
+<div class="jumbotron">
+    <table border="1">
+        <tr *ngFor="let product of products | async">
+          <!-- <td> {{product.pid}} </td> -->
+            <!-- <td> {{product.pname}} </td>
+            <td> {{product.category}} </td>
+            <td> {{product.stock}} </td>
+            <td> {{product.min_bvalue}} </td>
+            <td>  {{product.min_bvalue}} </td>
+            <td>{{product.pimage}}</td> -->
+            <div class="info">
+               <label class="information"> PRODUCT NAME:</label> {{product.pname}}<hr/>
+               <label class="information">CATEGORY:</label> {{product.category}} <br/>
+                <label class="information">STOCK: </label> {{product.stock}} <br/>
+                <label class="information">BID RANGE:</label> {{product.min_bvalue}} -  {{product.max_bvalue}}
+ <!-- <div class="pimage"> <img ng-src="{{file.Path}}" alt="{{file.Name}}.jpg" style="height: 100px; width: 100px" /></div> --><br/><br/>
+            </div>
+          <!-- <td> <button class="e-info" (click)="placeBid()" style="background-color:skyblue"> Place Bid </button></td>--> 
+           
+        </tr>
+    </table>
+    <br/>
+    <button (click)="logOut()"> Log Out </button>
     </div>
 </div>
 

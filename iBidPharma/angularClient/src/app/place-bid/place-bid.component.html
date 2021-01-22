@@ -1,0 +1,41 @@
+
+<div class="BidForm">
+    <div class="heading">
+       Place Bid
+    </div> 
+        <div class="bid">
+    <form (ngSubmit)="onSubmit()">
+   
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+                 <label for="stock"> Quantity </label>
+                 </div>
+                 <div class="col">
+                <input type="number" class="form-control" id="stock" required [(ngModel)]="bid.stock" name="stock" />
+                  </div>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+                 <label for="bvalue"> BID Value </label>
+                 </div>
+                 <div class="col">
+                <input type="number" class="form-control" id="bvalue" required [(ngModel)]="bid.bvalue" name="bvalue" />
+                  </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+            <button type="submit" class="btn btn-success" style="float: right;"> Submit </button>
+            </div>
+            <div class="col">
+            <input class="btn btn-primary" type="reset" value="Reset">
+            </div>
+        </div>
+
+    </form>
+      </div>
+</div>

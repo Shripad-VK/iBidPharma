@@ -25,13 +25,14 @@ export class ReportGenerationComponent implements OnInit {
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
     console.log(this.currentUser.uid);
    this.getDid();
+   this.getBid();
     
   }
  getDid()
  {
   this.distributorService.getDistributorByUId(this.currentUser.uid).subscribe(data=>{console.log(data);this.currentDistributor=data as Distributor,console.log(this.currentDistributor.d_id); this.d_id=this.currentDistributor.d_id as number;},
     error=>console.log(error));
-    this.getBid();
+    
  }
 getBid()
 {

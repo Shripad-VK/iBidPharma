@@ -32,6 +32,8 @@ import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { TableFilterPipe } from './table-filter.pipe';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
+import { PlaceBidComponent } from './place-bid/place-bid.component';
+
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { MaufacturerProductListComponent } from './manufacturer/maufacturer-prod
     MailComponent,
     UserRegisterComponent,
     TableFilterPipe,
-    MaufacturerProductListComponent
+    MaufacturerProductListComponent,
+    PlaceBidComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
+import { PlaceBidComponent } from './place-bid/place-bid.component';
+
 
 
 const routes: Routes = [
@@ -43,6 +45,7 @@ const routes: Routes = [
   {path:'reportMaufacturer',component:ReportGenerationComponent},
   
 
+  {path:'placebid',component:PlaceBidComponent}
 ];
 
 @NgModule({

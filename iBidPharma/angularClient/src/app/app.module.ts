@@ -18,7 +18,7 @@ import { DistributorListComponent } from './distributor/distributor-list/distrib
 import { CreateDistributorComponent } from './distributor/create-distributor/create-distributor.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { UpdateAccountComponent } from './admin/update-account/update-account.component';
-import { ReportGenerationComponent } from './admin/report-generation/report-generation.component';
+import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
 import { RevenueManagementComponent } from './admin/revenue-management/revenue-management.component';
 import { SearchManufacturerComponent } from './distributor/search-manufacturer/search-manufacturer.component';
 import { SearchProductComponent } from './distributor/search-product/search-product.component';
@@ -30,6 +30,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
 import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { TableFilterPipe } from './table-filter.pipe';
+import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     FooterComponent,
     DistributorHomeComponent,
     MailComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    TableFilterPipe,
+    MaufacturerProductListComponent
   ],
   imports: [
     BrowserModule,

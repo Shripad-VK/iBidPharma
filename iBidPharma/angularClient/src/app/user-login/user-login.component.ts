@@ -70,7 +70,7 @@ export class UserLoginComponent implements OnInit {
             if(this.user.utype=="Manufacturer")
             {
               console.log(this.user.utype);
-              this.router.navigate(['manufacturer']);
+              this.router.navigate(['manufacturerHome']);
             }
               if(this.user.utype=="Distributor")
             {

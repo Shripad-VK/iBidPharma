@@ -14,14 +14,18 @@ export class ProductListComponent implements OnInit {
   fileToUpload: File = null;
   products : Observable<Product[]>;
   selectedCategory : string;
-  categories = [
-    { pname : "Vaccine" },
-    { pname : "Syrup"},
-    { pname : "Tablet"},
-    { pname : "Drops"},
-    { pname : "Injection"},
-    { pname : "Capsule"}
-  ];
+  category : string;
+  state : string;
+  min_bvalue : number;
+  max_bvalue : number;
+  bvalue : number;
+  categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
+  states = ["Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", 
+  "Jammu and Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", 
+  "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Punjab", "Rajasthan", "Sikkim", 
+  "Tamil Nadu", "Tripura", "Uttaranchal", "Uttar Pradesh", "Haryana", "Himachal Pradesh", "Chhattisgarh", 
+  "Andaman and Nicobar", "Pondicherry", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", 
+  "Chandigarh", "Lakshadweep"];
   constructor(private productService : ProductService, private router : Router, private userService : UserService) { }
 
   ngOnInit() {
@@ -31,6 +35,7 @@ export class ProductListComponent implements OnInit {
 
   reloadProductList(){
     this.products = this.productService.getProductList();
+    this.products.subscribe((v) => console.log('Product List: ', v));
   }
   
 
@@ -40,12 +45,13 @@ export class ProductListComponent implements OnInit {
   update(pid : number){
     this.router.navigate(['updateProduct',pid]);
   }
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-  }
 
   logOut() {
     this.userService.logOutUser();
     alert("Logged Out Successfully..!!");
+  }
+
+  handleBidInput() {
+    this.products = this.productService.getProductListWithBidValue(this.bvalue);
   }
 }

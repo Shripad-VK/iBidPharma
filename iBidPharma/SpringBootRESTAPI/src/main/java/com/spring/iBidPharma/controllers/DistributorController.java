@@ -69,4 +69,10 @@ public class DistributorController {
 		Distributor distributor=distributorRepository.getOne(mid);
 		distributorRepository.delete(distributor);
 	}
+	
+	@GetMapping("/distributorsByUID/{uid}")
+	public Distributor getDistributorByUId(@PathVariable (value="uid")Long uid)
+	{
+		return distributorRepository.getDistributorByuid(uid);
+	}
 }

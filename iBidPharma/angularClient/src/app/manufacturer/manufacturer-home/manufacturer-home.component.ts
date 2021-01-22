@@ -19,7 +19,7 @@ export class ManufacturerHomeComponent implements OnInit {
   ngOnInit() 
   {
     // productService.getProductByManufacturerId(5);
-   this.ProductByManufacturerId(2);
+  // this.ProductByManufacturerId(2);
   }
 ProductByManufacturerId(mid:number){
 alert(mid);

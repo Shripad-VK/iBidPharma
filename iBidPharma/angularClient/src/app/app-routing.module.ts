@@ -15,6 +15,8 @@ import { UpdateManufacturerComponent } from './manufacturer/update-manufacturer/
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
+import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
 
 
 const routes: Routes = [
@@ -27,15 +29,19 @@ const routes: Routes = [
   {path: 'address', component:AddressListComponent},
   {path: 'addAddressManufacturer/:mid', component:CreateAddressComponent},
   {path: 'addAddress/:d_id', component:CreateAddressComponent},
-  {path: 'manufacturerHome',component:CreateManufacturerComponent},
+  {path: 'manufacturerHome',component:ManufacturerHomeComponent},
   {path:  'distributorHome',component:CreateDistributorComponent},
-  {path: 'distributors', component:DistributorListComponent},
+  {path: 'distributorsList', component:DistributorListComponent},
   {path: 'addDistributor',component:CreateDistributorComponent},
   {path: 'adminHome',component:AdminHomeComponent},
   {path: 'login',component:UserLoginComponent},
   {path:'register',component:UserRegisterComponent},
   {path:'manufacturer',component:ManufacturerHomeComponent},
-  {path:'distributor',component:DistributorHomeComponent}
+  {path:'distributor',component:DistributorHomeComponent},
+  {path:'reportDistributor',component:ReportGenerationComponent},
+  {path:'productMaufacturerList',component:MaufacturerProductListComponent},
+  {path:'reportMaufacturer',component:ReportGenerationComponent},
+  
 
 ];
 

@@ -78,11 +78,18 @@ public class ProductController {
 	}
 	
 	
+
 	@GetMapping("/products/manufacturer/{mid}")
 	public List<Product> getProductByManufactureId(@PathVariable (value="mid") Long mid)
 	{
-		return  productRepository.getProducts(mid);
+	return  productRepository.getProducts(mid);
 	}
+
+	@GetMapping("/products/bidValue/{bvalue}")
+	public List<Product> getAllProductsWithBidValue(@PathVariable(value="bvalue") Long bvalue){
+		return productRepository.getProductByBidValue(bvalue);
+	}
+	
 	
 	
 	

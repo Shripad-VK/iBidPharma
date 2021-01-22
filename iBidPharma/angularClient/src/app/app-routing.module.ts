@@ -15,6 +15,7 @@ import { UpdateManufacturerComponent } from './manufacturer/update-manufacturer/
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { PlaceBidComponent } from './place-bid/place-bid.component';
 
 
 const routes: Routes = [
@@ -35,8 +36,8 @@ const routes: Routes = [
   {path: 'login',component:UserLoginComponent},
   {path:'register',component:UserRegisterComponent},
   {path:'manufacturer',component:ManufacturerHomeComponent},
-  {path:'distributor',component:DistributorHomeComponent}
-
+  {path:'distributor',component:DistributorHomeComponent},
+  {path:'placebid',component:PlaceBidComponent}
 ];
 
 @NgModule({

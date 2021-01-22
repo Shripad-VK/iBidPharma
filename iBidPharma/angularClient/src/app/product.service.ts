@@ -26,7 +26,7 @@ export class ProductService {
     return this.http.get(`${this.baseUrl}`+'/products/'+pid);
   }
   getProductByManufacturerId(mid:number):Observable<any>
-{
+  {
   return this.http.get(`${this.baseUrl}`+'/products/manufacturer/'+mid);
   }
   getProductListWithBidValue(bid : number):Observable<any> {

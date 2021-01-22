@@ -1,12 +1,12 @@
-
-<div class="row container-fluid">
-    <div class="col-2 mt-2"><br/> 
-        <a routerLink = "/list"> Update Account </a> <br/><br/>
-        <a routerLink = "/entry"> Browse Bids </a> <br/><br/>
-        <a routerLink = "/update"> Report Generation </a>            
+<div id="pageBody" class="row container-fluid-100">
+    <div class="col-3 mt-2 text-center"><br/><br/><br/><br/>
+        <button type="button" class="btn btn-dark btn-lg" (click)="someFunc()">Go Back</button><br/><br/><br/>
+        <a routerLink = "/list"> Update Account </a> <br/><br/><br/>
+        <a routerLink = "/entry"> Browse Bids </a> <br/><br/><br/>
+        <a routerLink = "/update"> Report Generation </a> <br/><br/><br/>
+        <a routerLink = "/login" (click)="logOut()"> Log Out </a>            
     </div>
     <div class="col ml-2">
-        <h1 class = "display-2"> Welcome </h1>
+        <app-product-list> </app-product-list>
     </div>
 </div>
-

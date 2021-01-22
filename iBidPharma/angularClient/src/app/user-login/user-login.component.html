@@ -21,7 +21,8 @@
       <span *ngIf="primaryEmail.errors?.email">
          Email not valid.
      </span> 
-      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+     <br/> 
+     <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
         <input type="password" name="password" id="password" placeholder="Password" formControlName="password" class="form-control" [(ngModel)]="user.password" minlength="5" maxLength="10"/>
       </p>
       <span *ngIf="password.errors?.minlength">
@@ -34,9 +35,10 @@
       <span *ngIf="isSubmitted && formControls.password.errors" class="help-block">
         <span *ngIf="formControls.password.errors.required">Password is required</span>
       </span>
-  
+      <br/>
       <p>
-        <input type="submit" value="Log in">
+        <input class="btn btn-success btn-lg" type="submit" value="Log in" style="margin-left: 15%;">
+        <input class="btn btn-danger btn-lg" type="reset" value="Clear" style="margin-left: 25%;"/> 
       </p>
     </form>
   </div>

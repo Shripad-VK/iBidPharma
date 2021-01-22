@@ -15,7 +15,16 @@ user:User;
   }
 
   ngOnInit() {
-    
+    this.newUser();
+  }
+
+  newUser():void {
+    this.user = new User();
+  }
+
+  onSubmit(){
+    this.userService.createUser(this.user).subscribe(data=>console.log(data),error=>console.error(error));
+    this.user = new User();
   }
 
 }

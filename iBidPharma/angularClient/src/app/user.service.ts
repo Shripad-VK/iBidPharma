@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from './user';
 
 @Injectable({
@@ -19,5 +20,9 @@ export class UserService {
   logOutUser() {
     this.user = JSON.parse(sessionStorage.getItem('currentUser'));
     sessionStorage.removeItem('currentUser');
+  }
+
+  createUser(user:Object):Observable<Object> {
+    return this.http.post(`${this.baseUrl}`+'/users',user);
   }
 }

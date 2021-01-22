@@ -8,7 +8,7 @@
 </div>1-->
 
 
-<div class="jumbotron">
+<div class="jumbotron" style="height: 340px;">
     <form [formGroup]="loginForm" (ngSubmit)="login()"  >
   
         <p [ngClass]="{ 'has-error': isSubmitted && formControls.primaryEmail.errors }">
@@ -41,6 +41,7 @@
         <input class="btn btn-danger btn-lg" type="reset" value="Clear" style="margin-left: 25%;"/> 
       </p>
     </form>
+    <a routerLink = "/register" class="btn btn-warning btn-lg" style="float: right; margin-right: 25%;"> New User..? Register </a>
   </div>
 
 

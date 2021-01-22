@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.iBidPharma.models.Bid;
+import com.spring.iBidPharma.models.Product;
 import com.spring.iBidPharma.repository.BidRepository;
 
 @RestController
@@ -62,6 +63,12 @@ public class BidController {
 		Bid bid =bidRepository.getOne(id);
 		bidRepository.delete(bid);
 		
+	}
+	
+	@GetMapping("/bid/report/{d_id}")
+	public List<Bid> getProductByManufactureId(@PathVariable (value="d_id") Long d_id)
+	{
+	return  bidRepository.getBid(d_id);
 	}
 
 }

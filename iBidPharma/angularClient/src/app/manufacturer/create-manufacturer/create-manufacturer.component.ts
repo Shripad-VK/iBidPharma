@@ -18,11 +18,8 @@ manufacturer:any;
 utype:any;
 manufacturerLoginForm:any;
 isSubmitted:boolean;
-  constructor (private http:HttpClient, private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router,private route:ActivatedRoute,private formBuilder:FormBuilder,private formGroup:FormGroup){
-    this.manufacturerLoginForm=new FormGroup({
-    cname:new FormControl(), 
-  
-  });
+  constructor ( private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router,private route:ActivatedRoute,private formBuilder:FormBuilder){
+   
 }
 
   ngOnInit() {
@@ -55,7 +52,8 @@ isSubmitted:boolean;
   {
     this.isSubmitted=true;
     this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>{this.manufacturer=data;
-      this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);
+     
+     console.log(data); this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);
     },error=>console.log(error));
    
   }

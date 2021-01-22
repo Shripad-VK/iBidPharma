@@ -24,13 +24,14 @@ export class ManufacturerHomeComponent implements OnInit {
 
   ngOnInit() 
   {
-   // this.newAddress();
-    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-    //this.uid=this.currentUser.uid;
-    console.log(this.currentUser.uid);
-   // alert(this.currentUser.uid);
-    this.getMid(this.currentUser.uid);
-  } 
+
+  this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+  //this.uid=this.currentUser.uid;
+  console.log(this.currentUser.uid);
+ // alert(this.currentUser.uid);
+  this.getMid(this.currentUser.uid);
+  }
+
     
   
 

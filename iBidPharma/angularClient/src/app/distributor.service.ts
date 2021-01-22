@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Distributor } from './Distributor';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,8 @@ export class DistributorService {
   }
   updateDistributor(d_id:number,value:any):Observable<Object>{
     return this.http.put(`${this.baseUrl}`+'/distributors/'+d_id,value);
+  }
+  getDistributorByUId(uid:number):Observable<any>{
+    return this.http.get(`${this.baseUrl}`+'/distributorsByUID/'+uid);
   }
 }

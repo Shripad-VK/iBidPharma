@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,10 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AppComponent {
   title = 'angularClient';
 
-  constructor(private router:Router,private routr:ActivatedRoute) { }
+  constructor(private router:Router,private routr:ActivatedRoute,private location:Location) { }
 
   someFunc() {
-    console.log("button clicked..!!");
+   this.location.back();
   }
   
   ngOnInit() {
@@ -22,4 +22,5 @@ export class AppComponent {
   {
     this.router.navigate(['login']);
   }
+  
 }

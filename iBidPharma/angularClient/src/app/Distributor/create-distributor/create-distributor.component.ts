@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/user';
+
 import { Address } from '../../address';
 import { AddressService } from '../../address.service';
 import { Distributor } from '../../Distributor';
@@ -21,11 +21,8 @@ export class CreateDistributorComponent implements OnInit {
   utype:any;
   distributorLoginForm: any;
   isSubmitted:boolean;
-  constructor(private http=HttpClient, private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder,private formGroup:FormGroup) {
-    this.distributorLoginForm=new FormGroup({
-      cname:new FormControl()
-    });
-   
+  constructor( private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder) {
+  
    }
 
   ngOnInit() {

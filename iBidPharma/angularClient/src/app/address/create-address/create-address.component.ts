@@ -49,13 +49,15 @@ export class CreateAddressComponent implements OnInit {
     this.manufacturer=new Manufacturer();
     this.manufacturer.addr_id=this.address.addr_id;  
     this.manufacturerService.updateManufacturer(this.mid,this.manufacturer).subscribe(data=>console.log(data),error=>console.log(error));
-    }
+      this.router.navigate(['login']);
+  }
     if(this.d_id!=0 && this.currentUser.utype=="Distributor")
     {
         this.distributor=new Distributor();
         this.distributor.addr_id=this.address.addr_id;
         this.distributorService.updateDistributor(this.d_id,this.distributor).subscribe(data=>console.log(data),error=>console.log(error));
-    }
+        this.router.navigate(['login']);
+      }
   
   },error=>console.error(error));
     

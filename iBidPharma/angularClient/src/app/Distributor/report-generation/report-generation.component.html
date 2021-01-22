@@ -1,1 +1,14 @@
-<p>report-generation works!</p>
+
+<div>
+    <table border="1">
+    <tr><th>ProductName</th><th>Bid Value</th><th>Product Stock</th><th>Bid Date</th><th>Location</th></tr>
+    <tr *ngFor="let bid of currentList ">
+        <td>{{bid.pid}}</td>
+        <td>{{bid.bvalue}}</td>
+        <td>{{bid.stock}}</td>
+        <td>{{bid.bid_date}}</td>
+    </tr>    
+</table>
+<br/>
+<button (click)="update(distributor.d_id)"> PDF Report</button>
+</div>

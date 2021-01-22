@@ -1,7 +1,7 @@
 export class Manufacturer
 {
     mid:number;
-    cname:String;
+    cname:string;
     addr_id:number;
     uid:number;
-}
+}  

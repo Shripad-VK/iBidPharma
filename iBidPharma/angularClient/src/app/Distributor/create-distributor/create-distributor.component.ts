@@ -29,7 +29,17 @@ export class CreateDistributorComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.distributor=new Distributor();
+    this.distributorLoginForm = new FormGroup({
+    cname: new FormControl(this.distributorLoginForm.name, [
+    Validators.required
+  ]),
+  alterEgo: new FormControl(this.distributorLoginForm.alterEgo),
+  power: new FormControl(this.distributorLoginForm.power, Validators.required)
+});
+  }
+  get cname() { return this.distributorLoginForm.get('cname'); }
+  get power() { return this.distributorLoginForm.get('power'); }
+   /* this.distributor=new Distributor();
     this.getAddressList();
     this.utype=this.route.snapshot.params['utype'];
     this.distributorLoginForm=this.formBuilder.group({
@@ -37,20 +47,20 @@ export class CreateDistributorComponent implements OnInit {
     });
     cname: new FormControl('', Validators.minLength(4));
     cname: new FormControl('', Validators.maxLength(20));
-  }
+  }*/
 
-  get formControls()
+  /*get formControls()
   {
     return this.distributorLoginForm.controls;
-  }
+  }*/
   
-  newDistributor():void { 
+ /* newDistributor():void { 
     this.distributor=new Distributor();
     
-  }
-  get cname() {
+  }*/
+  /*get cname() {
     return this.distributorLoginForm.get('cname');
-  } 
+  } */
   onSubmit()
   {
     this.isSubmitted=true;

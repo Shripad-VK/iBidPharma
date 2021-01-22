@@ -2,41 +2,27 @@
     <div class="heading">
       MANUFACTURER
     </div> 
-<div class="manufacturerForm">
+<div class="name">
 <form [formGroup]="manufacturerLoginForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
         <div class="form-row">
             <div class="col">
-            <label for="cname"> Company Name </label>
+                <label for="cname"> Company Name </label>
             </div>
-            
-            
-            <div *ngIf="manufacturer"class="col">
+            <div class="col">
                 <p [ngClass]="{ 'has-error': isSubmitted && formControls.cname.errors }">
-             <input type="text" class="form-control" id="cname"  [(ngModel)]="manufacturer.cname"  formControlName="cname" name="cname" minlength="5" maxLength="10"required/>
-            </p>
+                    <input type="text" class="form-control" id="cname"  [(ngModel)]="manufacturer.cname"  formControlName="cname" name="cname" required/>
+                </p>
+            </div>
+            <br/>
             <span *ngIf="isSubmitted && formControls.cname.errors" class="help-block">
-            <span *ngIf="cname.errors?.minlength">
-                Name must be at least 4 characters long.
-              </span> 
-              <span *ngIf="cname.errors?.maxLength">
-                Name must be at least 20 characters long.
-              </span>
-            </span>
-              <span *ngIf="isSubmitted && formControls.cname.invalid && formControls.cname.touched" class="help-block">
-                <span *ngIf="formControls.cname.errors.required">Please enter the company name!!</span>
-            </span>
-         </div>
+                 <span *ngIf="formControls.cname.errors.required">Company name required!!</span> 
+            </span> 
            
         </div>
     </div>
-   <!-- <div class="form-group">
-        <label for="address"> Manufacturer Address </label>
-        <select [(ngModel)]="manufacturer.addr_id" name="address">
-            <option *ngFor="let a of addresses" [ngValue]="a.addr_id"> {{a.line1}} </option>
-         </select>
-    </div>-->
+   
    
     <button type="submit" class="btn btn-success"> Submit </button> 
 </form>

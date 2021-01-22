@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { User } from 'src/app/user';
 import { Address } from '../../address';
 import { AddressService } from '../../address.service';
 import { Distributor } from '../../Distributor';
@@ -21,8 +21,11 @@ export class CreateDistributorComponent implements OnInit {
   utype:any;
   distributorLoginForm: any;
   isSubmitted:boolean;
-  constructor( private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder) {
-  
+  constructor(private distributorService:DistributorService,private addressService:AddressService,private router :Router,private route:ActivatedRoute,private formBuilder: FormBuilder) {
+    this.distributorLoginForm=new FormGroup({
+      cname:new FormControl()
+    });
+   
    }
 
   ngOnInit() {
@@ -32,8 +35,6 @@ export class CreateDistributorComponent implements OnInit {
     this.distributorLoginForm=this.formBuilder.group({
       cname:['',Validators.required]
     });
-    cname: new FormControl('', Validators.minLength(4));
-    cname: new FormControl('', Validators.maxLength(20));
   }
 
   get formControls()

@@ -4,4 +4,4 @@ export class Manufacturer
     cname:string;
     addr_id:number;
     uid:number;
-}
+}  

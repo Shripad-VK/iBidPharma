@@ -19,7 +19,9 @@ utype:any;
 manufacturerLoginForm:any;
 isSubmitted:boolean;
   constructor ( private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router,private route:ActivatedRoute,private formBuilder:FormBuilder){
-   
+   this.manufacturerLoginForm=new FormGroup({
+     cname:new FormControl()
+   });
 }
 
   ngOnInit() {
@@ -29,8 +31,7 @@ isSubmitted:boolean;
     this.manufacturerLoginForm=this.formBuilder.group({
       cname:['',Validators.required]
     });
-    cname: new FormControl('', Validators.minLength(4));
-    cname: new FormControl('', Validators.maxLength(20));
+    
   
   }
 

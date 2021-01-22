@@ -25,7 +25,7 @@ isSubmitted:boolean;
     this.getAddressList();
     this.utype=this.route.snapshot.params['utype'];
     this.manufacturerLoginForm=this.formBuilder.group({
-      pname:['',Validators.required]
+      cname:['',Validators.required]
     });
   }
 
@@ -37,7 +37,8 @@ isSubmitted:boolean;
   {
     this.isSubmitted=true;
     this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>{this.manufacturer=data;
-      this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);
+     
+     console.log(data); this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);
     },error=>console.log(error));
    
   }

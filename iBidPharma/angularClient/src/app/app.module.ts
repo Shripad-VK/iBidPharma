@@ -31,6 +31,7 @@ import { DistributorHomeComponent } from './distributor/distributor-home/distrib
 import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { TableFilterPipe } from './table-filter.pipe';
+import { PlaceBidComponent } from './place-bid/place-bid.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { TableFilterPipe } from './table-filter.pipe';
     DistributorHomeComponent,
     MailComponent,
     UserRegisterComponent,
-    TableFilterPipe
+    TableFilterPipe,
+    PlaceBidComponent
   ],
   imports: [
     BrowserModule,

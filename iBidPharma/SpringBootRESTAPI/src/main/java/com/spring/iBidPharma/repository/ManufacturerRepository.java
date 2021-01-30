@@ -16,4 +16,7 @@ public interface ManufacturerRepository extends JpaRepository<Manufacturer, Long
 	
 	@Query(value = "SELECT mid FROM manufacturer WHERE uid = :uid", nativeQuery = true)
 	public long findByuid(@Param("uid") long uid);
+	
+	@Query(value = "SELECT * FROM manufacturer WHERE uid = :uid", nativeQuery = true)
+	public Manufacturer findManufacturerbyUID(@Param("uid") long uid);
 }

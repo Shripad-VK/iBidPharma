@@ -25,11 +25,13 @@ export class ManufacturerHomeComponent implements OnInit {
   ngOnInit() 
   {
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-   // console.log(this.currentUser.uid);
+
     this.getMid(this.currentUser.uid);
    
   } 
 
+    
+  
 
 ProductByManufacturerId(mid:number){
   this.products = this.productService.getProductByManufacturerId(mid);

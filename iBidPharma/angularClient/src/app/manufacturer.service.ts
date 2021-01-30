@@ -30,4 +30,8 @@ export class ManufacturerService {
   getManufactureByUId(uid:number):Observable<any>{
     return this.http.get(`${this.baseUrl}`+'/manufacturersbyid/'+uid);
   }
+  getManufactureObjectByuid(uid:number):Observable<object>
+  {
+    return this.http.get(`${this.baseUrl}`+'/manufacturersObjectByuid/'+uid);
+  }
 }

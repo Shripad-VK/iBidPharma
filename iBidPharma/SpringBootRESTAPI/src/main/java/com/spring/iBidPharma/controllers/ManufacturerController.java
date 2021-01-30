@@ -79,4 +79,13 @@ public class ManufacturerController {
 	  	
 		return manufacturerRepository.findByuid(uid);
 	}
+	
+	@GetMapping("/manufacturersObjectByuid/{uid}")
+	public Manufacturer getProductsByUID(@PathVariable (value="uid")Long uid)
+	{
+	    System.out.println(uid);	
+		return manufacturerRepository.findManufacturerbyUID(uid);
+	}
+	
+	
 }

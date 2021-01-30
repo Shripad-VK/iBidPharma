@@ -21,8 +21,8 @@ export class DistributorHomeComponent implements OnInit {
     this.products = this.productService.getProductList();
     this.products.subscribe((v) => console.log('Product List: ', v));
   }
-placeBid()
+placeBid(product:object)
 {
-  this.router.navigate(['/placebid']);
+  this.router.navigate(['/placebid',{products:JSON.stringify(product)}]);
 }
 }

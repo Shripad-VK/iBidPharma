@@ -61,8 +61,24 @@
                 <th>Product Stock</th>
                 <th>Minimum Bid Value</th>
                 <th>Maximum Bid Value</th>
-                <th>Location</th>
-                <th>Product Image</th>
+                <th>Place Bid</th>
+
+          </thead>
+          <tbody>
+        <tr *ngFor="let product of products | async">
+           <td> {{product.pname}} </td>
+            <td> {{product.category}} </td>
+            <td> {{product.stock}} </td>
+            <td> {{product.min_bvalue}} </td>
+            <td>  {{product.min_bvalue}} </td>
+            
+            <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
+        </tbody>
+    </table>
+    <br/>
+    <button (click)="logOut()"> Log Out </button>
+   
+            <!-- </thead>
                 <th>Action</th>
             </thead>
             <tbody>

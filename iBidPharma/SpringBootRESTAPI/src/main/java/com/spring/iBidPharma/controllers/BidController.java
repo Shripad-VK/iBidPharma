@@ -70,10 +70,6 @@ public class BidController {
 	{
 	return  bidRepository.getBid(d_id);
 	}
-	@GetMapping("/bid/transaction/{d_id}")
-	public List<Bid> gettransactionByManufactureId(@PathVariable (value="d_id") Long d_id)
-	{
-	return  bidRepository.getTransaction(d_id);
-	}
+	
 
 }

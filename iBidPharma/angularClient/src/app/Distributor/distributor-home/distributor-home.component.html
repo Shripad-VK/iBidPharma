@@ -18,7 +18,7 @@
         <a routerLink = "/reportDistributor"> Report Generation </a> <br/><br/>
         <a routerLink = "/login"> Log Out </a>             
     </div>
-
+</div>
 <div class="jumbotron">
     <div id="bidFilter" class="col-3 form-group" style="width: 200px;">
         <strong>Bid Value</strong>              
@@ -53,28 +53,7 @@
                 <th>Location</th>
                 <th>Product Image</th>
 
-<<<<<<< HEAD
           </thead>
-          <tbody>
-        <tr *ngFor="let product of products | async">
-           <td> {{product.pname}} </td>
-            <td> {{product.category}} </td>
-            <td> {{product.stock}} </td>
-            <td> {{product.min_bvalue}} </td>
-            <td>  {{product.min_bvalue}} </td>
-            <td>{{product.pimage}}</td>
-           
-           
- <!-- <div class="pimage"> <img ng-src="{{file.Path}}" alt="{{file.Name}}.jpg" style="height: 100px; width: 100px" /></div> --><br/><br/>
-           
-            <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
-        </tbody>
-    </table>
-    <br/>
-    <button (click)="logOut()"> Log Out </button>
-   
-=======
-            </thead>
             <tbody>
             <tr *ngFor="let product of products | async | tableFilter: form.value">
             <td> {{product.pname}} </td>
@@ -86,10 +65,10 @@
                 <td><img src="http://localhost:8080/api/products/image?name={{product.pimage}}" width="100" height="100"></td>                      
                 <br/><br/>
             
-                <td> <button class="e-info" (click)="placeBid()" style="background-color:skyblue"> Place Bid </button></td>
+                <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
+            </tr>
             </tbody>
         </table>
     </form> 
->>>>>>> fbd1fc05ccce2f18aed248d1c61134b0e0cfda22
 </div>
 

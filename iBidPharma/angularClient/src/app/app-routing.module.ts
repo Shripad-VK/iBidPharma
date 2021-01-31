@@ -49,7 +49,7 @@ const routes: Routes = [
   {path: 'bids',component:ShowBidsComponent},
   
 
-  {path:'placebid/:product',component:PlaceBidComponent}
+  {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent}
 ];
 

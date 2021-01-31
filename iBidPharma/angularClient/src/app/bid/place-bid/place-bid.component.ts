@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PlaceBidService } from '../place-bid.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
- import { bid } from '../bid';
+import { bid } from 'src/app/bid';
+import {formatDate} from '@angular/common';
+import { DistributorService } from 'src/app/distributor.service';
+
+import { PlaceBidService } from 'src/app/place-bid.service';
+
 @Component({
   selector: 'app-place-bid',
   templateUrl: './place-bid.component.html',
@@ -9,25 +14,39 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PlaceBidComponent implements OnInit {
 
-  constructor(private router:ActivatedRoute,private route: Router,private placeBidService:PlaceBidService) { }
+  constructor(private PlacebidService:PlaceBidService, private distributorService:DistributorService,private router:ActivatedRoute,private route: Router,private placeBidService:PlaceBidService) { }
   bid:any;
   addr_id:number;
   pid:number;
   products:any;
+  getProducts:any;
+  currentUser:any;
+  d_id:any;
+  myDate:any;
   ngOnInit() 
   {
-    this.newbid();
-  }
-  newbid():void
-  {
     this.bid = new bid();
-    this.products=this.router.snapshot.paramMap.get['products'];
-  //  this.pid=this.router.snapshot.params['pid'];
-    // this.utype=this.route.snapshot.params['utype'];
-    alert(this.products);
+    
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+    console.log(this.currentUser.uid);
+    this.distributorService.getDistributorByUId(this.currentUser.uid)
+    .subscribe(data=>{this.d_id=data.d_id,console.log(data);
+      console.log(this.d_id);
+            },
+      error=>console.log(error));
+      this.router.queryParams.subscribe(params=>{this.products=JSON.parse(params['products'])});
+      this.myDate = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+     
   }
+ 
 
   onSubmit(){
+
+    this.bid.d_id=this.d_id;
+    this.bid.pid=this.products.pid;
+    this.bid.addr_id=this.products.addr_id;
+    this.bid.bid_date=this.myDate;
+    this.PlacebidService.createBid(this.bid).subscribe(data=>console.log(data),error=>console.log(error));
  }
 
 }

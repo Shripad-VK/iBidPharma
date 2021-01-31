@@ -16,6 +16,8 @@
         <a routerLink = "/distributorsList"> Distributor List </a> <br/><br/>
         <a routerLink = "/addDistributor"> Create Distributor</a> <br/><br/>
         <a routerLink = "/reportDistributor"> Report Generation </a> <br/><br/>
+        <a routerLink = "/distributorTransaction"> Transaction History </a> <br/><br/>
+        
         <a routerLink = "/login"> Log Out </a>             
     </div>
 
@@ -53,7 +55,6 @@
                 <th>Location</th>
                 <th>Product Image</th>
 
-<<<<<<< HEAD
           </thead>
           <tbody>
         <tr *ngFor="let product of products | async">
@@ -62,19 +63,14 @@
             <td> {{product.stock}} </td>
             <td> {{product.min_bvalue}} </td>
             <td>  {{product.min_bvalue}} </td>
-            <td>{{product.pimage}}</td>
-           
-           
- <!-- <div class="pimage"> <img ng-src="{{file.Path}}" alt="{{file.Name}}.jpg" style="height: 100px; width: 100px" /></div> --><br/><br/>
-           
+            <td>{{product.pimage}}</td>           
             <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
         </tbody>
     </table>
     <br/>
     <button (click)="logOut()"> Log Out </button>
    
-=======
-            </thead>
+            <!-- </thead>
             <tbody>
             <tr *ngFor="let product of products | async | tableFilter: form.value">
             <td> {{product.pname}} </td>
@@ -87,9 +83,8 @@
                 <br/><br/>
             
                 <td> <button class="e-info" (click)="placeBid()" style="background-color:skyblue"> Place Bid </button></td>
-            </tbody>
-        </table>
+            </tbody> -->
+        
     </form> 
->>>>>>> fbd1fc05ccce2f18aed248d1c61134b0e0cfda22
 </div>
 

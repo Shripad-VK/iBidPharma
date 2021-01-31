@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PlaceBidService } from '../place-bid.service';
+import { PlaceBidService } from '../../place-bid.service';
 import { ActivatedRoute, Router } from '@angular/router';
- import { bid } from '../bid';
+ import { bid } from '../../bid';
 @Component({
   selector: 'app-place-bid',
   templateUrl: './place-bid.component.html',

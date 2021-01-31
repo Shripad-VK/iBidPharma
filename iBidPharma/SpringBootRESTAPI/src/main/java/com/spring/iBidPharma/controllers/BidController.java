@@ -43,7 +43,7 @@ public class BidController {
 		System.out.println(id);
 		return bidRepository.findById(id).orElse(null);
 	}
-
+	
 	@PutMapping("/bid/{id}")
 	public Bid updateProduct(@PathVariable (value="id")Long id,@RequestBody Bid info)
 	{
@@ -69,6 +69,11 @@ public class BidController {
 	public List<Bid> getProductByManufactureId(@PathVariable (value="d_id") Long d_id)
 	{
 	return  bidRepository.getBid(d_id);
+	}
+	@GetMapping("/bid/transaction/{d_id}")
+	public List<Bid> gettransactionByManufactureId(@PathVariable (value="d_id") Long d_id)
+	{
+	return  bidRepository.getTransaction(d_id);
 	}
 
 }

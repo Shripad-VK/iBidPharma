@@ -35,6 +35,7 @@ import { MaufacturerProductListComponent } from './manufacturer/maufacturer-prod
 import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
+import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
 
 
 
@@ -71,7 +72,8 @@ import { DistributorBidListComponent } from './distributor/distributor-bid-list/
     MaufacturerProductListComponent,
     PlaceBidComponent,
     ShowBidsComponent,
-    DistributorBidListComponent
+    DistributorBidListComponent,
+    DistributorTransactionsComponent,
   ],
   imports: [
     BrowserModule,

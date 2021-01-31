@@ -1,16 +1,16 @@
 
 
-<div class="row container-fluid" id="nav">
-    <div class="col-4 mt-4"><br/> 
-        <button type="button" class="btn btn-dark btn-lg" (click)="goBack()">Go Back</button><br/><br/><br/>
-        <a routerLink="/bids" >Show Bids</a> <br/><br/>
-        <a routerLink = "/distributorsList"> Distributor List </a> <br/><br/>
-        <a routerLink = "/addDistributor"> Create Distributor</a> <br/><br/>
-        <a routerLink = "/reportDistributor"> Report Generation </a> <br/><br/>
-        <a routerLink = "/login"> Log Out </a>             
-    </div>
 
-<div class="jumbotron">
+<div class="row container-fluid" id="nav">
+    <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
+    <div class="col"><a routerLink="/bids" >Show Bids</a></div>
+    <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
+    <div class="col"><a routerLink = "/addDistributor"> Create Distributor</a></div>
+    <div class="col"><a routerLink = "/reportDistributor"> Report Generation </a></div>
+    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+</div>
+
+<div class="row jumbotron">
     <div id="bidFilter" class="col-3 form-group" style="width: 200px;">
         <strong>Bid Value</strong>              
         <div class="row">
@@ -54,9 +54,7 @@
                    
                 </tr>
             </tbody>
-          </table>
-
-
-
-
-
+        </table>
+    </form> 
+</div>
+    

@@ -100,7 +100,7 @@ export class UserLoginComponent implements OnInit {
 
   login(){
     console.log(this.loginForm.value);
-   this.isSubmitted=true;
-   this.checkLogin();
+    this.isSubmitted=true;
+    this.checkLogin();
   }
 }

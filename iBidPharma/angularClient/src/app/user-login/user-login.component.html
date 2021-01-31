@@ -19,17 +19,17 @@
         <span *ngIf="formControls.primaryEmail.errors.required">Email is required</span>
       </span>
       <span *ngIf="primaryEmail.errors?.email">
-         Email not valid.
+         Email is not valid.
      </span> 
      <br/> 
      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
         <input type="password" name="password" id="password" placeholder="Password" formControlName="password" class="form-control" [(ngModel)]="user.password" minlength="5" maxLength="10"/>
       </p>
       <span *ngIf="password.errors?.minlength">
-        Name must be at least 5 characters long.
+        Password must be at least 5 characters long.
       </span> 
       <span *ngIf="password.errors?.maxLength">
-        Name must be at least 10 characters long.
+        Password must be at most 10 characters long.
       </span> 
     
       <span *ngIf="isSubmitted && formControls.password.errors" class="help-block">

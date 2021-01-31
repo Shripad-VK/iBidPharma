@@ -61,10 +61,10 @@
                 <th>Product Stock</th>
                 <th>Minimum Bid Value</th>
                 <th>Maximum Bid Value</th>
-                <th>State</th>
-                <th>Image</th>
-                <th>Place Bid</th>
-          </thead>
+                <th>Location</th>
+                <th>Product Image</th>
+                <th>Action</th>
+            </thead>
             <tbody>
             <tr *ngFor="let product of products | async | tableFilter: form.value">
             <td> {{product.pname}} </td>

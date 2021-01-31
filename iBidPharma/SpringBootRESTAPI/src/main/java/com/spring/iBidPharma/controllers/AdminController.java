@@ -26,15 +26,8 @@ public class AdminController {
 	private AdminRepository adminRepository;
 
 	@GetMapping("/admin")
-	public List<Admin> getAllProduct(){
+	public List<Admin> getAllAdmins(){
 		return adminRepository.findAll();
-	}
-	
-	@PostMapping("/admin")
-	public Admin createProduct(@RequestBody Admin admin)
-	{
-		System.out.println(admin);
-		return adminRepository.save(admin);
 	}
 	
 	@GetMapping("/admin/{aid}")
@@ -45,7 +38,7 @@ public class AdminController {
 	}
 	
 	@PutMapping("/admin/{aid}")
-	public Admin updateProduct(@PathVariable (value="aid")Long aid,@RequestBody Admin info)
+	public Admin updateAdmin(@PathVariable (value="aid")Long aid,@RequestBody Admin info)
 	{
 		Admin admin=adminRepository.findById(aid).orElse(null);
 		admin.setFname(info.getFname());

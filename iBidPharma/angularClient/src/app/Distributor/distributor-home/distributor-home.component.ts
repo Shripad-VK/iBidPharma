@@ -31,9 +31,9 @@ export class DistributorHomeComponent implements OnInit {
     //this.products.subscribe((v) => console.log('Product List: ', v));
   }
   
-  placeBid() {
-    this.router.navigate(['/placebid']);
-  }
+  // placeBid() {
+  //   this.router.navigate(['/placebid']);
+  // }
 
   goBack() {
     this.location.back();
@@ -42,4 +42,8 @@ export class DistributorHomeComponent implements OnInit {
   handleBidInput() {
     this.products = this.productService.getProductListWithBidValue(this.bvalue);
   }
+placeBid(product:object)
+{
+  this.router.navigate(['/placebid',{products:JSON.stringify(product)}]);
+}
 }

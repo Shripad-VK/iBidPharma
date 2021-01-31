@@ -48,7 +48,8 @@ const routes: Routes = [
   {path: 'reportMaufacturer',component:ReportGenerationComponent},
   {path: 'bids',component:ShowBidsComponent},
   
-  {path: 'placebid',component:PlaceBidComponent}
+  {path:'placebid/:product',component:PlaceBidComponent},
+  {path: 'placebid',component:PlaceBidComponent},
 ];
 
 @NgModule({

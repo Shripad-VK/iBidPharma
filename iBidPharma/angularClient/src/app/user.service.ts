@@ -25,4 +25,12 @@ export class UserService {
   createUser(user:Object):Observable<Object> {
     return this.http.post(`${this.baseUrl}`+'/users',user);
   }
+  getInValidUser():Observable<any>
+  {
+    return this.http.get(`${this.baseUrl}`+'/users');
+  }
+  updateUserStatus(uid:number,value:any):Observable<Object>
+  {
+    return this.http.put(`${this.baseUrl}`+'/users/'+uid,value);
+  }
 }

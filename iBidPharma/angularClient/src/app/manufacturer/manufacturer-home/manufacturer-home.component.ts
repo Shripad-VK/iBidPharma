@@ -47,7 +47,7 @@ export class ManufacturerHomeComponent implements OnInit {
    }
 
   goBack() {
-    this.location.back();
+    this.router.navigate([sessionStorage.getItem('previousURL')]);
   }
 
   handleBidInput() {
@@ -69,4 +69,7 @@ export class ManufacturerHomeComponent implements OnInit {
   }
   
   
+  setPreviousURL() {
+    sessionStorage.setItem('previousURL',"/manufacturer");
+  }
 }

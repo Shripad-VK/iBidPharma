@@ -55,7 +55,7 @@ export class UserLoginComponent implements OnInit {
 
   checkLogin() 
   {
-
+    sessionStorage.setItem('previousURL',"/login");
     this.isSubmitted=true;
     console.log(this.loginForm.value.primaryEmail);
     this.userService.checkValidUser(this.loginForm.value.primaryEmail, this.loginForm.value.password).subscribe

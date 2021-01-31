@@ -32,6 +32,26 @@
 </div>
 
       </div>
-<div class="col-md-8">.col-md-4</div>
+<div class="col-md-8" style="background-color: teal;margin-top: 150px;">
+  <table class="table table-bordered">
+    <thead>
+        <th>User Email</th>
+        <th>Contact No</th>
+        <th>Utype</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users ">
+    <td> {{user.email}} </td>
+        <td> {{user.contact_no}} </td>
+        <td> {{user.utype}} </td>
+        <td> <button class="e-info" (click)="valid(user)" style="background-color:skyblue">valid</button></td>
+     </tr>
+    </tbody> 
+</table>
+
+
+
+</div>
 </div>
 <app-footer> </app-footer> 

@@ -24,7 +24,7 @@ Run Angular + Spring Boot Project
 2. For running imported angular project : npm install --save-dev @angular-devkit/build-angular
 3. Running angular Project : ng serve --proxy-config proxy.config.json
 4. For running our project : npm start
-5. command for bootstrap installation in angular  :  npm install bootstrap jquery popper .js --save
+5. command for bootstrap installation in angular  :  npm install bootstrap jquery popper.js --save
 
 Port Already in Use :
 1. netstat -ano | findstr 8080

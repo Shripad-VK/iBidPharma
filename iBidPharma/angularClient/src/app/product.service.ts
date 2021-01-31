@@ -32,5 +32,7 @@ export class ProductService {
   getProductListWithBidValue(bid : number):Observable<any> {
     return this.http.get(`${this.baseUrl}`+'/products/bidValue/'+bid);
   }
-
+  getManufacturerProductsWithBidValue(mid : number, bid : number):Observable<any> {
+    return this.http.get(`${this.baseUrl}`+'/products/manufacturer/'+ mid +'/'+ bid);
+  }
 }

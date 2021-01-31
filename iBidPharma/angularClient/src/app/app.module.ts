@@ -32,7 +32,9 @@ import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { TableFilterPipe } from './table-filter.pipe';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
-import { PlaceBidComponent } from './place-bid/place-bid.component';
+import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
+import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
+import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 
 
 
@@ -67,7 +69,9 @@ import { PlaceBidComponent } from './place-bid/place-bid.component';
     UserRegisterComponent,
     TableFilterPipe,
     MaufacturerProductListComponent,
-    PlaceBidComponent
+    PlaceBidComponent,
+    ShowBidsComponent,
+    DistributorBidListComponent
   ],
   imports: [
     BrowserModule,

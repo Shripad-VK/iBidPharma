@@ -17,7 +17,9 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
-import { PlaceBidComponent } from './place-bid/place-bid.component';
+import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
+import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
+import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 
 
 
@@ -37,15 +39,18 @@ const routes: Routes = [
   {path: 'addDistributor',component:CreateDistributorComponent},
   {path: 'adminHome',component:AdminHomeComponent},
   {path: 'login',component:UserLoginComponent},
-  {path:'register',component:UserRegisterComponent},
-  {path:'manufacturer',component:ManufacturerHomeComponent},
-  {path:'distributor',component:DistributorHomeComponent},
-  {path:'reportDistributor',component:ReportGenerationComponent},
-  {path:'productMaufacturerList',component:MaufacturerProductListComponent},
-  {path:'reportMaufacturer',component:ReportGenerationComponent},
+  {path: 'register',component:UserRegisterComponent},
+  {path: 'manufacturer',component:ManufacturerHomeComponent},
+  {path: 'distributor',component:DistributorHomeComponent},
+  {path: 'reportDistributor',component:ReportGenerationComponent},
+  {path: 'maufacturerProductList',component:MaufacturerProductListComponent},
+  {path: 'distributorBidList',component:DistributorBidListComponent},
+  {path: 'reportMaufacturer',component:ReportGenerationComponent},
+  {path: 'bids',component:ShowBidsComponent},
   
 
   {path:'placebid/:product',component:PlaceBidComponent}
+  {path: 'placebid',component:PlaceBidComponent}
 ];
 
 @NgModule({

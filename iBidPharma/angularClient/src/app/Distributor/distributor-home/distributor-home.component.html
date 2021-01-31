@@ -8,13 +8,26 @@
     </div>
     <div class="col ml-2"> -->
         
-
+        <!-- <div class="col-4 mt-4"><br/> 
+            <button type="button" class="btn btn-dark btn-lg" (click)="goBack()">Go Back</button><br/><br/><br/>
+            <a routerLink="/bids" >Show Bids</a> <br/><br/>
+            <a routerLink = "/distributorsList"> Distributor List </a> <br/><br/>
+            <a routerLink = "/addDistributor"> Create Distributor</a> <br/><br/>
+            <a routerLink = "/reportDistributor"> Report Generation </a> <br/><br/>
+            <a routerLink = "/distributorTransaction"> Transaction History </a> <br/><br/>
+            
+            <a routerLink = "/login"> Log Out </a>             
+        </div>
+    
+    <div class="jumbotron"> -->
 <div class="row container-fluid" id="nav">
         <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
         <div class="col"><a routerLink="/bids" >Show Bids</a></div>
         <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
         <div class="col"><a routerLink = "/addDistributor"> Create Distributor</a></div>
         <div class="col"><a routerLink = "/reportDistributor"> Report Generation </a></div>
+        <a routerLink = "/distributorTransaction"> Transaction History </a> <br/><br/>
+
         <div class="col"><a routerLink = "/login"> Log Out </a></div>
 </div>
 <div class="row jumbotron">
@@ -62,7 +75,8 @@
                 <td>  {{product.state}} </td>
                 <td> <img src="http://localhost:8080/api/products/image?name={{product.pimage}}" width="100" height="100"></td>                                  
                 <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
-            </tbody>
+             </tr>
+            </tbody> 
         </table>
     </form> 
 </div>

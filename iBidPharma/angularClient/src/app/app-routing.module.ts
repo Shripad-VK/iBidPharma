@@ -20,6 +20,7 @@ import { MaufacturerProductListComponent } from './manufacturer/maufacturer-prod
 import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
+import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
 
 
 
@@ -47,9 +48,9 @@ const routes: Routes = [
   {path: 'distributorBidList',component:DistributorBidListComponent},
   {path: 'reportMaufacturer',component:ReportGenerationComponent},
   {path: 'bids',component:ShowBidsComponent},
+  {path:'distributorTransaction',component:DistributorTransactionsComponent},
   {path:'placebid/:products',component:PlaceBidComponent},
-  {path: 'placebid',component:PlaceBidComponent}
- 
+  {path: 'placebid',component:PlaceBidComponent},
 ];
 
 @NgModule({

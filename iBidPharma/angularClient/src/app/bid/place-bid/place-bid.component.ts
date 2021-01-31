@@ -44,6 +44,7 @@ export class PlaceBidComponent implements OnInit {
     this.bid.pid=this.products.pid;
     this.bid.addr_id=this.products.addr_id;
     this.bid.bid_date=this.myDate;
+    this.bid.state=this.products.state;
     this.PlacebidService.createBid(this.bid).subscribe(data=>{console.log(data),
     this.route.navigate(['/distributor']);
     },error=>console.log(error));

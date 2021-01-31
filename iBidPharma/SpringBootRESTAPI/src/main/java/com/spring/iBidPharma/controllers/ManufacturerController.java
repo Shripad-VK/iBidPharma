@@ -74,14 +74,14 @@ public class ManufacturerController {
 		manufacturerRepository.delete(manufacturer);
 	}
 	@GetMapping("/manufacturersbyid/{uid}")
-	public Long getProductsById(@PathVariable (value="uid")Long uid)
+	public Long getProductsByManufacturerId(@PathVariable (value="uid")Long uid)
 	{
 	    //System.out.println(uid);	  	
 		return manufacturerRepository.findByuid(uid);
 	}
 	
 	@GetMapping("/manufacturersObjectByuid/{uid}")
-	public Manufacturer getProductsByUID(@PathVariable (value="uid")Long uid)
+	public Manufacturer getProductsByUid(@PathVariable (value="uid")Long uid)
 	{
 	    System.out.println(uid);	
 		return manufacturerRepository.findManufacturerbyUID(uid);

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { bid } from 'src/app/bid';
 import { BidService } from 'src/app/bid.service';
 import { Distributor } from 'src/app/Distributor';
+import { DistributorTransactionService } from 'src/app/distributor-transaction.service';
 import { DistributorService } from 'src/app/distributor.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { DistributorService } from 'src/app/distributor.service';
 })
 export class DistributorTransactionsComponent implements OnInit {
 
-  constructor(private distributorService:DistributorService,private bidservice:BidService,private router:ActivatedRoute,private route:Router) { }
+  constructor(private distributorService:DistributorService,private bidservice:BidService,private distributorTransactionservice:DistributorTransactionService,private router:ActivatedRoute,private route:Router) { }
   currentUser:any;
   currentDistributor:any;
   currentList:any;
@@ -40,7 +41,7 @@ export class DistributorTransactionsComponent implements OnInit {
  {
    this.currentDistributor=JSON.parse(sessionStorage.getItem('currentDistributor'));
    console.log(this.currentDistributor.d_id);
-  this.bidservice.getDistributorTransactionById(this.currentDistributor.d_id).subscribe(data=>this.currentList=data,error=>console.log(error));
+  this.distributorTransactionservice.getDistributorTransactionById(this.currentDistributor.d_id).subscribe(data=>this.currentList=data,error=>console.log(error));
    
  
  }

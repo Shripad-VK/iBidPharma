@@ -1,13 +1,13 @@
 <div>
     <table border="1">
-    <tr><th>ProductName</th><th>Bid Value</th><th>Product Stock</th><th>Manufacturer Name</th><th>Bid Date</th></tr>
+    <tr><th>ManufacturerName</th><th>ProductName</th><th>BidValue</th><th>Quantity</th><th>Date</th></tr>
     <tr *ngFor="let bid of currentList ">
-        <td>{{bid.pid}}</td>
+        <td>{{bid.mname}}</td>
+        <td>{{bid.pname}}</td>
         <td>{{bid.bvalue}}</td>
-        <td>{{bid.stock}}</td>
-        <td>{{bid.bid_date}}</td>
+        <td>{{bid.quantity}}</td>
+        <td>{{bid.tdate}}</td>
     </tr>    
 </table>
 <br/>
-<button (click)="update(distributor.d_id)"> PDF Report</button>
 </div>

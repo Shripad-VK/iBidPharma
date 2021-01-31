@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.iBidPharma.models.Bid;
 import com.spring.iBidPharma.models.Transaction;
 import com.spring.iBidPharma.repository.TransactionRepository;
 
@@ -38,6 +39,12 @@ public class TransactionController {
 	{
 		System.out.println(tid);
 		return transactionRepository.findById(tid).orElse(null);
+	}
+	@GetMapping("/transactions/{dist_id}")
+	public List<Transaction> gettransactionByManufactureId(@PathVariable (value="dist_id") Long dist_id)
+	{System.out.println(dist_id);
+	return  transactionRepository.getTransaction(dist_id);
+	
 	}
 	
 }

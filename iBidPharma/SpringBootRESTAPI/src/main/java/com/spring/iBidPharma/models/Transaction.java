@@ -25,6 +25,9 @@ public class Transaction {
 	
 	@Column
 	private String pname;
+	
+	@Column
+	private String category;
 
 	@Column
 	private long dist_id;
@@ -52,13 +55,14 @@ public class Transaction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Transaction(long mid, String mname, long pid, String pname, long dist_id, String dname, long bid,
-			long bvalue, long quantity, String state, String tdate) {
+	public Transaction(long mid, String mname, long pid, String pname, String category, long dist_id, String dname,
+			long bid, long bvalue, long quantity, String state, String tdate) {
 		super();
 		this.mid = mid;
 		this.mname = mname;
 		this.pid = pid;
 		this.pname = pname;
+		this.category = category;
 		this.dist_id = dist_id;
 		this.dname = dname;
 		this.bid = bid;
@@ -102,6 +106,14 @@ public class Transaction {
 
 	public void setPname(String pname) {
 		this.pname = pname;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public long getDist_id() {
@@ -163,8 +175,8 @@ public class Transaction {
 	@Override
 	public String toString() {
 		return "Transaction [tid=" + tid + ", mid=" + mid + ", mname=" + mname + ", pid=" + pid + ", pname=" + pname
-				+ ", dist_id=" + dist_id + ", dname=" + dname + ", bid=" + bid + ", bvalue=" + bvalue + ", quantity="
-				+ quantity + ", state=" + state + ", tdate=" + tdate + "]";
+				+ ", category=" + category + ", dist_id=" + dist_id + ", dname=" + dname + ", bid=" + bid + ", bvalue="
+				+ bvalue + ", quantity=" + quantity + ", state=" + state + ", tdate=" + tdate + "]";
 	}
 
 }

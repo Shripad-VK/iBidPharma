@@ -27,8 +27,7 @@ export class DistributorTransactionsComponent implements OnInit {
     this.getTransaction();
     
   }
-  getDid()
-  {
+  getDid() {
    this.distributorService.getDistributorByUId(this.currentUser.uid)
    .subscribe(data=>{console.log(data);
              this.currentDistributor = JSON.stringify(data);
@@ -37,13 +36,18 @@ export class DistributorTransactionsComponent implements OnInit {
      error=>console.log(error));
      
   }
-  getTransaction()
- {
+  getTransaction() {
    this.currentDistributor=JSON.parse(sessionStorage.getItem('currentDistributor'));
    console.log(this.currentDistributor.d_id);
   this.distributorTransactionservice.getDistributorTransactionById(this.currentDistributor.d_id).subscribe(data=>this.currentList=data,error=>console.log(error));
-   
  
  }
-
+ 
+  goBack() {
+    this.route.navigate([sessionStorage.getItem('previousURL')]);
+  }
+  
+  setPreviousURL() {
+    sessionStorage.setItem('previousURL',"/distributorTransaction");
+  }
 }

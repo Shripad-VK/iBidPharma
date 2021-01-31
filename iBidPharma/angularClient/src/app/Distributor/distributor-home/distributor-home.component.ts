@@ -40,17 +40,20 @@ export class DistributorHomeComponent implements OnInit {
   // }
 
   goBack() {
-    this.location.back();
+    this.router.navigate([sessionStorage.getItem('previousURL')]);
   }
 
   handleBidInput() {
     this.products = this.productService.getProductListWithBidValue(this.bvalue);
   }
-placeBid(product:object)
-{
-  console.log(product);
- // this.router.navigate(['/placebid',{products:JSON.stringify(product)}],{skipLocationChange: true, replaceUrl: false});
-  this.router.navigate(['/placebid'],{queryParams:{products:JSON.stringify(product)},skipLocationChange: true, replaceUrl: false});
 
-}
+  placeBid(product:object) {
+    console.log(product);
+  // this.router.navigate(['/placebid',{products:JSON.stringify(product)}],{skipLocationChange: true, replaceUrl: false});
+    sessionStorage.setItem('previousURL',"/distributor");
+    this.router.navigate(['/placebid'],{queryParams:{products:JSON.stringify(product)},skipLocationChange: true, replaceUrl: false});
+  }
+  setPreviousURL() {
+    sessionStorage.setItem('previousURL',"/distributor");
+  }
 }

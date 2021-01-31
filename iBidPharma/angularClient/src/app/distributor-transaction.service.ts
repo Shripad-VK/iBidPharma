@@ -8,7 +8,7 @@ export class DistributorTransactionService {
 
   private baseUrl='/api';
   constructor(private http:HttpClient) { }
-  getDistributorTransactionById(dist_id:number):Observable<Object>{
+  getDistributorTransactionById(dist_id:number):Observable<Object> {
     return this.http.get(`${this.baseUrl}`+'/transactions/'+dist_id);
   }
 }

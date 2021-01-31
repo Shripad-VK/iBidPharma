@@ -43,11 +43,14 @@ export class ManufacturerHomeComponent implements OnInit {
    }
 
   goBack() {
-    this.location.back();
+    this.router.navigate([sessionStorage.getItem('previousURL')]);
   }
 
   handleBidInput() {
     this.products = this.productService.getManufacturerProductsWithBidValue(this.mid, this.bvalue);
   }
   
+  setPreviousURL() {
+    sessionStorage.setItem('previousURL',"/manufacturer");
+  }
 }

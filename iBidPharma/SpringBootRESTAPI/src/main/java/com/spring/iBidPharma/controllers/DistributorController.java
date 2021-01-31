@@ -75,4 +75,10 @@ public class DistributorController {
 	{
 		return distributorRepository.getDistributorByuid(uid);
 	}
+	@GetMapping("/distributorsbyid/{uid}")
+	public Long getProductsByManufacturerId(@PathVariable (value="uid")Long uid)
+	{
+	    //System.out.println(uid);	  	
+		return distributorRepository.findByuid(uid);
+	}
 }

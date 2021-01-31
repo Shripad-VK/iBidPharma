@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.models.Product;
 import com.spring.iBidPharma.models.User;
 
@@ -24,5 +25,9 @@ import com.spring.iBidPharma.models.User;
 		
 		@Query(value = "SELECT * FROM product WHERE mid = :mid AND min_bvalue <= :bvalue AND max_bvalue >= :bvalue", nativeQuery = true)
 		public List<Product> getManufacturerProductsWithBidValue(@Param("mid") Long mid, @Param("bvalue") Long bvalue);
+		
+		
+		
+		
 	}
 

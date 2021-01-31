@@ -70,6 +70,12 @@ public class BidController {
 	{
 	return  bidRepository.getBid(d_id);
 	}
+	@GetMapping("/manufacturersShowbids/{pid}")
+	public List<Bid> showBidByManufacturerid(@PathVariable (value="pid") Long pid)
+	{
+		System.out.println("\n\n"+pid);
+	return  bidRepository.showManufacturerBids(pid);
 	
+	}
 
 }

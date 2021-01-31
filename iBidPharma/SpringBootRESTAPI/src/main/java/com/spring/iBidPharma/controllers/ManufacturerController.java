@@ -76,7 +76,7 @@ public class ManufacturerController {
 	@GetMapping("/manufacturersbyid/{uid}")
 	public Long getProductsById(@PathVariable (value="uid")Long uid)
 	{
-	  	
+	    //System.out.println(uid);	  	
 		return manufacturerRepository.findByuid(uid);
 	}
 	

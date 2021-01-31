@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute, Router } from '@angular/router';
 import { bid } from 'src/app/bid';
 import {formatDate} from '@angular/common';
 import { DistributorService } from 'src/app/distributor.service';
-
 import { PlaceBidService } from 'src/app/place-bid.service';
-
 @Component({
   selector: 'app-place-bid',
   templateUrl: './place-bid.component.html',
@@ -35,6 +32,7 @@ export class PlaceBidComponent implements OnInit {
             },
       error=>console.log(error));
       this.router.queryParams.subscribe(params=>{this.products=JSON.parse(params['products'])});
+      console.log(this.products.pid);
       this.myDate = formatDate(new Date(), 'yyyy/MM/dd', 'en');
      
   }
@@ -46,7 +44,9 @@ export class PlaceBidComponent implements OnInit {
     this.bid.pid=this.products.pid;
     this.bid.addr_id=this.products.addr_id;
     this.bid.bid_date=this.myDate;
-    this.PlacebidService.createBid(this.bid).subscribe(data=>console.log(data),error=>console.log(error));
+    this.PlacebidService.createBid(this.bid).subscribe(data=>{console.log(data),
+    this.route.navigate(['/distributor']);
+    },error=>console.log(error));
  }
 
 }

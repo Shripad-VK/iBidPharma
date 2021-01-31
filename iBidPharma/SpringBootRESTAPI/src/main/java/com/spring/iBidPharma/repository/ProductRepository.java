@@ -21,7 +21,8 @@ import com.spring.iBidPharma.models.User;
 		//Optional<Product> findAllById(Long mid);
 		@Query(value = "SELECT * FROM product WHERE mid = :mid", nativeQuery = true)
 		public List<Product> getProducts(@Param("mid") Long mid);
-
 		
+		@Query(value = "SELECT * FROM product WHERE mid = :mid AND min_bvalue <= :bvalue AND max_bvalue >= :bvalue", nativeQuery = true)
+		public List<Product> getManufacturerProductsWithBidValue(@Param("mid") Long mid, @Param("bvalue") Long bvalue);
 	}
 

@@ -24,10 +24,9 @@
         <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
         <div class="col"><a routerLink="/bids" >Show Bids</a></div>
         <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
-        <div class="col"><a routerLink = "/addDistributor"> Create Distributor</a></div>
+        <!-- <div class="col"><a routerLink = "/addDistributor"> Create Distributor</a></div> -->
         <div class="col"><a routerLink = "/reportDistributor"> Report Generation </a></div>
-        <a routerLink = "/distributorTransaction"> Transaction History </a> <br/><br/>
-
+        <div class="col"><a routerLink = "/distributorTransaction"> Transaction History </a></div>
         <div class="col"><a routerLink = "/login"> Log Out </a></div>
 </div>
 <div class="row jumbotron">
@@ -61,8 +60,7 @@
                 <th>Product Stock</th>
                 <th>Minimum Bid Value</th>
                 <th>Maximum Bid Value</th>
-                <th>Location</th>
-                <th>Product Image</th>
+                <th>Place Bid</th>
 
           </thead>
           <tbody>
@@ -72,7 +70,7 @@
             <td> {{product.stock}} </td>
             <td> {{product.min_bvalue}} </td>
             <td>  {{product.min_bvalue}} </td>
-            <td>{{product.pimage}}</td>           
+            
             <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
         </tbody>
     </table>
@@ -91,9 +89,10 @@
                 <td>  {{product.max_bvalue}} </td>
                 <td>  {{product.state}} </td>
                 <td> <img src="http://localhost:8080/api/products/image?name={{product.pimage}}" width="100" height="100"></td>                                  
-                <td> <button class="e-info" (click)="placeBid()" style="background-color:skyblue"> Place Bid </button></td>
-            </tbody> -->
-        
+                <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
+             </tr>
+            </tbody> 
+        </table>
     </form> 
 </div>
 

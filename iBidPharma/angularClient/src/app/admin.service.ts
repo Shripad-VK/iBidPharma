@@ -5,12 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PlaceBidService {
+export class AdminService {
+
   private baseUrl='/api';
   constructor(private http:HttpClient) { }
-
-  createBid(bid:Object):Observable<Object>
-  {
-    return this.http.post(`${this.baseUrl}`+'/bid',bid);
+  getAllTransactions():Observable<Object> {
+    return this.http.get(`${this.baseUrl}`+'/transactions');
   }
 }

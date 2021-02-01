@@ -12,4 +12,7 @@ export class BidService {
   getDistributorBidById(d_id:number):Observable<Object>{
     return this.http.get(`${this.baseUrl}`+'/bid/report/'+d_id);
   }
+  getDistributorTransactionById(dist_id:number):Observable<Object>{
+    return this.http.get(`${this.baseUrl}`+'/transactions/'+dist_id);
+  }
 }

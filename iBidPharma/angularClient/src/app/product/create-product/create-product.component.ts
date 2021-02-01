@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ManufacturerService } from 'src/app/manufacturer.service';
 import { Manufacturer } from 'src/manufacturer';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-create-product',
@@ -13,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-product.component.scss']
 })
 export class CreateProductComponent implements OnInit {
-
+  addProductForm : FormGroup;
   product : Product;
   categories : any;
   selectedLevel:any;
@@ -21,7 +22,7 @@ export class CreateProductComponent implements OnInit {
   currentUser:any;
   currentManufacturer:any;
   mid:any;
-  
+  isSubmitted:boolean;
 
   constructor(private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route :Router) { 
     this.categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
@@ -44,12 +45,14 @@ export class CreateProductComponent implements OnInit {
     this.product.mid=this.currentManufacturer.mid;
     this.product.addr_id=this.currentManufacturer.addr_id;
     this.productService.createProduct(this.product).subscribe(data=>{console.log(data);
-      this.route.navigate(['products']);
+      this.route.navigate(['manufacturer']);
     
     },error=>console.error(error));
     this.product = new Product();
   }
   onSubmit(){
+
+    this.isSubmitted=true;
     const uploadData = new FormData();
     uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
     this.product.pimage = this.selectedFile.name;

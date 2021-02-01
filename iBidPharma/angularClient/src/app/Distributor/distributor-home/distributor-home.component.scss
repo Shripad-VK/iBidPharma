@@ -18,7 +18,7 @@ font-size: 15px;
 a {
     background-color:orangered;
     color: white;
-    padding: 1em 1.5em;
+    padding: 0.5em 0.5em;
     margin-top: 20%;
     text-decoration: none;
     text-transform: uppercase;
@@ -27,4 +27,39 @@ a {
     background-color: teal;
     min-height: 660px;
     max-width: 1380px;
+}
+#nav {
+    margin-top: 6%;
+    margin-bottom: 2%;
+}
+#bidFilter {
+    height: 400px;
+    width: 700px;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+}
+#categoryFilter {
+    height: 400px;
+    width: 700px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+#stateFilter {
+    height: 400px;
+    width: 700px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+table {
+    margin-top: 2%;
+    background-color:teal;
+    color: white;
+    padding: 1em 1.5em;
+ }
+ th {
+    background-color:black;
+    color: white;
 }

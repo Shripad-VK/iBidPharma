@@ -7,4 +7,5 @@ export class bid
     bid_date:string;
     addr_id:string;
     stock:number;
+    state:string;
 }

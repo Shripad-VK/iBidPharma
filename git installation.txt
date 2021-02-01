@@ -26,6 +26,9 @@ Run Angular + Spring Boot Project
 4. For running our project : npm start
 5. command for bootstrap installation in angular  :  npm install bootstrap jquery popper.js --save
 
+For PDF Download
+1. npm install jspdf jspdf-autotable faker --save
+
 Port Already in Use :
 1. netstat -ano | findstr 8080
 2. taskkill /F /PID <Process Id>

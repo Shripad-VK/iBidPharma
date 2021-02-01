@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵPipeDefWithMeta } from '@angular/core';
 import { ProductListComponent } from 'src/app/product/product-list/product-list.component';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -7,6 +7,7 @@ import { ProductService } from '../../product.service';
 import { UserService } from '../../user.service';
 import { ManufacturerService } from 'src/app/manufacturer.service';
 import { Location } from '@angular/common';
+import { pid } from 'process';
 
 @Component({
   selector: 'app-manufacturer-home',
@@ -20,6 +21,9 @@ export class ManufacturerHomeComponent implements OnInit {
   currentUser:any;
   uid:number;
   bvalue : number;
+  currentManufacturer:any;
+  currentList:any;
+
   categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   constructor(private productService : ProductService,private router : Router,private manufacturerService:ManufacturerService, private location: Location) { 
   }
@@ -43,11 +47,30 @@ export class ManufacturerHomeComponent implements OnInit {
    }
 
   goBack() {
-    this.location.back();
+    this.router.navigate([sessionStorage.getItem('previousURL')]);
   }
 
   handleBidInput() {
     this.products = this.productService.getManufacturerProductsWithBidValue(this.mid, this.bvalue);
+  }
+
+  // showBids(pid:number)
+  // {
+  //  this.currentManufacturer=JSON.parse(sessionStorage.getItem('currentDistributor'));
+  //   // console.log(this.currentManufacturer.mid);
+  //  this.manufacturerService.showManufacturerBids(pid).subscribe(data=>this.currentList=data,error=>console.log(error));
+ 
+  // }
+
+  showBids(pid:number)
+  {
+    this.router.navigate(['bids',pid] );
+    // ,{queryParams:{products:JSON.stringify(pid)},skipLocationChange: true, replaceUrl: false}
+  }
+  
+  
+  setPreviousURL() {
+    sessionStorage.setItem('previousURL',"/manufacturer");
   }
   
 }

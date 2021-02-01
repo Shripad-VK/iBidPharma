@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.models.Product;
+import com.spring.iBidPharma.models.Transaction;
 
 @Repository
 public interface ManufacturerRepository extends JpaRepository<Manufacturer, Long> {
@@ -19,4 +20,7 @@ public interface ManufacturerRepository extends JpaRepository<Manufacturer, Long
 	
 	@Query(value = "SELECT * FROM manufacturer WHERE uid = :uid", nativeQuery = true)
 	public Manufacturer findManufacturerbyUID(@Param("uid") long uid);
+	
+	
+	
 }

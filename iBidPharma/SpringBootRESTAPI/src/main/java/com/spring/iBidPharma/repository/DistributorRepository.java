@@ -15,5 +15,8 @@ public interface DistributorRepository  extends JpaRepository<Distributor, Long>
 
 	@Query(value = "SELECT * FROM distributor WHERE uid = :uid", nativeQuery = true)
 	public Distributor getDistributorByuid(@Param("uid") Long uid);
+	
+	@Query(value = "SELECT d_id FROM distributor WHERE uid = :uid", nativeQuery = true)
+	public long findByuid(@Param("uid") long uid);
 
 }

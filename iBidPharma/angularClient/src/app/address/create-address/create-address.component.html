@@ -3,7 +3,7 @@
         Add Address
     </div> 
         <div class="addr">
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
    
         <div class="form-group">
             <div class="form-row">
@@ -11,8 +11,14 @@
                  <label for="line1"> Line1 </label>
                  </div>
                  <div class="col">
-                <input type="text" class="form-control" id="line1" required [(ngModel)]="address.line1" name="line1" />
-                  </div>
+                    <p [ngClass]="{ 'has-error': isSubmitted && formControls.line1.errors }">
+                         <input type="text" class="form-control" id="line1" [(ngModel)]="address.line1" name="line1" formControlName="line1" required/>
+                    </p>
+                 </div>
+                 <br/>
+                 <span *ngIf="isSubmitted && formControls.line1.errors" class="help-block">
+                    <span *ngIf="formControls.line1.errors.required">please enter line 1..</span>
+                  </span>
             </div>
         </div>   
 
@@ -22,8 +28,14 @@
              <label for="line2"> Line2 </label>
              </div>
              <div class="col">
-            <input type="text" class="form-control" id="line2" required [(ngModel)]="address.line2" name="line2" />
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.line2.errors }">
+                    <input type="text" class="form-control" id="line2" [(ngModel)]="address.line2" name="line2" formControlName="line2" required/>
+               </p>
               </div>
+              <br/>
+                 <span *ngIf="isSubmitted && formControls.line2.errors" class="help-block">
+                    <span *ngIf="formControls.line2.errors.required">please enter line 2..</span>
+                  </span>
         </div>
     </div>   
 
@@ -34,8 +46,14 @@
             <label for="area"> Area </label>
             </div>
             <div class="col">
-            <input type="text" class="form-control" id="area" required [(ngModel)]="address.area" name="area" />
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.area.errors }">
+                    <input type="text" class="form-control" id="area" [(ngModel)]="address.area" name="area" formControlName="area" required/>
+               </p>
              </div>
+             <br/>
+                 <span *ngIf="isSubmitted && formControls.area.errors" class="help-block">
+                    <span *ngIf="formControls.area.errors.required">please enter area..</span>
+                  </span>
         </div>
     </div>
 
@@ -46,8 +64,14 @@
             <label for="pin_code"> Pincode </label>
             </div>
             <div class="col">
-              <input type="number" class="form-control" id="pin_code" required [(ngModel)]="address.pin_code" name="pin_code" />
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.pin_code.errors }">
+                    <input type="text" class="form-control" id="pin_code" [(ngModel)]="address.pin_code" name="pin_code" formControlName="pin_code" required/>
+               </p>
              </div>
+             <br/>
+                 <span *ngIf="isSubmitted && formControls.pin_code.errors" class="help-block">
+                    <span *ngIf="formControls.pin_code.errors.required">please enter pin_code..</span>
+                  </span>
         </div>
     </div>
 
@@ -58,8 +82,14 @@
             <label for="city"> City </label>
             </div>
             <div class="col">
-            <input type="text" class="form-control" id="city" required [(ngModel)]="address.city" name="city" />
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.city.errors }">
+                    <input type="text" class="form-control" id="city" [(ngModel)]="address.city" name="city" formControlName="city" required/>
+               </p>
             </div>
+            <br/>
+            <span *ngIf="isSubmitted && formControls.city.errors" class="help-block">
+               <span *ngIf="formControls.city.errors.required">please enter city..</span>
+             </span>
         </div>
     </div>
 
@@ -70,8 +100,14 @@
              <label for="state"> State </label>
              </div>
              <div class="col">
-             <input type="text" class="form-control" id="state" required [(ngModel)]="address.state" name="state" />
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }">
+                    <input type="text" class="form-control" id="state" [(ngModel)]="address.state" name="state" formControlName="state" required/>
+               </p>
             </div>
+            <br/>
+            <span *ngIf="isSubmitted && formControls.state.errors" class="help-block">
+               <span *ngIf="formControls.state.errors.required">please enter state..</span>
+             </span>
          </div>
      </div>
 

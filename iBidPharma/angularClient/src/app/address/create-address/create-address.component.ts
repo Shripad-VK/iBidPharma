@@ -7,6 +7,7 @@ import { AddressService } from '../../address.service';
 import { ManufacturerService } from '../../manufacturer.service';
 import { Distributor } from '../../Distributor';
 import { DistributorService } from '../../distributor.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -23,14 +24,37 @@ export class CreateAddressComponent implements OnInit {
   manufacturer:any;
   distributor:any;
   currentUser:any;
-  constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService,private distributorService: DistributorService) { }
-
-  ngOnInit() {
-    this.newAddress();
-    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-    console.log(this.currentUser.utype);
+  addressForm: FormGroup;
+  isSubmitted:boolean;
+  constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService,private distributorService: DistributorService,private formBuilder:FormBuilder) { 
+    this.addressForm=new FormGroup({
+      line1:new FormControl(),
+      line2:new FormControl(),
+      area:new FormControl(),
+      pin_code:new FormControl(),
+      city:new FormControl(),
+      state:new FormControl()
+    });
   }
 
+  ngOnInit() {
+    this.address=new Address();
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+    console.log(this.currentUser.utype);
+    this.addressForm=this.formBuilder.group({
+      line1:['',Validators.required],
+      line2:['',Validators.required],
+      area:['',Validators.required],
+      pin_code:['',Validators.required],
+      city:['',Validators.required],
+      state:['',Validators.required]
+    });
+  }
+
+  get formControls()
+  {
+    return this.addressForm.controls;
+  }
   newAddress():void
   {
     this.address=new Address();
@@ -39,8 +63,27 @@ export class CreateAddressComponent implements OnInit {
     this.utype=this.route.snapshot.params['utype'];
     console.log(this.mid);
   }
+  get line1(){
+    return this.addressForm.get('line1');
+  }
+  get line2(){
+    return this.addressForm.get('line2');
+  }
+  get area(){
+    return this.addressForm.get('area');
+  }
+  get pin_code(){
+    return this.addressForm.get('pin_code');
+  }
+  get city(){
+    return this.addressForm.get('city');
+  }
+  get state(){
+    return this.addressForm.get('state');
+  }
   onSubmit()
   {
+    this.isSubmitted=true;
     this.addressService.createAddress(this.address).subscribe(data=>{this.address=data;
     
     if(this.mid!=0 && this.currentUser.utype=="Manufacturer")

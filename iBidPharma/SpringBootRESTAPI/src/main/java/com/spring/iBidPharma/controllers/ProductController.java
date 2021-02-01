@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.models.Product;
 import com.spring.iBidPharma.repository.ProductRepository;
 
@@ -85,7 +86,6 @@ public class ProductController {
 		fo.write(file.getBytes());
 		fo.close();
 	}
-	
 	
 
 

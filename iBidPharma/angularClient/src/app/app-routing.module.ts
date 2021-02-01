@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'maufacturerProductList',component:MaufacturerProductListComponent},
   {path: 'distributorBidList',component:DistributorBidListComponent},
   {path: 'reportMaufacturer',component:ReportGenerationComponent},
-  {path: 'bids',component:ShowBidsComponent},
+  {path: 'bids/:pid',component:ShowBidsComponent},
   {path:'distributorTransaction',component:DistributorTransactionsComponent},
   {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent},

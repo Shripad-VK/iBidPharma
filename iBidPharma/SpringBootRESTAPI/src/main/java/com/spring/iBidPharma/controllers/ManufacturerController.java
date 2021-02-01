@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.iBidPharma.models.Manufacturer;
+import com.spring.iBidPharma.models.Transaction;
 import com.spring.iBidPharma.repository.ManufacturerRepository;
 
 @RestController
@@ -86,6 +87,8 @@ public class ManufacturerController {
 	    System.out.println(uid);	
 		return manufacturerRepository.findManufacturerbyUID(uid);
 	}
+	
+	
 	
 	
 }

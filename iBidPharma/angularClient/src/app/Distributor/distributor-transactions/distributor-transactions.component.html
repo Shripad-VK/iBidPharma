@@ -1,4 +1,4 @@
-<div class="row container-fluid" id="nav">
+<div class="row container" id="nav">
     <div class="col"><a routerLink="/" (click)="goBack()">Go Back</a></div>
     <div class="col"><a routerLink="/bids" (click)="setPreviousURL()">Show Bids</a></div>
     <div class="col"><a routerLink = "/distributorsList" (click)="setPreviousURL()"> Distributor List </a></div>
@@ -7,25 +7,28 @@
     <div class="col"><a routerLink = "/distributorTransaction" (click)="setPreviousURL()"> Transaction History </a></div>
     <div class="col"><a routerLink = "/login"> Log Out </a></div>
 </div>
-<div class="row jumbotron">
-    <table class="table table-bordered">
-        <thead>
-            <th>Product Name</th>
-            <th>Manufacturer Name</th>
-            <th>Product Category</th>
-            <th>Bid Value</th>
-            <th>Quantity</th>
-            <th>Location</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let transaction of currentList ">
-                <td>{{transaction.pname}}</td>
-                <td>{{transaction.mname}}</td>
-                <td>{{transaction.category}}</td>
-                <td>{{transaction.bvalue}}</td>
-                <td>{{transaction.quantity}}</td>
-                <td>{{transaction.state}}</td>
-            </tr>
-        </tbody>    
-    </table>
+<div class="row jumbotron" style="height: 490px;">
+    <div id="content" #content>
+        <button class="button bg-success btn-lg" (click)="download()">Download PDF</button> <br/>
+        <table class="table table-bordered" id="reportsTable">
+            <thead>
+                <th>Product Name</th>
+                <th>Manufacturer Name</th>
+                <th>Product Category</th>
+                <th>Bid Value</th>
+                <th>Quantity</th>
+                <th>Location</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of currentList ">
+                    <td>{{transaction[1]}}</td>
+                    <td>{{transaction[5]}}</td>
+                    <td>{{transaction[2]}}</td>
+                    <td>{{transaction[3]}}</td>
+                    <td>{{transaction[4]}}</td>
+                    <td>{{transaction[6]}}</td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
 </div>

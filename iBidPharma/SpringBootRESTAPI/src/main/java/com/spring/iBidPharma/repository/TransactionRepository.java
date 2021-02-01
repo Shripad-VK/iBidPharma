@@ -13,6 +13,6 @@ import com.spring.iBidPharma.models.Transaction;
 	@Repository
 	public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 		
-		@Query(value = "SELECT * FROM transaction  WHERE dist_id = :dist_id", nativeQuery = true)
-		public List<Transaction> getTransaction(@Param("dist_id") Long dist_id);
+		@Query(value = "SELECT tid,pname,category,bvalue,quantity,mname,state,tdate FROM transaction  WHERE dist_id = :dist_id", nativeQuery = true)
+		public List<Object> getTransaction(@Param("dist_id") Long dist_id);
 }

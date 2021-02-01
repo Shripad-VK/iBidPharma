@@ -53,4 +53,5 @@ export class ManufacturerHomeComponent implements OnInit {
   setPreviousURL() {
     sessionStorage.setItem('previousURL',"/manufacturer");
   }
+  
 }

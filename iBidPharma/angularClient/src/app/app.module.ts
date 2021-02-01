@@ -36,7 +36,8 @@ import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
-
+import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -74,13 +75,16 @@ import { DistributorTransactionsComponent } from './Distributor/distributor-tran
     ShowBidsComponent,
     DistributorBidListComponent,
     DistributorTransactionsComponent,
+    AdminReportsComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

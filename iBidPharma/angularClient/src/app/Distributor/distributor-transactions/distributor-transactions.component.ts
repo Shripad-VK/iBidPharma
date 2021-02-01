@@ -20,24 +20,6 @@ export class DistributorTransactionsComponent implements OnInit {
   currentDistributor:any;
   currentList:any;
   d_id:number;
-  header : [{
-    "tid": "Transaction ID",
-    "mid": "Manufacturer ID",
-    "mname": "Manufacturer Name",
-    "pid": "Product ID",
-    "pname": "Product Name",
-    "category": "Product Category",
-    "dist_id": "Distributor ID",
-    "dname": "Distributor Name",
-    "bid": "Bid ID",
-    "bvalue": "Bid Value",
-    "quantity": "Quantity",
-    "state": "Location",
-    "tdate": "Transaction Date"
-}];
-  headers: [['Transaction ID', 'Manufacturer ID', 'Manufacturer Name', 'Product ID', 'Product Name', 
-    'Product Category', 'Distributor ID', 'Distributor Name', 'Bid ID', 'Bid Value', 'Quantity', 
-    'Location','Transaction Date']];
 
   ngOnInit() {
     this.currentDistributor=new Distributor();
@@ -92,8 +74,8 @@ export class DistributorTransactionsComponent implements OnInit {
       margin: {
         top: 40
       },
-       head: [['TID', 'Product', 'Category', 'Bid Value', 'Quantity', 'Manufacturer', 
-       'State','Date']],
+       head: [['TID', 'Product', 'Category', 'Bid Value', 'Quantity', 'Manufacturer', 'Distributor',
+       'Location','Date']],
       body: this.currentList,
       theme: 'grid'
       });

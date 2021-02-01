@@ -1,57 +1,28 @@
-
-<app-header> </app-header> 
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-       
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div class="row">
-  <div class="col-md-4">
- 
-
-<div class="wrapper">
-  <div class="sidebar">
-   
-    <ul>
-      <li><a href="#" (click)="onClick()"><i class="fa fa-bars"></i>MENU</a></li>
-      <li><a href="#"><i class="fa fa-fw fa-home"></i>Home</a></li>
-      <li><div class="dropdown">
-        <button class="dropbtn"><i class="fa fa-cog fa-spin"></i>Account</button>
-        <div class="dropdown-content">
-          <a href="#"><i class="fa fa-fw fa-user"></i>Update Account</a>
-          <a href="#"><i class="fa fa-fw fa-user"></i>Change Password</a>
-        </div>
-      </div></li>
-      <li><a href="#"><i class="fa fa-fw fa-file"></i>Report Generation</a></li>
-      <li><a href="#"><i class="fa fa-fw fa-money"></i>Revenue Generation</a></li>
-    </ul>
-  </div>
-  <div class="main_content">
-    <div class ="header">WELCOME</div>
-</div>
+<div class="row container-fluid" id="nav">
+  <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
+  <div class="col"><a routerLink="/bids" (click)="setPreviousURL()">Show Bids</a></div>
+  <div class="col"><a routerLink = "/distributorsList" (click)="setPreviousURL()"> Distributor List </a></div>
+  <!-- <div class="col"><a routerLink = "/manufacturerList" (click)="setPreviousURL()"> Manufacturer :ist </a></div> -->
+  <div class="col"><a routerLink = "/adminTransactions" (click)="setPreviousURL()" routerLinkActive="active"> Admin Generation </a></div>
+  <div class="col"><a routerLink = "/distributorTransaction" (click)="setPreviousURL()"> Report Generation </a></div>
+  <div class="col"><a routerLink = "/login"> Log Out </a></div>
 </div>
 
-      </div>
-<div class="col-md-8" style="background-color: teal;margin-top: 150px;">
+<div class="row jumbotron">
   <table class="table table-bordered">
     <thead>
         <th>User Email</th>
-        <th>Contact No</th>
-        <th>Utype</th>
+        <th>Contact Number</th>
+        <th>User Type</th>
         <th>Action</th>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users ">
-    <td> {{user.email}} </td>
+      <tr *ngFor="let user of users">
+        <td> {{user.email}} </td>
         <td> {{user.contact_no}} </td>
         <td> {{user.utype}} </td>
-        <td> <button class="e-info" (click)="valid(user)" style="background-color:skyblue">valid</button></td>
-     </tr>
+        <td> <button class="btn btn-light" (click)="valid(user)">Authorize</button> </td>
+      </tr>
     </tbody> 
-</table>
-
-
-
+  </table>
 </div>
-</div>
-<app-footer> </app-footer> 

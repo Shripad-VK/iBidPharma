@@ -21,6 +21,7 @@ import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
+import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
 
 
 
@@ -35,7 +36,7 @@ const routes: Routes = [
   {path: 'addAddressManufacturer/:mid', component:CreateAddressComponent},
   {path: 'addAddress/:d_id', component:CreateAddressComponent},
   {path: 'manufacturerHome',component:ManufacturerHomeComponent},
-  {path:  'distributorHome',component:CreateDistributorComponent},
+  {path: 'distributorHome',component:CreateDistributorComponent},
   {path: 'distributorsList', component:DistributorListComponent},
   {path: 'addDistributor',component:CreateDistributorComponent},
   {path: 'adminHome',component:AdminHomeComponent},
@@ -51,6 +52,9 @@ const routes: Routes = [
   {path:'distributorTransaction',component:DistributorTransactionsComponent},
   {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent},
+  // {path: 'adminReports',component:AdminReportsComponent},
+  {path: 'adminTransactions', component:AdminReportsComponent}
+  
 ];
 
 @NgModule({

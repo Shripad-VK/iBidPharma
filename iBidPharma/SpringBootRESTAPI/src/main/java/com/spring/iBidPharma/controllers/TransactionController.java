@@ -22,25 +22,25 @@ public class TransactionController {
 	@Autowired
 	private TransactionRepository transactionRepository;
 
-	@GetMapping("/transaction")
+	@GetMapping("/transactions")
 	public List<Transaction> getAllTransactions(){
 		return transactionRepository.findAll();
 	}
 	
-	@PostMapping("/transaction")
+	@PostMapping("/transactions")
 	public Transaction createTransaction(@RequestBody Transaction transaction)
 	{
 		System.out.println(transaction);
 		return transactionRepository.save(transaction);
 	}
 	
-	@GetMapping("/transaction/{tid}")
+	@GetMapping("/transactions/{tid}")
 	public Transaction getTransactionById(@PathVariable(value="tid")Long tid)
 	{
 		System.out.println(tid);
 		return transactionRepository.findById(tid).orElse(null);
 	}
-	@GetMapping("/transactions/{dist_id}")
+	@GetMapping("/transaction/{dist_id}")
 	public List<Object> gettransactionByManufactureId(@PathVariable (value="dist_id") Long dist_id) {
 		return  transactionRepository.getTransaction(dist_id);
 	}

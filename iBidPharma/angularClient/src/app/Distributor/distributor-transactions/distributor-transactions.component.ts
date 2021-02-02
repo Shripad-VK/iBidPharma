@@ -23,7 +23,7 @@ export class DistributorTransactionsComponent implements OnInit {
 
   ngOnInit() {
     this.currentDistributor=new Distributor();
-    this.currentList=new bid();
+    this.currentList;
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
     console.log(this.currentUser.uid);
     this.getDid();

@@ -40,9 +40,13 @@ public class TransactionController {
 		System.out.println(tid);
 		return transactionRepository.findById(tid).orElse(null);
 	}
-	@GetMapping("/transaction/{dist_id}")
-	public List<Object> gettransactionByManufactureId(@PathVariable (value="dist_id") Long dist_id) {
-		return  transactionRepository.getTransaction(dist_id);
+	@GetMapping("/transactionDistributor/{dist_id}")
+	public List<Object> getTransactionByDistributoreId(@PathVariable (value="dist_id") Long dist_id) {
+		return  transactionRepository.getTransactionsByDistributor(dist_id);
 	}
 	
+	@GetMapping("/transactionManufacturer/{mid}")
+	public List<Object> getTransactionByManufactureId(@PathVariable (value="mid") Long mid) {
+		return  transactionRepository.getTransactionsByManufacturer(mid);
+	}
 }

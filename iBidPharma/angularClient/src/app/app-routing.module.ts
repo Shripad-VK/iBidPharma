@@ -24,7 +24,7 @@ import { DistributorTransactionsComponent } from './Distributor/distributor-tran
 import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
 import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
 import { MailComponent } from './mail/mail.component';
-
+import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
 
 
 
@@ -55,10 +55,10 @@ const routes: Routes = [
   {path:'distributorTransaction',component:DistributorTransactionsComponent},
   {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent},
-  // {path: 'adminReports',component:AdminReportsComponent},
-  {path: 'adminTransactions', component:AdminReportComponent},
-  {path: 'mail',component:MailComponent}
-  
+  {path: 'mail',component:MailComponent},
+  {path: 'reportManufacturer',component:ViewOrderHistoryComponent},
+  {path: 'adminTransactions', component:AdminReportComponent}
+    
 
 ];
 

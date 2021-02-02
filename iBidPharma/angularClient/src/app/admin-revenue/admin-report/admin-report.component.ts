@@ -20,6 +20,8 @@ export class AdminReportComponent implements OnInit {
 
   getTransactions(){
     this.adminService.getAllTransactions().subscribe(data=>this.currentList=data,error=>console.log(error));
+  console.log(this.currentList);
+  
   }
 
   goBack() {

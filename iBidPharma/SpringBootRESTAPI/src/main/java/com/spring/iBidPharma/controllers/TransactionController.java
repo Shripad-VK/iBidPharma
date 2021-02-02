@@ -23,8 +23,8 @@ public class TransactionController {
 	private TransactionRepository transactionRepository;
 
 	@GetMapping("/transactions")
-	public List<Transaction> getAllTransactions(){
-		return transactionRepository.findAll();
+	public List<Object> getAllTransactions(){
+		return transactionRepository.getAllTransactions();
 	}
 	
 	@PostMapping("/transactions")

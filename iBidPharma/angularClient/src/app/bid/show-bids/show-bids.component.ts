@@ -7,14 +7,17 @@ import { DistributorService } from 'src/app/distributor.service';
 import * as _ from "lodash"
 import { ProductService } from '../../product.service';
 import { Distributor } from 'src/app/Distributor';
+import { BidService } from 'src/app/bid.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-show-bids',
   templateUrl: './show-bids.component.html',
   styleUrls: ['./show-bids.component.scss']
 })
 export class ShowBidsComponent implements OnInit {
-
-  constructor(private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router) { }
+  readonly APP_URL = '/api';
+  myresponse: any;
+  constructor(private http: HttpClient,private bidService:BidService,private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router) { }
   currentUser:any;
   product : any;
   currentManufacturer:any;
@@ -92,4 +95,11 @@ getDistributorById(d_id:number)
 
 }
 
+/*chooseBid(id:number)
+{
+  this.route.navigate[('/mail')];
+  this.bidService.deleteBidById(id).subscribe(data=>console.log(data),error=>console.log(error));
+}*/
+
+ 
 }

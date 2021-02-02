@@ -1,7 +1,7 @@
 
 <div>
     <table border="1">
-    <tr><th>DistributorName</th><th>ProductCategory</th><th>ProductName</th><th>BidValue</th><th>Quantity</th><th>Date</th></tr>
+    <tr><th>DistributorName</th><th>ProductCategory</th><th>ProductName</th><th>BidValue</th><th>Quantity</th><th>Date</th><th>Action</th></tr>
    <!-- <tr *ngFor="let bid of currentList ">
         <td>{{distributor.cname}}</td> 
     </tr>-->
@@ -12,6 +12,7 @@
         <td>{{bid.bvalue}}</td>
         <td>{{bid.stock}}</td>
         <td>{{bid.bid_date}}</td>
+        <td> <button (click)="chooseBid(bid.id)"> ChoosBid </button></td>
     </tr>    
 </table>
 <br/>

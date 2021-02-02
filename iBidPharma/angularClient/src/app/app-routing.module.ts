@@ -23,6 +23,7 @@ import { DistributorBidListComponent } from './distributor/distributor-bid-list/
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
 import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
 import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
+import { MailComponent } from './mail/mail.component';
 
 
 
@@ -55,7 +56,8 @@ const routes: Routes = [
   {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent},
   // {path: 'adminReports',component:AdminReportsComponent},
-  {path: 'adminTransactions', component:AdminReportComponent}
+  {path: 'adminTransactions', component:AdminReportComponent},
+  {path: 'mail',component:MailComponent}
   
 
 ];

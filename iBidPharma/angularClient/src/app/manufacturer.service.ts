@@ -38,4 +38,7 @@ export class ManufacturerService {
   {
     return this.http.get(`${this.baseUrl}`+'/manufacturersShowbids/'+pid);
   }
+  getManufacturerTransactions(mid:number):Observable<Object> {
+    return this.http.get(`${this.baseUrl}`+'/transactionManufacturer/'+mid);
+  }
 }

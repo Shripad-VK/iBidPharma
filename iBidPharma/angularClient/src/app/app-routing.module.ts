@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddressListComponent } from './address/address-list/address-list.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+
 import { CreateAddressComponent } from './address/create-address/create-address.component';
 import { CreateDistributorComponent } from './distributor/create-distributor/create-distributor.component';
 import { CreateManufacturerComponent } from './manufacturer/create-manufacturer/create-manufacturer.component';
@@ -21,7 +21,9 @@ import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
-import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
+import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
+import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
+
 
 
 
@@ -53,7 +55,7 @@ const routes: Routes = [
   {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent},
   // {path: 'adminReports',component:AdminReportsComponent},
-  {path: 'adminTransactions', component:AdminReportsComponent}
+  {path: 'adminTransactions', component:AdminReportComponent}
   
 
 ];

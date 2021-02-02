@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BidService } from 'src/app/bid.service';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import { jsPDF } from 'jspdf';
 import { AdminService } from 'src/app/admin.service';
+import { BidService } from 'src/app/bid.service';
 
 @Component({
-  selector: 'app-admin-reports',
-  templateUrl: './admin-reports.component.html',
-  styleUrls: ['./admin-reports.component.scss']
+  selector: 'app-admin-report',
+  templateUrl: './admin-report.component.html',
+  styleUrls: ['./admin-report.component.scss']
 })
-export class AdminReportsComponent implements OnInit {
+export class AdminReportComponent implements OnInit {
+
   currentList:any;
 
   constructor(private adminService:AdminService,private bidservice:BidService,private router:ActivatedRoute,private route:Router) { }
@@ -20,6 +20,8 @@ export class AdminReportsComponent implements OnInit {
 
   getTransactions(){
     this.adminService.getAllTransactions().subscribe(data=>this.currentList=data,error=>console.log(error));
+  console.log(this.currentList);
+  
   }
 
   goBack() {
@@ -59,5 +61,6 @@ export class AdminReportsComponent implements OnInit {
     // below line for Download PDF document  
     doc.save('reports.pdf');
   }
+
 
 }

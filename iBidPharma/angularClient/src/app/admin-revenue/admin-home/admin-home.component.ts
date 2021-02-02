@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as $ from 'jquery'
 import { Observable } from 'rxjs';
 import { User } from 'src/app/user';
+
 import { UserService } from 'src/app/user.service';
 
 @Component({
@@ -24,8 +24,8 @@ export class AdminHomeComponent implements OnInit {
 valid(user:object)
 {
   user["status"]=1;
-  this.userService.updateUserStatus(user["uid"],user).subscribe(data=>{console.log(data),
-  this.route.navigate[('/adminHome')];
+  this.userService.updateUserStatus(user["uid"],user).subscribe(data=>{console.log(data);
+ 
 }
 ,error=>console.log(error));
 }

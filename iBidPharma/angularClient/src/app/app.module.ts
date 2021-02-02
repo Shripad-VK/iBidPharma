@@ -16,10 +16,9 @@ import { AddressListComponent } from './address/address-list/address-list.compon
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
 import { DistributorListComponent } from './distributor/distributor-list/distributor-list.component';
 import { CreateDistributorComponent } from './distributor/create-distributor/create-distributor.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { UpdateAccountComponent } from './admin/update-account/update-account.component';
+
 import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
-import { RevenueManagementComponent } from './admin/revenue-management/revenue-management.component';
+
 import { SearchManufacturerComponent } from './distributor/search-manufacturer/search-manufacturer.component';
 import { SearchProductComponent } from './distributor/search-product/search-product.component';
 import { ViewTransactionHistoryComponent } from './distributor/view-transaction-history/view-transaction-history.component';
@@ -36,8 +35,10 @@ import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
-import { AdminReportsComponent } from './admin/admin-reports/admin-reports.component';
+
 import { RouterModule } from '@angular/router';
+import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
+import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
 
 
 @NgModule({
@@ -58,9 +59,8 @@ import { RouterModule } from '@angular/router';
     DistributorListComponent,
     CreateDistributorComponent,
     AdminHomeComponent,
-    UpdateAccountComponent,
     ReportGenerationComponent,
-    RevenueManagementComponent,
+
     SearchManufacturerComponent,
     SearchProductComponent,
     ViewTransactionHistoryComponent,
@@ -75,7 +75,8 @@ import { RouterModule } from '@angular/router';
     ShowBidsComponent,
     DistributorBidListComponent,
     DistributorTransactionsComponent,
-    AdminReportsComponent,
+  
+    AdminReportComponent,
   ],
   
   imports: [

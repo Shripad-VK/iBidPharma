@@ -90,7 +90,9 @@ getProductsById(pid:number)
 
 chooseBid(id:number)
 {
-  this.route.navigate[('/mail')];
+  alert(id);
+  this.route.navigate[('mail')];
+ 
  // this.bidService.deleteBidById(id).subscribe(data=>console.log(data),error=>console.log(error));
 }
 

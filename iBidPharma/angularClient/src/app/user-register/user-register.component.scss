@@ -16,7 +16,7 @@
         float:right;
     }
     .name{
-        background: rgb(23, 27, 31);
+        background: rgb(133, 155, 177);
         margin-top:20px;
         margin-left:100px;
        
@@ -25,9 +25,12 @@
         //font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .heading{
-        color:white;
+        color:rgb(255, 255, 255);
         font-weight: 500;
-        font-size: 30px;
+        font-size: 15px;
         text-align: center;
     }
-    
+    span{
+        color:red;
+        font-weight:600px;
+    }

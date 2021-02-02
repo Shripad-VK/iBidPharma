@@ -3,9 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ManufacturerService } from 'src/app/manufacturer.service';
 import { Manufacturer } from 'src/manufacturer';
 import { DistributorService } from 'src/app/distributor.service';
-import { Observable } from 'rxjs';
-import { Product } from '../../product';
+
+import * as _ from "lodash"
 import { ProductService } from '../../product.service';
+import { Distributor } from 'src/app/Distributor';
 @Component({
   selector: 'app-show-bids',
   templateUrl: './show-bids.component.html',
@@ -23,6 +24,10 @@ export class ShowBidsComponent implements OnInit {
   pid:number;
   d_id:number;
   distributornm:any;
+  i:number;
+  size:number;
+  disName:any[];
+  disObject:any;
   ngOnInit() {
     //this.currentManufacturer=new Manufacturer();
     //this.currentList=new bid();
@@ -47,14 +52,32 @@ export class ShowBidsComponent implements OnInit {
   }
 
   getManufacturerBids(mid:number){
-    
+   
   this.currentManufacturer=JSON.parse(sessionStorage.getItem('currentDistributor'));
   this.manufacturerService.showManufacturerBids(mid).subscribe(
-    data=>{
-      console.log(data);
-      this.currentList=data,
+    (data:any)=>{
+      this.size= data.length;
+      console.log(this.size);
+      this.currentList=data;
+      console.log(this.currentList);
+    for(this.i=0;this.i<this.size;this.i++)
+    {
+      console.log(this.currentList[this.i].d_id);
+      this.distributorService.getDistributorrById(this.currentList[this.i].d_id).subscribe(data=>{
+        this.disObject=new Distributor();
+        this.disObject=data;
+        alert(this.disObject.cname);
+        this.disName[this.i]=this.disObject.cname;
+      
+      })
+    }
+
     error=>console.log(error)
     });
+   
+   
+    console.log(this.size);
+  
   
 }
 

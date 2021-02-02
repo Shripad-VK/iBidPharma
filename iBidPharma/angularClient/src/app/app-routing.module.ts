@@ -55,12 +55,7 @@ const routes: Routes = [
   // {path: 'adminReports',component:AdminReportsComponent},
   {path: 'adminTransactions', component:AdminReportsComponent}
   
-<<<<<<< HEAD
 
-  {path:'placebid/:product',component:PlaceBidComponent},
-  {path:'placebid',component:PlaceBidComponent}
-=======
->>>>>>> f7fefb9bd6f20ef53395498e30798c18ed3f28d9
 ];
 
 @NgModule({

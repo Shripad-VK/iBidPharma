@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { bid } from 'src/app/bid';
-<<<<<<< HEAD
-=======
 import {formatDate} from '@angular/common';
 import { DistributorService } from 'src/app/distributor.service';
->>>>>>> f7fefb9bd6f20ef53395498e30798c18ed3f28d9
 import { PlaceBidService } from 'src/app/place-bid.service';
 @Component({
   selector: 'app-place-bid',

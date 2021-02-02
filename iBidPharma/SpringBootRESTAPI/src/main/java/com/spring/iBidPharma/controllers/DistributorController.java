@@ -39,7 +39,7 @@ public class DistributorController {
 		return distributorRepository.save(distributor);
 		
 	}
-	@GetMapping("/distributors/{mid}")
+	@GetMapping("/distributors/{d_id}")
 	public Distributor getDistributorById(@PathVariable (value="d_id")Long d_id)
 	{
 		return distributorRepository.findById(d_id).orElse(null);

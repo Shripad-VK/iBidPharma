@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@types/lodash": "^4.14.168",
     "bootstrap": "^4.6.0",
     "faker": "^5.2.0",
     "jquery": "^3.5.1",

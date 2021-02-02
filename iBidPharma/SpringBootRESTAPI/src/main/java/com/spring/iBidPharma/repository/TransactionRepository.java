@@ -15,4 +15,7 @@ import com.spring.iBidPharma.models.Transaction;
 		
 		@Query(value = "SELECT tid,pname,category,bvalue,quantity,mname,dname,state,tdate FROM transaction  WHERE dist_id = :dist_id", nativeQuery = true)
 		public List<Object> getTransaction(@Param("dist_id") Long dist_id);
-}
+
+		@Query(value = "SELECT tid,pname,category,bvalue,quantity,mname,dname,state,tdate FROM transaction", nativeQuery = true)
+		public List<Object> getAllTransactions();
+	}

@@ -32,19 +32,11 @@ export class ShowBidsComponent implements OnInit {
   disName:any[];
   disObject:any;
   ngOnInit() {
-    //this.currentManufacturer=new Manufacturer();
-    //this.currentList=new bid();
-    this.pid=this.router.snapshot.params['pid'];
-    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-   // alert(this.currentUser.uid);
-  this.getMid(this.currentUser.uid);
-  //alert(this.pid);
-
-   this.getProductsById(this.pid);
-
-    
-
-  }
+        this.pid=this.router.snapshot.params['pid'];
+        this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
+        this.getMid(this.currentUser.uid);
+        this.getProductsById(this.pid);
+}
 
   getMid(uid:number) {
     this.manufacturerService.getManufactureByUId(uid).subscribe(data=> {
@@ -69,12 +61,13 @@ export class ShowBidsComponent implements OnInit {
       this.distributorService.getDistributorrById(this.currentList[this.i].d_id).subscribe(data=>{
         this.disObject=new Distributor();
         this.disObject=data;
-        alert(this.disObject.cname);
+        //alert(this.disObject.cname);
         this.disName[this.i]=this.disObject.cname;
+       // alert(this.disName);
       
       })
     }
-
+   
     error=>console.log(error)
     });
    
@@ -89,17 +82,17 @@ getProductsById(pid:number)
  this.productService.getProductById(pid).subscribe(data=>this.product=data,error=>console.log(error));
 
 }
-getDistributorById(d_id:number)
-{
- this.distributorService.getDistributorrById(d_id).subscribe(data=>this.distributornm=data,error=>console.log(error));
+// getDistributorById(d_id:number)
+// {
+//  this.distributorService.getDistributorrById(d_id).subscribe(data=>this.distributornm=data,error=>console.log(error));
 
-}
+// }
 
-/*chooseBid(id:number)
+chooseBid(id:number)
 {
   this.route.navigate[('/mail')];
-  this.bidService.deleteBidById(id).subscribe(data=>console.log(data),error=>console.log(error));
-}*/
+ // this.bidService.deleteBidById(id).subscribe(data=>console.log(data),error=>console.log(error));
+}
 
  
 }

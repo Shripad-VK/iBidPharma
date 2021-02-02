@@ -41,8 +41,9 @@ export class DistributorTransactionsComponent implements OnInit {
   }
   getTransaction() {
    this.currentDistributor=JSON.parse(sessionStorage.getItem('currentDistributor'));
-   console.log(this.currentDistributor.d_id);
-  this.distributorTransactionservice.getDistributorTransactionById(this.currentDistributor.d_id)
+   this.d_id = this.currentDistributor.d_id;
+   console.log(this.d_id);
+  this.distributorTransactionservice.getDistributorTransactionById(this.d_id)
                   .subscribe(data=>this.currentList=data,error=>console.log(error));
    
  

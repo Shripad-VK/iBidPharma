@@ -3,7 +3,7 @@
 <div class="registerForm" style="height: 500px;">
     <h1 class="display-4" style="text-align: center;"> REGISTER </h1> 
         <div class="name">
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" [formGroup]="regForm">
 
     <div class="form-group">
         <div class="form-row">
@@ -11,10 +11,21 @@
             <label for="cname"> Email Address </label>
             </div>
             <div class="col">
-             <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email" />
-             </div>
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+                 <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email" formControlName="email" />
+                    </p>
+                </div>
         </div>
     </div>
+
+<span *ngIf="isSubmitted && formControls.email.errors"  class="error-messages">
+    <span *ngIf="formControls.email.errors.required">Email is required!!!</span>
+  </span>
+  <span *ngIf="email.errors?.email">
+     Email is not valid!!!
+ </span> 
+
+
 
     <div class="form-group">
         <div class="form-row">
@@ -22,10 +33,22 @@
             <label for="password"> Password </label>
             </div>
             <div class="col">
-             <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" />
-             </div>
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" formControlName="password" />
+                </p>
+            </div>
         </div>
     </div>
+
+    <span *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <span *ngIf="formControls.email.errors.required">Password is required!!!</span>
+      </span>
+    <span *ngIf="password.errors?.minlength">
+        Password must be at least 5 characters long.
+      </span> 
+      <span *ngIf="password.errors?.maxLength">
+        Password must be at most 10 characters long.
+      </span> 
 
     <div class="form-group">
         <div class="form-row">
@@ -33,11 +56,26 @@
             <label for="confirmPassword">Confirm Password </label>
             </div>
             <div class="col">
-             <input type="password" class="form-control" id="password" name="confirmPassword" />
-             </div>
+                <p [ngClass]="{ 'has-error': isSubmitted && formControls.confirmPassword.errors }">
+                    <input 
+                    formControlName="confirmPassword"
+                    id="confirmPassword" 
+                    type="password" 
+                    class="form-control">
+            </p>
+            </div>
         </div>
     </div>
-
+    
+    <!-- <span *ngIf="isSubmitted && formControls.confirmPassword.errors" class="help-block">
+        <span *ngIf="formControls.confirmPassword.errors.required">Please Confirm your password!!!</span>
+      </span> -->
+      
+      <span *ngIf="formControls.confirmPassword.touched && formControls.confirmPassword.invalid" >
+        <span *ngIf="formControls.confirmPassword.errors.required">Password is required.</span>
+        <span *ngIf="formControls.confirmPassword.errors.confirmedValidator">Password and Confirm Password must be match.</span>
+    </span>
+   
 
     <div class="form-group">
         <div class="form-row">
@@ -45,23 +83,42 @@
             <label for="contact_no">Contact Number </label>
             </div>
             <div class="col">
-             <input type="number" class="form-control" id="contact_no" required [(ngModel)]="user.contact_no" name="contact_no" />
-             </div>
+             <p [ngClass]="{ 'has-error': isSubmitted && formControls.contact_no.errors }">
+             <input type="text" class="form-control" id="contact_no" required [(ngModel)]="user.contact_no" name="contact_no" formControlName="contact_no" />
+            </p> 
+            </div>
         </div>
     </div>
+    <span *ngIf="isSubmitted && formControls.contact_no.errors" class="help-block">
+        <span *ngIf="formControls.contact_no.errors.required">Contact number is required!!!</span>
+      </span>
+      <span *ngIf="formControls.contact_no.touched && formControls.contact_no.invalid" >
+        <!-- <span *ngIf="formControls.contact_no.errors.required">Mobile Number is required.</span>class="alert alert-danger" -->
+        <span *ngIf="formControls.contact_no.errors.pattern">Please, Enter 10 digit Mobile Number.</span>
+      </span>
+
+
+
 
     <div class="form-group">
         <div class="form-row">
             <div class="col">
             <label for="utype">User Type</label>
             </div>
-            <div class="col">
-                <select [(ngModel)]="user.utype" name="utype">
-                    <option *ngFor="let u of utype" [ngValue]="u"> {{u}} </option>
+            <div class="col">            
+                 <p [ngClass]="{ 'has-error': isSubmitted && formControls.utype.errors }">
+                 <select required [(ngModel)]="user.utype" name="utype" id="utype" formControlName="utype" class="form-control" >
+                    <option *ngFor="let u of utypes" [ngValue]="u" > {{u}} </option>
                 </select>
+                </p>
              </div>
         </div>
     </div>
+    <span *ngIf="isSubmitted && formControls.utype.errors" class="help-block">
+        <span *ngIf="formControls.utype.errors.required">UserType is required!!!</span>
+      </span>
+
+
     <div class="form-group">
         <div class="form-row" style="margin-top: 2%;">
             <div class="col"><input class="btn btn-success btn-lg" type="submit" value="Next" style="margin-left: 15%;"></div>

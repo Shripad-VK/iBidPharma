@@ -1,57 +1,29 @@
-
-.information{
-font-weight: 500;
-font-size: 15px;
-
-}
-// div {
-//    // opacity: 0.8;
-//   //  height: 300px;
-//      width: 500px;
-//     margin-top: 10%;
-//    margin-left: 50%;
-//     background-color:gray;
-//     color:white;
-// }
-// .jumbotron{
- //   float:right;}
 a {
-    background-color:orangered;
+    background-color:teal;
     color: white;
     padding: 0.5em 0.5em;
     margin-top: 20%;
     text-decoration: none;
     text-transform: uppercase;
 }
-#pageBody {
-    background-color: teal;
-    min-height: 660px;
-    max-width: 1380px;
-}
 #nav {
     margin-top: 6%;
     margin-bottom: 2%;
+    display: flex;
 }
 #bidFilter {
-    height: 400px;
-    width: 700px;
-    position: absolute;
-    top: 20%;
-    left: 0%;
-}
+    float: left;
+    width: 200px;
+ }
 #categoryFilter {
-    height: 400px;
-    width: 700px;
-    position: absolute;
-    top: 20%;
-    left: 20%;
+    float: left;
+    width: 250px;
+    margin-left: 5%;
 }
 #stateFilter {
-    height: 400px;
-    width: 700px;
-    position: absolute;
-    top: 20%;
-    left: 40%;
+    float: left;
+    width: 250px;
+    margin-left: 5%;
 }
 table {
     margin-top: 2%;
@@ -62,4 +34,9 @@ table {
  th {
     background-color:black;
     color: white;
+}
+#clearButton {
+    margin-left: 45%;
+    margin-top: 60%;
+    padding: 0.5rem 0.75rem;
 }

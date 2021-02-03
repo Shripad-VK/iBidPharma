@@ -32,7 +32,7 @@ const routes: Routes = [
   {path :'products', component:ProductListComponent},
   {path: 'addProduct', component:CreateProductComponent},
   {path: 'updateProduct/:pid', component:UpdateProductComponent},
-  {path: 'manufacturers', component:ManufacturerListComponent},
+  {path: 'manufacturerList', component:ManufacturerListComponent},
   {path: 'addManufacturer',component:CreateManufacturerComponent},
   {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent},
   {path: 'address', component:AddressListComponent},

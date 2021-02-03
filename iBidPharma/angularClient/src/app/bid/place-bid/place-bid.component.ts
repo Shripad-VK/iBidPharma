@@ -4,6 +4,8 @@ import { bid } from 'src/app/bid';
 import {formatDate} from '@angular/common';
 import { DistributorService } from 'src/app/distributor.service';
 import { PlaceBidService } from 'src/app/place-bid.service';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-place-bid',
   templateUrl: './place-bid.component.html',
@@ -11,7 +13,7 @@ import { PlaceBidService } from 'src/app/place-bid.service';
 })
 export class PlaceBidComponent implements OnInit {
 
-  constructor(private PlacebidService:PlaceBidService, private distributorService:DistributorService,private router:ActivatedRoute,private route: Router,private placeBidService:PlaceBidService) { }
+  constructor(private PlacebidService:PlaceBidService, private distributorService:DistributorService,private router:ActivatedRoute,private route: Router,private placeBidService:PlaceBidService, private location: Location) { }
   bid:any;
   addr_id:number;
   pid:number;
@@ -36,7 +38,10 @@ export class PlaceBidComponent implements OnInit {
       this.myDate = formatDate(new Date(), 'yyyy/MM/dd', 'en');
      
   }
- 
+
+  logOut() {  
+    sessionStorage.clear();
+  }
 
   onSubmit(){
 
@@ -49,5 +54,9 @@ export class PlaceBidComponent implements OnInit {
     this.route.navigate(['/distributor']);
     },error=>console.log(error));
  }
+
+ goBack() {
+    this.route.navigate(['/distributor']);
+}
 
 }

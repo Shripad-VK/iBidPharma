@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ManufacturerService } from 'src/app/manufacturer.service';
+import { Location } from '@angular/common';
 import { Manufacturer } from 'src/manufacturer';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
@@ -17,7 +18,7 @@ export class ViewOrderHistoryComponent implements OnInit {
   currentList:any;
   mid:number;
 
-  constructor(private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router) { }
+  constructor(private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router,private location: Location) { }
 
     ngOnInit() {
     this.currentManufacturer=new Manufacturer();
@@ -47,13 +48,8 @@ export class ViewOrderHistoryComponent implements OnInit {
  }
  
   goBack() {
-    this.route.navigate([sessionStorage.getItem('previousURL')]);
+    this.location.back();
   }
-
-  setPreviousURL() {
-    sessionStorage.setItem('previousURL',"/distributorTransaction");
-  }
-  
 
   download() {
     let doc = new jsPDF();

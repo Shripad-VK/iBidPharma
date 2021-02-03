@@ -1,59 +1,33 @@
-<!-- <div id="pageBody" class="row container-fluid-100">
-    <div class="col-3 mt-2 text-center"><br/><br/><br/>
-        <button type="button" class="btn btn-dark btn-lg" (click)="someFunc()">Go Back</button><br/><br/>
-        <a routerLink = "/list"> Update Account </a> <br/><br/><br/>
-        <a routerLink = "/entry"> Browse Bids </a> <br/><br/><br/>
-        <a routerLink = "/update"> Report Generation </a> <br/><br/><br/>
-        <a routerLink = "/login" (click)="logOut()"> Log Out </a>            
-    </div>
-    <div class="col ml-2"> -->
-        
-        <!-- <div class="col-4 mt-4"><br/> 
-            <button type="button" class="btn btn-dark btn-lg" (click)="goBack()">Go Back</button><br/><br/><br/>
-            <a routerLink="/bids" >Show Bids</a> <br/><br/>
-            <a routerLink = "/distributorsList"> Distributor List </a> <br/><br/>
-            <a routerLink = "/addDistributor"> Create Distributor</a> <br/><br/>
-            <a routerLink = "/reportDistributor"> Report Generation </a> <br/><br/>
-            <a routerLink = "/distributorTransaction"> Transaction History </a> <br/><br/>
-            
-            <a routerLink = "/login"> Log Out </a>             
-        </div>
-    
-    <div class="jumbotron"> -->
 <div class="row container-fluid" id="nav">
-        <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
-        <div class="col"><a routerLink="/bids" (click)="setPreviousURL()">Show Bids</a></div>
-        <div class="col"><a routerLink = "/distributorsList" (click)="setPreviousURL()"> Distributor List </a></div>
-        <!-- <div class="col"><a routerLink = "/addDistributor"> Create Distributor</a></div> -->
-        <div class="col"><a routerLink = "/reportDistributor" (click)="setPreviousURL()"> Report Generation </a></div>
-        <div class="col"><a routerLink = "/distributorTransaction" (click)="setPreviousURL()"> Transaction History </a></div>
-        <div class="col"><a routerLink = "/login"> Log Out </a></div>
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink="/bids">Show Bids</a></div>
+    <div class="col"><a routerLink = "/manufacturerList"> Manufacturer List </a></div>
+    <div class="col"><a routerLink = "/distributorTransaction"> Transaction History </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
 </div>
 
-<div class="row jumbotron">
-    <div id="bidFilter" class="col-3 form-group" style="width: 200px;">
+<div class="jumbotron">
+    <div id="bidFilter" class="form-group" style="width: 200px;">
         <strong>Bid Value</strong>              
-        <div class="row">
-            <div class="col-10"><input type="number" class="form-control " id="bvalue" required [(ngModel)]="bvalue" name="bvalue" (change)="handleBidInput()"/></div>
-            <div class="col-1"><button type="button" class="btn btn-dark btn-sm" (click)="ngOnInit()">X</button></div>
-        </div>
+            <input type="number" class="form-control " id="bvalue" required [(ngModel)]="bvalue" name="bvalue" (change)="handleBidInput()" style="float: left;"/>        
     </div>
-
+    <div style="float: left;"><button type="button" class="btn btn-dark btn-sm" (click)="ngOnInit()" id="clearButton"><b>X</b></button></div>
     <form novalidate #form="ngForm">
-        <div id="categoryFilter" class="col-3 form-group" style="width: 200px;">
+        <div id="categoryFilter" class="form-group" style="width: 200px;">
             <strong>Category</strong>
             <select class="form-control" name="category" [(ngModel)]="category">
                 <option></option>      
                 <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
             </select>
         </div>
-        <div id="stateFilter" class="col-3 form-group">
+        <div id="stateFilter" class="form-group">
             <strong>State</strong>
             <select class="form-control" name="state" [(ngModel)]="state">
                 <option></option> 
                 <option *ngFor="let state of states" [value]="state">{{ state }}</option>
             </select>
         </div>
+        <br style="clear: left;" />
         <table class="table table-bordered">
             <thead>
                 <th>Product Name</th>
@@ -74,7 +48,7 @@
                 <td>  {{product.max_bvalue}} </td>
                 <td>  {{product.state}} </td>
                 <td> <img src="http://localhost:8080/api/products/image?name={{product.pimage}}" width="100" height="100"></td>                                  
-                <td> <button class="e-info" (click)="placeBid(product)" style="background-color:skyblue"> Place Bid </button></td>
+                <td> <button class="btn btn-primary" (click)="placeBid(product)"> Place Bid </button></td>
              </tr>
             </tbody> 
         </table>

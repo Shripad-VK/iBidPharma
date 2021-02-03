@@ -23,7 +23,8 @@ import { DistributorBidListComponent } from './distributor/distributor-bid-list/
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
 import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
 import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
-
+import { MailComponent } from './mail/mail.component';
+import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
 
 
 
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path :'products', component:ProductListComponent},
   {path: 'addProduct', component:CreateProductComponent},
   {path: 'updateProduct/:pid', component:UpdateProductComponent},
-  {path: 'manufacturers', component:ManufacturerListComponent},
+  {path: 'manufacturerList', component:ManufacturerListComponent},
   {path: 'addManufacturer',component:CreateManufacturerComponent},
   {path: 'updateManufacturer/:mid',component:UpdateManufacturerComponent},
   {path: 'address', component:AddressListComponent},
@@ -54,9 +55,10 @@ const routes: Routes = [
   {path:'distributorTransaction',component:DistributorTransactionsComponent},
   {path:'placebid/:products',component:PlaceBidComponent},
   {path: 'placebid',component:PlaceBidComponent},
-  // {path: 'adminReports',component:AdminReportsComponent},
+  {path: 'mail',component:MailComponent},
+  {path: 'reportManufacturer',component:ViewOrderHistoryComponent},
   {path: 'adminTransactions', component:AdminReportComponent}
-  
+    
 
 ];
 

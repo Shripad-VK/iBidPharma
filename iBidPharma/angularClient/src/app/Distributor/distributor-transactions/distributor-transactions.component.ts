@@ -5,6 +5,7 @@ import { BidService } from 'src/app/bid.service';
 import { Distributor } from 'src/app/Distributor';
 import { DistributorTransactionService } from 'src/app/distributor-transaction.service';
 import { DistributorService } from 'src/app/distributor.service';
+import { Location } from '@angular/common';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
@@ -15,53 +16,32 @@ import 'jspdf-autotable';
 })
 export class DistributorTransactionsComponent implements OnInit {
 
-  constructor(private distributorService:DistributorService,private bidservice:BidService,private distributorTransactionservice:DistributorTransactionService,private router:ActivatedRoute,private route:Router) { }
+  constructor(private distributorService:DistributorService,private bidservice:BidService,private distributorTransactionservice:DistributorTransactionService,private router:ActivatedRoute,private route:Router,private location: Location) { }
   currentUser:any;
   currentDistributor:any;
   currentList:any;
   d_id:number;
-
   ngOnInit() {
     this.currentDistributor=new Distributor();
-    this.currentList=new bid();
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-    console.log(this.currentUser.uid);
-    this.getDid();
     this.getTransaction();
-    
   }
-  getDid() {
-   this.distributorService.getDistributorByUId(this.currentUser.uid)
-   .subscribe(data=>{console.log(data);
-             this.currentDistributor = JSON.stringify(data);
-             sessionStorage.setItem('currentDistributor', this.currentDistributor);
-           },
-     error=>console.log(error));
-     
-  }
+
   getTransaction() {
    this.currentDistributor=JSON.parse(sessionStorage.getItem('currentDistributor'));
    this.d_id = this.currentDistributor.d_id;
    console.log(this.d_id);
   this.distributorTransactionservice.getDistributorTransactionById(this.d_id)
-                  .subscribe(data=>this.currentList=data,error=>console.log(error));
-   
- 
+  .subscribe(data=>this.currentList=data,error=>console.log(error));
  }
- 
-  goBack() {
-    this.route.navigate([sessionStorage.getItem('previousURL')]);
-  }
-
-  setPreviousURL() {
-    sessionStorage.setItem('previousURL',"/distributorTransaction");
-  }
   
+  goBack() {
+    this.location.back();
+  }
 
   download() {
     let doc = new jsPDF();
-    //var doc = new jsPDF();
-   
+ 
     doc.setFontSize(20);
     doc.text('Transaction Details', 30, 20);
     doc.setFontSize(14);
@@ -81,10 +61,14 @@ export class DistributorTransactionsComponent implements OnInit {
       theme: 'grid'
       });
 
-    // below line for Open PDF document in new tab
+    // Open PDF document in new tab
     doc.output('dataurlnewwindow');
-    // below line for Download PDF document  
+    // Download PDF  
     doc.save('reports.pdf');
   }
 
+  logOut() {  
+    sessionStorage.clear();
+  }
+  
 }

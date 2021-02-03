@@ -43,11 +43,7 @@ isSubmitted:boolean;
   get cname() {
     return this.manufacturerLoginForm.get('cname');
   } 
-  newManufacturer():void { 
-    this.manufacturer=new Manufacturer();
-   /* this.manufacturer.cname=undefined;
-    console.log(this.manufacturer);*/
-  }
+  
 
   onSubmit()
   {

@@ -1,32 +1,26 @@
-
-
-
 <div class="row container-fluid" id="nav">
-    <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
-    <div class="col"><a routerLink="/bids" (click)="setPreviousURL()">Show Bids</a></div>
-    <div class="col"><a routerLink = "/distributorsList" (click)="setPreviousURL()"> Distributor List </a></div>
-    <div class="col"><a routerLink = "/addDistributor" (click)="setPreviousURL()"> Create Distributor</a></div>
-    <div class="col"><a routerLink = "/reportDistributor" (click)="setPreviousURL()"> Report Generation </a></div>
-    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
+    <div class="col"><a routerLink = "/addProduct"> Create Product</a></div>
+    <div class="col"><a routerLink = "/reportManufacturer"> Report Generation </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
 </div>
 
-<div class="row jumbotron">
-    <div id="bidFilter" class="col-3 form-group" style="width: 200px;">
+<div class="jumbotron">
+    <div id="bidFilter" class="form-group" style="width: 200px;">
         <strong>Bid Value</strong>              
-        <div class="row">
-            <div class="col-10"><input type="number" class="form-control " id="bvalue" required [(ngModel)]="bvalue" name="bvalue" (change)="handleBidInput()"/></div>
-            <div class="col-1"><button type="button" class="btn btn-dark btn-sm" (click)="ngOnInit()">X</button></div>
-        </div>
+            <input type="number" class="form-control " id="bvalue" required [(ngModel)]="bvalue" name="bvalue" (change)="handleBidInput()" style="float: left;"/>        
     </div>
-
+    <div style="float: left;"><button type="button" class="btn btn-dark btn-sm" (click)="ngOnInit()" id="clearButton"><b>X</b></button></div>
     <form novalidate #form="ngForm">
-        <div id="categoryFilter" class="col-3 form-group" style="width: 200px;">
+        <div id="categoryFilter" class="form-group" style="width: 200px;">
             <strong>Category</strong>
             <select class="form-control" name="category" [(ngModel)]="category">
                 <option></option>      
                 <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
             </select>
         </div>
+        <br style="clear: left;" />
         <table class="table table-bordered">
             <thead>
               <th>Product Name</th>

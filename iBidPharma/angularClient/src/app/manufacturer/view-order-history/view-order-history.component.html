@@ -1,1 +1,33 @@
-<p>view-order-history works!</p>
+<div class="row container-fluid" id="nav">
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
+    <div class="col"><a routerLink = "/addProduct"> Create Product</a></div>
+    <div class="col"><a routerLink = "/reportManufacturer"> Report Generation </a></div>
+    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+</div>
+
+<div class="jumbotron" style="height: 500px;">
+    <div id="content" #content>
+        <button class="button bg-success btn-lg" (click)="download()">Download PDF</button> <br/>
+        <table class="table table-bordered" id="reportsTable">
+            <thead>
+                <th>Product Name</th>
+                <th>Manufacturer Name</th>
+                <th>Product Category</th>
+                <th>Bid Value</th>
+                <th>Quantity</th>
+                <th>Location</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of currentList ">
+                    <td>{{transaction[1]}}</td>
+                    <td>{{transaction[5]}}</td>
+                    <td>{{transaction[2]}}</td>
+                    <td>{{transaction[3]}}</td>
+                    <td>{{transaction[4]}}</td>
+                    <td>{{transaction[7]}}</td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+</div>

@@ -85,7 +85,7 @@
             </div>
             <div class="col">
              <p [ngClass]="{ 'has-error': isSubmitted && formControls.contact_no.errors }">
-             <input type="number" class="form-control" id="contact_no" required [(ngModel)]="user.contact_no" name="contact_no" formControlName="contact_no" />
+             <input type="text" class="form-control" id="contact_no" required [(ngModel)]="user.contact_no" name="contact_no" formControlName="contact_no" />
             </p> 
             </div>
         </div>
@@ -109,7 +109,7 @@
             <div class="col">            
                  <p [ngClass]="{ 'has-error': isSubmitted && formControls.utype.errors }">
                  <select required [(ngModel)]="user.utype" name="utype" id="utype" formControlName="utype" class="form-control" >
-                    <option *ngFor="let u of utype" [ngValue]="u" > {{u}} </option>
+                    <option *ngFor="let u of utypes" [ngValue]="u" > {{u}} </option>
                 </select>
                 </p>
              </div>

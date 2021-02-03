@@ -58,4 +58,11 @@ public class UserController {
 		users.setUtype(user.getUtype());
 		return userRepository.save(users);
 	}
+	
+	@GetMapping("/users/{uid}")
+	public User  getUserById(@PathVariable (value="uid")Long uid)
+	{
+		return userRepository.findById(uid).orElse(null);
+	}
+	
 }

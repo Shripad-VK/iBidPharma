@@ -1,11 +1,10 @@
 <div class="row container-fluid" id="nav">
-    <div class="col"><a href="#" (click)="goBack()">Go Back</a></div>
-    <div class="col"><a routerLink="/bids">Show Bids</a></div>
-    <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
-    <!-- <div class="col"><a routerLink = "/manufacturerList" (click)="setPreviousURL()"> Manufacturer :ist </a></div> -->
+  <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+  <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
+    <div class="col"><a routerLink = "/manufacturerList" (click)="setPreviousURL()"> Manufacturer List </a></div>
     <div class="col"><a routerLink = "/adminTransactions" > Admin Generation </a></div>
     <div class="col"><a routerLink = "/distributorTransaction"> Report Generation </a></div>
-    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
   </div>
   
   <div class="row jumbotron">

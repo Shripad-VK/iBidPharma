@@ -62,5 +62,7 @@ export class AdminReportComponent implements OnInit {
     doc.save('reports.pdf');
   }
 
-
+  logOut() {  
+    sessionStorage.clear();
+  }
 }

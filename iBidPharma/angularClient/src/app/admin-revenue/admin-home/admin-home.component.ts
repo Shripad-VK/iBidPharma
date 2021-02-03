@@ -18,9 +18,10 @@ export class AdminHomeComponent implements OnInit {
   constructor(private http:HttpClient,private userService:UserService,private router:ActivatedRoute,private route:Router) { }
 
   ngOnInit() {
-   
-   this.userService.getInValidUser().subscribe(data=>{this.users=data,console.log(data)});
-
+   this.getUsers();
+}
+getUsers(){
+  this.userService.getInValidUser().subscribe(data=>{this.users=data,console.log(data)});
 }
 
 valid(user:object)
@@ -30,15 +31,13 @@ valid(user:object)
     var data1={to:user["email"],subject:"Authoriztion Approved",message:" Thank you for Rgesitered.. approved your request!!!!"};
     this.http.post(this.APP_URL +'/maill', JSON.stringify(data1))
         .subscribe(res => {console.log(res);
-        this.Togo();
-          
+          this.ngOnInit();          
             });
  
 }
 ,error=>console.log(error));
 }
-Togo()
-{
-  this.route.navigate(['adminHome']);
+logOut() {  
+  sessionStorage.clear();
 }
 }

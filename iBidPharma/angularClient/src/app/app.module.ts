@@ -84,8 +84,7 @@ import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.compon
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
-    RouterModule,
+    FormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -7,14 +7,19 @@ import { DistributorService } from 'src/app/distributor.service';
 import * as _ from "lodash"
 import { ProductService } from '../../product.service';
 import { Distributor } from 'src/app/Distributor';
+import { BidService } from 'src/app/bid.service';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/user.service';
+import { User } from 'src/app/user';
 @Component({
   selector: 'app-show-bids',
   templateUrl: './show-bids.component.html',
   styleUrls: ['./show-bids.component.scss']
 })
 export class ShowBidsComponent implements OnInit {
-
-  constructor(private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router) { }
+  readonly APP_URL = '/api';
+  myresponse: any;
+  constructor(private userService:UserService,private http: HttpClient,private bidService:BidService,private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router) { }
   currentUser:any;
   product : any;
   currentManufacturer:any;
@@ -28,6 +33,8 @@ export class ShowBidsComponent implements OnInit {
   size:number;
   disName:any[];
   disObject:any;
+  disObjectUid:any;
+  userObject:any;
   ngOnInit() {
         this.pid=this.router.snapshot.params['pid'];
         this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
@@ -85,4 +92,31 @@ getProductsById(pid:number)
 
 // }
 
+chooseBid(bid:any)
+{
+    this.userObject=new User();
+    this.disObjectUid=new Distributor();
+  this.distributorService.getDistributorrById(bid.d_id).subscribe(data=>{
+  
+    this.disObject=data;
+  console.log(this.disObject.uid);
+  this.userService.getUserById(this.disObject.uid).subscribe(data=>{console.log(data),
+    this.userObject=new User();
+    this.userObject=data;
+  
+    var data1={to:this.userObject.email,subject:"Bid Approved",message:this.disObject.cname+" Your bid approved...Thank you!!!!"};
+    this.http.post(this.APP_URL +'/maill', JSON.stringify(data1))
+        .subscribe(res => {
+               console.log('inside postmehtod of sub.function', res);//only objects
+            });
+ 
+  },error=>console.log(error));
+ 
+  })
+       
+  this.bidService.deleteBidById(bid.id).subscribe(data=>console.log(data),error=>console.log(error));
+  this.route.navigate(['manufacturerHome']);
+}
+
+ 
 }

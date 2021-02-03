@@ -11,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./user-register.component.scss']
 })
 export class UserRegisterComponent implements OnInit {
-utype:any;
+utypes:any;
 user:any;
 currentUser : string;
 myInput:Boolean;
@@ -21,10 +21,12 @@ regForm : FormGroup;
 //passwordNotMatch:boolean;
 
   constructor(private formBuilder:FormBuilder,private userService : UserService,private router:ActivatedRoute,private route: Router) { 
-    this.utype = ["Manufacturer", "Distributor"];
+    this.utypes = ["Manufacturer", "Distributor"];
     this.regForm=new FormGroup({
       email:new FormControl(), 
-      password: new FormControl()
+      password: new FormControl(),
+      contact_no:new FormControl(),
+      utype:new FormControl()
     });
   }
 
@@ -36,7 +38,7 @@ regForm : FormGroup;
       email: ['', [Validators.required,Validators.email]],
      // password: ['', [Validators.required,Validators.password]],
       password: ['', Validators.required],
-      contact_no:['',Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")],
+      contact_no:['',Validators.required],
       utype:['',Validators.required],
       confirmPassword:['',Validators.required ]
      }, { 
@@ -91,7 +93,14 @@ regForm : FormGroup;
  get email() {
    return this.regForm.get('email');
 } 
-
+get utype()
+{
+  return this.regForm.get('utype');
+}
+get contact_no()
+{
+  return this.regForm.get('contact_no');
+}
   newUser():void {
     this.user = new User();
   }
@@ -101,8 +110,8 @@ regForm : FormGroup;
     this.user=data;
     if(this.user.uid !== 0) {
       if(this.user.email.toString()) {
-          console.log(this.user.passoword);
-          sessionStorage.setItem('userLog',this.user.email);
+         
+         
           this.currentUser = JSON.stringify(this.user);
           sessionStorage.setItem('currentUser', this.currentUser);
 

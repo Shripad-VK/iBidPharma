@@ -43,7 +43,7 @@ export class ViewOrderHistoryComponent implements OnInit {
    this.mid = this.currentManufacturer.mid;
    console.log("MID :  "+this.currentManufacturer.mid);
     this.manufacturerService.getManufacturerTransactions(this.mid)
-                  .subscribe(data=>this.currentList=data,error=>console.log(error));
+                  .subscribe(data=>{this.currentList=data,console.log(this.currentList);},error=>console.log(error));
    
  }
  

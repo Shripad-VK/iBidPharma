@@ -62,8 +62,6 @@ export class UserLoginComponent implements OnInit {
       if(this.user.uid !== 0) {
         if(this.user.email.toString()) {
           
-            console.log(this.user.passoword);
-            sessionStorage.setItem('userLog',this.user.email);
             this.currentUser = JSON.stringify(this.user);
             sessionStorage.setItem('currentUser', this.currentUser);
             if(this.user.utype=="Manufacturer")

@@ -30,6 +30,8 @@ export class MailComponent implements OnInit {
   }
 
   mail(data) {
+    console.log(data);
+    var data1={to:"neha888800@gmail.com",subject:"hello",message:"hii"};
    this.http.post(this.APP_URL +'/maill', JSON.stringify(data))
      .subscribe(res => {
             console.log('inside postmehtod of sub.function', res);//only objects

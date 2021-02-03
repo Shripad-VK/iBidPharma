@@ -15,4 +15,8 @@ export class BidService {
   getDistributorTransactionById(dist_id:number):Observable<Object>{
     return this.http.get(`${this.baseUrl}`+'/transactions/'+dist_id);
   }
+  deleteBidById(id:number):Observable<any>
+  {
+    return this.http.delete(`${this.baseUrl}`+'/bid/'+id);
+  }
 }

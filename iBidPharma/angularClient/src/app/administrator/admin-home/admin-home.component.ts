@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/user';
+import { User } from 'src/app/models/user';
 
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -28,7 +28,7 @@ valid(user:object)
 {
   user["status"]=1;
   this.userService.updateUserStatus(user["uid"],user).subscribe(data=>{console.log(data);
-    var data1={to:user["email"],subject:"Authoriztion Approved",message:" Thank you for Rgesitered.. approved your request!!!!"};
+    var data1={to:user["email"],subject:"iBidPharma - Account successfully created",message:"Thank you for registering with us... You can use your account for online bidding."};
     this.http.post(this.APP_URL +'/maill', JSON.stringify(data1))
         .subscribe(res => {console.log(res);
           this.ngOnInit();          

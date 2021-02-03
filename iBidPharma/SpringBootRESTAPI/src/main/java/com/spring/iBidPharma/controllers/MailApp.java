@@ -51,15 +51,6 @@ response.setContentType("text/jsp;charset=UTF-8");
       //  String user =  jsonObj.getString("gmailuser");
         String user = "nehaswami0695@gmail.com";
         String pass="vinayakvilla";
-        //String pass = jsonObj.getString("gmailpass");
-      //  System.out.println(jsonObj.getString("file"));
-       // String attachement =jsonObj.getString("file");
-   //     String attachement = "C:/Users/Dell/eclipse-workspace/erp_lcm/erp_lcm/src/main/webapp/resources/cd_img/HBNCKF.png";
-//        String[] attachFiles= new String[2];
-//        attachFiles[0]="C:/Users/Dell/Desktop/image-1.jpg";
-//        attachFiles[1]="C:/Users/Dell/Desktop/image-1.jpg";
-//        attachFiles[2]=" ";
-        //EmailController.send(to,subject, message, user, pass,attachement);
         EmailController.send(to,subject, message, user, pass);
         
         
@@ -72,15 +63,6 @@ response.setContentType("text/jsp;charset=UTF-8");
         	  Json=json.toJson("Mail send Successfully");
         	 out1.print(Json);
        
-/*
- * String Message="Mail send successfully";
- * 
- * request.setAttribute("Message", Message);
- * 
- * RequestDispatcher dispatcher =
- * getServletContext().getRequestDispatcher("urlString";
- * dispatcher.forward(request, response);
- */
         	// model.addAttribute("Json", Json);
         out1.println("Mail send Successfully");
 		return "success";

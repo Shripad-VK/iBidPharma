@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/user';
-import { Address } from '../../address';
-import { AddressService } from '../../address.service';
-import { Distributor } from '../../Distributor';
-import { DistributorService } from '../../distributor.service';
+import { User } from 'src/app/models/user';
+import { Address } from '../../models/address';
+import { AddressService } from '../../services/address.service';
+import { Distributor } from '../../models/distributor';
+import { DistributorService } from '../../services/distributor.service';
 
 
 @Component({

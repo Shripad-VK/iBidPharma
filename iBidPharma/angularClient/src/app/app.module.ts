@@ -7,7 +7,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 import { CreateManufacturerComponent } from './manufacturer/create-manufacturer/create-manufacturer.component';
 import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
 import { UpdateManufacturerComponent } from './manufacturer/update-manufacturer/update-manufacturer.component';
@@ -28,8 +28,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
 import { MailComponent } from './mail/mail.component';
-import { UserRegisterComponent } from './user-register/user-register.component';
-import { TableFilterPipe } from './table-filter.pipe';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { TableFilterPipe } from './models/table-filter.pipe';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
 import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
@@ -37,8 +37,8 @@ import { DistributorBidListComponent } from './distributor/distributor-bid-list/
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
 
 import { RouterModule } from '@angular/router';
-import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
-import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
+import { AdminReportComponent } from './administrator/admin-report/admin-report.component';
+import { AdminHomeComponent } from './administrator/admin-home/admin-home.component';
 
 
 @NgModule({

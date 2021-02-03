@@ -3,7 +3,7 @@
     <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
     <div class="col"><a routerLink = "/addProduct"> Create Product</a></div>
     <div class="col"><a routerLink = "/reportManufacturer"> Report Generation </a></div>
-    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
 </div>
 <div class="productForm">
     <div class="heading">
@@ -18,7 +18,7 @@
                     <label for="pname" > Product Name </label>
                 </div>
                 <div class="col"> 
-                <input type="text" class="form-control form-control-sm" id="pname" required [(ngModel)]="product.pname" name="pname"/>
+                <input type="text" class="form-control form-control-sm" id="pname" required [(ngModel)]="product.pname" formControlName="pname"/>
                 </div>
             </div> 
         </div>
@@ -29,7 +29,7 @@
                     <label for="category" > Product Category </label>
                 </div>
                 <div class="col">
-                <select [(ngModel)]="product.category" name="category" >
+                <select [(ngModel)]="product.category" formControlName="category" >
                     <option *ngFor="let c of categories" [ngValue]="c"> {{c}} </option>
                 </select>
                 </div>
@@ -42,7 +42,7 @@
                     <label for="stock"> Product Stock </label>
                 </div>
                 <div class="col">  
-                    <input type="number" class="form-control form-control-sm" id="stock" required [(ngModel)]="product.stock" name="stock" style="float:right" />
+                    <input type="number" class="form-control form-control-sm" id="stock" required [(ngModel)]="product.stock" formControlName="stock" style="float:right" />
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                     <label for="min_bvalue"> Minimum Bid Value </label>
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control form-control-sm" id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
+                    <input type="number" class="form-control form-control-sm" id="min_bvalue" required [(ngModel)]="product.min_bvalue" formControlName="min_bvalue" />
                 </div>   
             </div>
         </div>
@@ -64,7 +64,7 @@
                     <label for="max_bvalue"> Maximum Bid Value </label>
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control form-control-sm" id="max_bvalue" required [(ngModel)]="product.max_bvalue" name="max_bvalue" />
+                    <input type="number" class="form-control form-control-sm" id="max_bvalue" required [(ngModel)]="product.max_bvalue" formControlName="max_bvalue" />
                 </div> 
             </div>
         </div>
@@ -75,7 +75,7 @@
                     <label for="pimage">Upload Product Image </label>
                 </div>
                 <div class="col">
-                    <input type="file" class="form-control " id="pimage" name="pimage" (change)="handleFileInput($event)" />
+                    <input type="file" class="form-control " id="pimage" formControlName="pimage" (change)="handleFileInput($event)" />
                 </div>
             </div>
         </div>

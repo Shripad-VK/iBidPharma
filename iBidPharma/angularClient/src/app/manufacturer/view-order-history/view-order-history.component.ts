@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ManufacturerService } from 'src/app/manufacturer.service';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
 import { Location } from '@angular/common';
-import { Manufacturer } from 'src/manufacturer';
+import { Manufacturer } from 'src/app/models/manufacturer';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 

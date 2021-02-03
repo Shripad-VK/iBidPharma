@@ -13,16 +13,16 @@ import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manu
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { UpdateManufacturerComponent } from './manufacturer/update-manufacturer/update-manufacturer.component';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
 import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
 import { DistributorBidListComponent } from './distributor/distributor-bid-list/distributor-bid-list.component';
 import { DistributorTransactionsComponent } from './Distributor/distributor-transactions/distributor-transactions.component';
-import { AdminHomeComponent } from './admin-revenue/admin-home/admin-home.component';
-import { AdminReportComponent } from './admin-revenue/admin-report/admin-report.component';
+import { AdminHomeComponent } from './administrator/admin-home/admin-home.component';
+import { AdminReportComponent } from './administrator/admin-report/admin-report.component';
 import { MailComponent } from './mail/mail.component';
 import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
 

@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Manufacturer } from 'src/manufacturer';
-import { Address } from '../../address';
-import { AddressService } from '../../address.service';
-import { ManufacturerService } from '../../manufacturer.service';
-import { Distributor } from '../../Distributor';
-import { DistributorService } from '../../distributor.service';
+import { Manufacturer } from 'src/app/models/manufacturer';
+import { Address } from '../../models/address';
+import { AddressService } from '../../services/address.service';
+import { ManufacturerService } from '../../services/manufacturer.service';
+import { Distributor } from '../../models/distributor';
+import { DistributorService } from '../../services/distributor.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 

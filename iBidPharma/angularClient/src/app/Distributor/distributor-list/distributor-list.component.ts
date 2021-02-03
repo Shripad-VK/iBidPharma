@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Distributor } from '../../Distributor';
-import { DistributorService } from '../../distributor.service';
+import { Distributor } from '../../models/distributor';
+import { DistributorService } from '../../services/distributor.service';
 @Component({
   selector: 'app-distributor-list',
   templateUrl: './distributor-list.component.html',

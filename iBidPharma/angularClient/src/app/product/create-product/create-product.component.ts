@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../product';
+import { Product } from '../../models/product';
 import { ProductListComponent } from '../product-list/product-list.component';
-import { ProductService } from '../../product.service';
+import { ProductService } from '../../services/product.service';
 import { HttpClient } from '@angular/common/http';
-import { ManufacturerService } from 'src/app/manufacturer.service';
-import { Manufacturer } from 'src/manufacturer';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { Manufacturer } from 'src/app/models/manufacturer';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-create-product',
@@ -16,7 +17,7 @@ import { FormGroup } from '@angular/forms';
 export class CreateProductComponent implements OnInit {
   addProductForm : FormGroup;
   product : Product;
-  categories : any;
+  categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   selectedLevel:any;
   selectedFile: File;
   currentUser:any;
@@ -24,8 +25,7 @@ export class CreateProductComponent implements OnInit {
   mid:any;
   isSubmitted:boolean;
 
-  constructor(private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route :Router) { 
-    this.categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
+  constructor(private location: Location,private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route :Router) { 
   }
   
   ngOnInit() {
@@ -45,7 +45,7 @@ export class CreateProductComponent implements OnInit {
     this.product.mid=this.currentManufacturer.mid;
     this.product.addr_id=this.currentManufacturer.addr_id;
     this.productService.createProduct(this.product).subscribe(data=>{console.log(data);
-      this.route.navigate(['manufacturer']);
+    this.location.back();
     
     },error=>console.error(error));
     this.product = new Product();
@@ -66,4 +66,7 @@ export class CreateProductComponent implements OnInit {
     
   }
 
+  logOut(){
+    sessionStorage.clear();
+  }
 }

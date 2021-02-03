@@ -23,12 +23,6 @@ public class EmailController {
 //create an instance of Properties Class   
 Properties props = new Properties();
 
-/* Specifies the IP address of your default mail server
-for e.g if you are using gmail server as an email sever
-you will pass smtp.gmail.com as value of mail.smtp host. 
-As shown here in the code. 
-Change accordingly, if your email id is not a gmail id
-*/
 props.put("mail.smtp.host", "smtp.gmail.com");
 //below mentioned mail.smtp.port is optional
 props.put("mail.smtp.port", "587");		
@@ -61,23 +55,6 @@ message.setSubject(sub);
 message.setText(msg);
 
 System.out.println("/n Body part Created");
-
-/*Multipart multipart=new MimeMultipart();
-
-if(attachement !=null ) {
-	MimeBodyPart attachPart = new MimeBodyPart();
-	attachPart.attachFile(attachement);
-	multipart.addBodyPart(attachPart);
-
-}*/
-
-//set the multi-Part as email
-
-
-	//message.setContent(multipart);
-
-	
-	/* Transport class is used to deliver the message to the recipients */
 
 Transport.send(message);
 

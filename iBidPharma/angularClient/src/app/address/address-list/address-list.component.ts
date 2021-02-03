@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { Address } from '../../address';
-import { AddressService } from '../../address.service';
+import { Address } from '../../models/address';
+import { AddressService } from '../../services/address.service';
 
 @Component({
   selector: 'app-address-list',

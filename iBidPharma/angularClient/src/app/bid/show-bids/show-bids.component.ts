@@ -46,14 +46,15 @@ export class ShowBidsComponent implements OnInit {
     this.manufacturerService.getManufactureByUId(uid).subscribe(data=> {
         //alert(data);
         this.mid=data;
-        this.getManufacturerBids(data);
+       // this.getManufacturerBids(data);
+       this.getManufacturerBids();
       });
   }
 
-  getManufacturerBids(mid:number){
-   
+  getManufacturerBids(){
+   alert(this.pid);
   this.currentManufacturer=JSON.parse(sessionStorage.getItem('currentDistributor'));
-  this.manufacturerService.showManufacturerBids(mid).subscribe(
+  this.manufacturerService.showManufacturerBids(this.pid).subscribe(
     (data:any)=>{
       this.size= data.length;
       console.log(this.size);
@@ -114,7 +115,7 @@ chooseBid(bid:any)
  
   })
        
-  this.bidService.deleteBidById(bid.id).subscribe(data=>console.log(data),error=>console.log(error));
+  //this.bidService.deleteBidById(bid.id).subscribe(data=>console.log(data),error=>console.log(error));
   this.route.navigate(['manufacturerHome']);
 }
 

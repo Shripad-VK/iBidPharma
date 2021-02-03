@@ -19,10 +19,10 @@
     </div>
 
 <span *ngIf="isSubmitted && formControls.email.errors"  class="error-messages">
-    <span *ngIf="formControls.email.errors.required">Email is required!!!</span>
+    <span *ngIf="formControls.email.errors.required"><b>Email is required!!!</b></span>
   </span>
   <span *ngIf="email.errors?.email">
-     Email is not valid!!!
+    <b>Email is not valid!!!</b>
  </span> 
 
 
@@ -41,14 +41,14 @@
     </div>
 
     <span *ngIf="password.errors?.minlength">
-        Password must be at least 5 characters long.
+        <b>Password must be at least 5 characters long.</b>
       </span> 
       <span *ngIf="password.errors?.maxLength">
-        Password must be at most 10 characters long.
+        <b>Password must be at most 10 characters long.</b>
       </span> 
     
       <span *ngIf="isSubmitted && formControls.password.errors" class="help-block">
-        <span *ngIf="formControls.password.errors.required">Password is required</span>
+        <span *ngIf="formControls.password.errors.required"><b>Password is required</b></span>
       </span>
 
     <div class="form-group">
@@ -73,8 +73,8 @@
       </span> -->
       
       <span *ngIf="formControls.confirmPassword.touched && formControls.confirmPassword.invalid" >
-        <span *ngIf="formControls.confirmPassword.errors.required">Password is required.</span>
-        <span *ngIf="formControls.confirmPassword.errors.confirmedValidator">Password and Confirm Password must be match.</span>
+        <span *ngIf="formControls.confirmPassword.errors.required"><b>Password is required.</b></span>
+        <span *ngIf="formControls.confirmPassword.errors.confirmedValidator"><b>Password and Confirm Password must match.</b></span>
     </span>
    
 
@@ -91,11 +91,11 @@
         </div>
     </div>
     <span *ngIf="isSubmitted && formControls.contact_no.errors" class="help-block">
-        <span *ngIf="formControls.contact_no.errors.required">Contact number is required!!!</span>
+        <span *ngIf="formControls.contact_no.errors.required"><b>Contact number is required!!!</b></span>
       </span>
       <span *ngIf="formControls.contact_no.touched && formControls.contact_no.invalid" >
         <!-- <span *ngIf="formControls.contact_no.errors.required">Mobile Number is required.</span>class="alert alert-danger" -->
-        <span *ngIf="formControls.contact_no.errors.pattern">Please, Enter 10 digit Mobile Number.</span>
+        <span *ngIf="formControls.contact_no.errors.pattern"><b>Please, Enter 10 digit Mobile Number.</b></span>
       </span>
 
 
@@ -116,7 +116,7 @@
         </div>
     </div>
     <span *ngIf="isSubmitted && formControls.utype.errors" class="help-block">
-        <span *ngIf="formControls.utype.errors.required">UserType is required!!!</span>
+        <span *ngIf="formControls.utype.errors.required"><b>UserType is required!!!</b></span>
       </span>
 
 

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../product';
+import { Product } from '../../models/product';
 import { ProductListComponent } from '../product-list/product-list.component';
-import { ProductService } from '../../product.service';
+import { ProductService } from '../../services/product.service';
 import { HttpClient } from '@angular/common/http';
-import { ManufacturerService } from 'src/app/manufacturer.service';
-import { Manufacturer } from 'src/manufacturer';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { Manufacturer } from 'src/app/models/manufacturer';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
+import { Address } from 'src/app/models/address';
 
 @Component({
   selector: 'app-create-product',
@@ -14,18 +16,18 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./create-product.component.scss']
 })
 export class CreateProductComponent implements OnInit {
-  addProductForm : FormGroup;
+ // addProductForm : FormGroup;
   product : Product;
-  categories : any;
+  categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   selectedLevel:any;
   selectedFile: File;
   currentUser:any;
   currentManufacturer:any;
   mid:any;
   isSubmitted:boolean;
-
-  constructor(private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route :Router) { 
-    this.categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
+  addressObject:any;
+  pstate:string;
+  constructor(private location: Location,private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route :Router) { 
   }
   
   ngOnInit() {
@@ -44,8 +46,22 @@ export class CreateProductComponent implements OnInit {
   save(){
     this.product.mid=this.currentManufacturer.mid;
     this.product.addr_id=this.currentManufacturer.addr_id;
-    this.productService.createProduct(this.product).subscribe(data=>{console.log(data);
-      this.route.navigate(['manufacturer']);
+    this.addressObject=new Address();
+    this.productService.getAddresObjectByaddId(this.currentManufacturer.addr_id).subscribe(data=>
+      {
+        
+        this.addressObject=data;
+        console.log(this.addressObject.state);
+        console.log(data["state"]);
+        this.pstate=this.addressObject.state;
+      
+        
+      },error=>console.log(error));
+      this.product.state=this.pstate;
+      alert(this.pstate);
+      this.productService.createProduct(this.product).subscribe(data=>{console.log(data);
+   
+    this.location.back();
     
     },error=>console.error(error));
     this.product = new Product();
@@ -67,4 +83,7 @@ export class CreateProductComponent implements OnInit {
     
   }
 
+  logOut(){
+    sessionStorage.clear();
+  }
 }

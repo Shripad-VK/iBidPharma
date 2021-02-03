@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { bid } from 'src/app/bid';
+import { bid } from 'src/app/models/bid';
 import {formatDate} from '@angular/common';
-import { DistributorService } from 'src/app/distributor.service';
-import { PlaceBidService } from 'src/app/place-bid.service';
+import { DistributorService } from 'src/app/services/distributor.service';
+import { PlaceBidService } from 'src/app/services/place-bid.service';
 import { Location } from '@angular/common';
 
 @Component({

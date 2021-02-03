@@ -101,7 +101,10 @@
              </div>
              <div class="col">
                 <p [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }">
-                    <input type="text" class="form-control" id="state" [(ngModel)]="address.state" name="state" formControlName="state" required/>
+                    <select class="form-control" id="state" [(ngModel)]="address.state" name="state" formControlName="state" required>
+                        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                    </select>
+                    <input type="text" class="form-control" />
                </p>
             </div>
             <br/>

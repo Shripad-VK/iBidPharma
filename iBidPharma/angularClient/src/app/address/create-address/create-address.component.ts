@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Manufacturer } from 'src/manufacturer';
-import { Address } from '../../address';
-import { AddressService } from '../../address.service';
-import { ManufacturerService } from '../../manufacturer.service';
-import { Distributor } from '../../Distributor';
-import { DistributorService } from '../../distributor.service';
+import { Manufacturer } from 'src/app/models/manufacturer';
+import { Address } from '../../models/address';
+import { AddressService } from '../../services/address.service';
+import { ManufacturerService } from '../../services/manufacturer.service';
+import { Distributor } from '../../models/distributor';
+import { DistributorService } from '../../services/distributor.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
@@ -26,6 +26,12 @@ export class CreateAddressComponent implements OnInit {
   currentUser:any;
   addressForm: FormGroup;
   isSubmitted:boolean;
+  states = ["Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", 
+  "Jammu and Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", 
+  "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Punjab", "Rajasthan", "Sikkim", 
+  "Tamil Nadu", "Tripura", "Uttaranchal", "Uttar Pradesh", "Haryana", "Himachal Pradesh", "Chhattisgarh", 
+  "Andaman and Nicobar", "Pondicherry", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", 
+  "Chandigarh", "Lakshadweep"];
   constructor(private addressService:AddressService,private router:Router,private route:ActivatedRoute,private http:HttpClient,private manufacturerService: ManufacturerService,private distributorService: DistributorService,private formBuilder:FormBuilder) { 
     this.addressForm=new FormGroup({
       line1:new FormControl(),

@@ -3,9 +3,9 @@
     <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
     <div class="col"><a routerLink = "/addProduct"> Create Product</a></div>
     <div class="col"><a routerLink = "/reportManufacturer"> Report Generation </a></div>
-    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
 </div>
-<div class="productForm">
+<div ><!--class="productForm"-->
     <div class="heading">
         Add Product
     </div> 
@@ -53,7 +53,7 @@
                     <label for="min_bvalue"> Minimum Bid Value </label>
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control form-control-sm" id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
+                    <input type="number"  id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
                 </div>   
             </div>
         </div>

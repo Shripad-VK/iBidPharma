@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { bid } from 'src/app/bid';
-import { BidService } from 'src/app/bid.service';
-import { Distributor } from 'src/app/Distributor';
-import { DistributorTransactionService } from 'src/app/distributor-transaction.service';
-import { DistributorService } from 'src/app/distributor.service';
+import { bid } from 'src/app/models/bid';
+import { BidService } from 'src/app/services/bid.service';
+import { Distributor } from 'src/app/models/distributor';
+import { DistributorTransactionService } from 'src/app/services/distributor-transaction.service';
+import { DistributorService } from 'src/app/services/distributor.service';
 import { Location } from '@angular/common';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';

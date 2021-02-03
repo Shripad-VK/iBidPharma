@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { jsPDF } from 'jspdf';
-import { AdminService } from 'src/app/admin.service';
-import { BidService } from 'src/app/bid.service';
+import { AdminService } from 'src/app/services/admin.service';
+import { BidService } from 'src/app/services/bid.service';
 
 @Component({
   selector: 'app-admin-report',
@@ -62,5 +62,7 @@ export class AdminReportComponent implements OnInit {
     doc.save('reports.pdf');
   }
 
-
+  logOut() {  
+    sessionStorage.clear();
+  }
 }

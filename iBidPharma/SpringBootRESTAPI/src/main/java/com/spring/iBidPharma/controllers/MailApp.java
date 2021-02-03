@@ -50,7 +50,7 @@ response.setContentType("text/jsp;charset=UTF-8");
      
         String user = "nehaswami0695@gmail.com";
         String pass="vinayakvilla";
-       
+
         EmailController.send(to,subject, message, user, pass);
         
         
@@ -63,15 +63,6 @@ response.setContentType("text/jsp;charset=UTF-8");
        Json=json.toJson("Mail send Successfully");
         	 out1.print(Json);
        
-/*
- * String Message="Mail send successfully";
- * 
- * request.setAttribute("Message", Message);
- * 
- * RequestDispatcher dispatcher =
- * getServletContext().getRequestDispatcher("urlString";
- * dispatcher.forward(request, response);
- */
         	// model.addAttribute("Json", Json);
         out1.println("Mail send Successfully");
 		return "success";

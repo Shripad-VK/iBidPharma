@@ -2,10 +2,10 @@ import { Component, OnInit, ɵɵPipeDefWithMeta } from '@angular/core';
 import { ProductListComponent } from 'src/app/product/product-list/product-list.component';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Product } from '../../product';
-import { ProductService } from '../../product.service';
-import { UserService } from '../../user.service';
-import { ManufacturerService } from 'src/app/manufacturer.service';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
+import { UserService } from '../../services/user.service';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
 import { Location } from '@angular/common';
 import { pid } from 'process';
 

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ManufacturerService } from 'src/app/manufacturer.service';
-import { Manufacturer } from 'src/manufacturer';
-import { DistributorService } from 'src/app/distributor.service';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { Manufacturer } from 'src/app/models/manufacturer';
+import { DistributorService } from 'src/app/services/distributor.service';
 
 import * as _ from "lodash"
-import { ProductService } from '../../product.service';
-import { Distributor } from 'src/app/Distributor';
-import { BidService } from 'src/app/bid.service';
+import { ProductService } from '../../services/product.service';
+import { Distributor } from 'src/app/models/distributor';
+import { BidService } from 'src/app/services/bid.service';
 import { HttpClient } from '@angular/common/http';
-import { UserService } from 'src/app/user.service';
-import { User } from 'src/app/user';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 @Component({
   selector: 'app-show-bids',
   templateUrl: './show-bids.component.html',

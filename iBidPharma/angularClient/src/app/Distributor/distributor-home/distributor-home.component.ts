@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Product } from '../../product';
-import { ProductService } from '../../product.service';
-import { UserService } from '../../user.service';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
+import { UserService } from '../../services/user.service';
 import { Location } from '@angular/common';
-import { DistributorService } from 'src/app/distributor.service';
-import { Distributor } from 'src/app/Distributor';
+import { DistributorService } from 'src/app/services/distributor.service';
+import { Distributor } from 'src/app/models/distributor';
 @Component({
   selector: 'app-distributor-home',
   templateUrl: './distributor-home.component.html',

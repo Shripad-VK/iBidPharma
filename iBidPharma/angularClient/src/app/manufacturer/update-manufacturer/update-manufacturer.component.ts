@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Manufacturer } from 'src/manufacturer';
-import { Address } from '../../address';
-import { AddressService } from '../../address.service';
-import { ManufacturerService } from '../../manufacturer.service';
+import { Manufacturer } from 'src/app/models/manufacturer';
+import { Address } from '../../models/address';
+import { AddressService } from '../../services/address.service';
+import { ManufacturerService } from '../../services/manufacturer.service';
 
 @Component({
   selector: 'app-update-manufacturer',

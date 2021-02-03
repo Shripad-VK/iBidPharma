@@ -33,4 +33,7 @@ export class UserService {
   {
     return this.http.put(`${this.baseUrl}`+'/users/'+uid,value);
   }
+  getUserById(uid:number):Observable<Object>{
+    return this.http.get(`${this.baseUrl}`+'/users/'+uid);
+  }
 }

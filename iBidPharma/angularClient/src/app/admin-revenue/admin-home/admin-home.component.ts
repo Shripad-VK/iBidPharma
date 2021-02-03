@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -11,9 +12,10 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
-
+  readonly APP_URL = '/api';
+  myresponse: any;
   users:Observable<User[]>
-  constructor(private userService:UserService,private router:ActivatedRoute,private route:Router) { }
+  constructor(private http:HttpClient,private userService:UserService,private router:ActivatedRoute,private route:Router) { }
 
   ngOnInit() {
    
@@ -25,8 +27,18 @@ valid(user:object)
 {
   user["status"]=1;
   this.userService.updateUserStatus(user["uid"],user).subscribe(data=>{console.log(data);
+    var data1={to:user["email"],subject:"Authoriztion Approved",message:" Thank you for Rgesitered.. approved your request!!!!"};
+    this.http.post(this.APP_URL +'/maill', JSON.stringify(data1))
+        .subscribe(res => {console.log(res);
+        this.Togo();
+          
+            });
  
 }
 ,error=>console.log(error));
+}
+Togo()
+{
+  this.route.navigate(['adminHome']);
 }
 }

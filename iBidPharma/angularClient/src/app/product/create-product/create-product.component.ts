@@ -27,42 +27,44 @@ export class CreateProductComponent implements OnInit {
   isSubmitted:boolean;
   addressObject:any;
   pstate:string;
+  sesionObject:any;
   constructor(private location: Location,private productService : ProductService, private http : HttpClient,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route :Router) { 
   }
   
   ngOnInit() {
+    this.currentManufacturer=new Manufacturer();
+    this.addressObject=new Address();
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
     console.log(this.currentUser.uid);
-    this.currentManufacturer=new Manufacturer();
-    this.manufacturerService.getManufactureObjectByuid(this.currentUser.uid).subscribe(data=>{console.log(data),this.currentManufacturer=data});
     this.newProduct();
-  }
-
- 
-
-  newProduct():void {
-    this.product = new Product();
-  }
-  save(){
-    this.product.mid=this.currentManufacturer.mid;
-    this.product.addr_id=this.currentManufacturer.addr_id;
-    this.addressObject=new Address();
+    this.manufacturerService.getManufactureObjectByuid(this.currentUser.uid).subscribe(data=>{console.log(data),this.currentManufacturer=data;
+      this.product.mid=this.currentManufacturer.mid;
+      this.product.addr_id=this.currentManufacturer.addr_id;
     this.productService.getAddresObjectByaddId(this.currentManufacturer.addr_id).subscribe(data=>
       {
         
         this.addressObject=data;
         console.log(this.addressObject.state);
         console.log(data["state"]);
-        this.pstate=this.addressObject.state;
-      
-        
+     
       },error=>console.log(error));
-      this.product.state=this.pstate;
-      alert(this.pstate);
-      this.productService.createProduct(this.product).subscribe(data=>{console.log(data);
-   
-    this.location.back();
     
+    
+    });
+
+  }
+
+ 
+
+  newProduct():void {
+    this.product = new Product();
+    
+  }
+  save(){
+    
+    this.product.state=this.addressObject.state;
+    this.productService.createProduct(this.product).subscribe(data=>{console.log(data);
+    this.location.back();
     },error=>console.error(error));
     this.product = new Product();
   }

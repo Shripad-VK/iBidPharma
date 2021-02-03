@@ -51,8 +51,7 @@ currentUser:any;
   {
     this.isSubmitted=true;
     this.manufacturer.uid=this.currentUser.uid;
-    alert(this.manufacturer.uid);
-    alert(this.currentUser.uid);
+  
     this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>{this.manufacturer=data;
      
      console.log(data); this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);

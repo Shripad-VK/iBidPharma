@@ -35,7 +35,7 @@ public class DistributorController {
 	{
 		if(distributor.getAddr_id()==0)
 			distributor.setAddr_id(1);
-		distributor.setUid(1);
+		
 		return distributorRepository.save(distributor);
 		
 	}

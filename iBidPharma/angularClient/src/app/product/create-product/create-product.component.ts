@@ -55,6 +55,7 @@ export class CreateProductComponent implements OnInit {
     this.isSubmitted=true;
     const uploadData = new FormData();
     uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    console.log(this.selectedFile.name);
     this.product.pimage = this.selectedFile.name;
     this.http.post('http://localhost:8080/api/products/image', uploadData).subscribe(data=>console.log(data),error=>console.error(error));
     this.save();

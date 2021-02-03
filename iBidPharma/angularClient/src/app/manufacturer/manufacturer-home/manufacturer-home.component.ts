@@ -23,7 +23,6 @@ export class ManufacturerHomeComponent implements OnInit {
   bvalue : number;
   currentManufacturer:any;
   currentList:any;
-
   categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   constructor(private productService : ProductService,private router : Router,private manufacturerService:ManufacturerService, private location: Location) { 
   }
@@ -47,7 +46,7 @@ export class ManufacturerHomeComponent implements OnInit {
    }
 
   goBack() {
-    this.router.navigate([sessionStorage.getItem('previousURL')]);
+    this.location.back();
   }
 
   handleBidInput() {
@@ -67,10 +66,8 @@ export class ManufacturerHomeComponent implements OnInit {
     this.router.navigate(['bids',pid] );
     // ,{queryParams:{products:JSON.stringify(pid)},skipLocationChange: true, replaceUrl: false}
   }
-  
-  
-  setPreviousURL() {
-    sessionStorage.setItem('previousURL',"/manufacturer");
+
+  logOut() {  
+    sessionStorage.clear();
   }
-  
 }

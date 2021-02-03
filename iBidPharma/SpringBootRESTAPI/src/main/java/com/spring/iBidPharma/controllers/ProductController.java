@@ -107,7 +107,7 @@ public class ProductController {
 	public ResponseEntity<Resource> getProductImg( @RequestParam("name") String name)
 			throws IOException {
     	Path root = Paths.get("src/main/resources/static/images/");
-		Path f = root.resolve(name + ".jpg");
+		Path f = root.resolve(name);
 		Resource resource = new UrlResource(f.toUri());
 		Resource file = resource;
 		return ResponseEntity.ok()
@@ -121,5 +121,9 @@ public class ProductController {
 		return productRepository.getManufacturerProductsWithBidValue(mid, bvalue);
 	}
 	
-	
+	@PutMapping("/products/{pid}/{state}")
+	public void updateProduct(@PathVariable (value="pid")Long pid,@PathVariable (value="state") String state)
+	{
+		productRepository.setProductAddress(pid, state);
+	}
 }

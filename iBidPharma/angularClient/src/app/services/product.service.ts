@@ -39,4 +39,7 @@ export class ProductService {
   {
     return this.http.get(`${this.baseUrl}`+'/addresses/'+ addr_id );
   }
+  setProductState(pid:number, state:string){
+    this.http.get(`${this.baseUrl}`+'/products/'+ pid + '/' + state);
+  }
 }

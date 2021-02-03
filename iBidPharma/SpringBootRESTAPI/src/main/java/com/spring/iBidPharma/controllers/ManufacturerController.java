@@ -38,7 +38,7 @@ public class ManufacturerController {
 	{
 		if(manufacturer.getAddr_id()==0)
 		manufacturer.setAddr_id(1);
-		manufacturer.setUid(1);
+		
 		return manufacturerRepository.save(manufacturer);
 		
 	}

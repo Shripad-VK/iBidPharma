@@ -18,6 +18,7 @@ manufacturer:any;
 utype:any;
 manufacturerLoginForm:any;
 isSubmitted:boolean;
+currentUser:any;
   constructor ( private manufacturerService:ManufacturerService,private addressService:AddressService,private router:Router,private route:ActivatedRoute,private formBuilder:FormBuilder){
    this.manufacturerLoginForm=new FormGroup({
      cname:new FormControl()
@@ -27,6 +28,7 @@ isSubmitted:boolean;
   ngOnInit() {
     this.manufacturer=new Manufacturer();
     this.getAddressList();
+    this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
     this.utype=this.route.snapshot.params['utype'];
     this.manufacturerLoginForm=this.formBuilder.group({
       cname:['',Validators.required]
@@ -48,6 +50,9 @@ isSubmitted:boolean;
   onSubmit()
   {
     this.isSubmitted=true;
+    this.manufacturer.uid=this.currentUser.uid;
+    alert(this.manufacturer.uid);
+    alert(this.currentUser.uid);
     this.manufacturerService.createManufacturer(this.manufacturer).subscribe(data=>{this.manufacturer=data;
      
      console.log(data); this.router.navigate(['addAddressManufacturer',this.manufacturer.mid]);

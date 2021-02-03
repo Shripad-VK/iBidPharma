@@ -22,6 +22,7 @@ export class PlaceBidComponent implements OnInit {
   currentUser:any;
   d_id:any;
   myDate:any;
+  
   ngOnInit() 
   {
     this.bid = new bid();
@@ -35,6 +36,7 @@ export class PlaceBidComponent implements OnInit {
       error=>console.log(error));
       this.router.queryParams.subscribe(params=>{this.products=JSON.parse(params['products'])});
       console.log(this.products.pid);
+
       this.myDate = formatDate(new Date(), 'yyyy/MM/dd', 'en');
      
   }

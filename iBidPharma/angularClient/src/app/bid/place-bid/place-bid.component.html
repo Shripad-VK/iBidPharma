@@ -30,7 +30,8 @@
                  </div>
                  <div class="col">
                 <input type="number" class="form-control" id="bvalue" required [(ngModel)]="bid.bvalue" name="bvalue" />
-                  </div>
+            <span>bid range must be between this range {{products.min_bvalue}} to {{products.max_bvalue}}</span>      
+            </div>
             </div>
         </div>
         <div class="form-row">

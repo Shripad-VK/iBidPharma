@@ -25,8 +25,8 @@ regForm : FormGroup;
     this.regForm=new FormGroup({
       email:new FormControl(), 
       password: new FormControl(),
-      contact_no:new FormControl(),
-      utype:new FormControl()
+      utype:new FormControl(),
+      contact_no:new FormControl()
     });
   }
 
@@ -36,17 +36,19 @@ regForm : FormGroup;
     this.user=new User();
     this.regForm  =  this.formBuilder.group({
       email: ['', [Validators.required,Validators.email]],
-     // password: ['', [Validators.required,Validators.password]],
-      password: ['', Validators.required],
-      contact_no:['',Validators.required],
-      utype:['',Validators.required],
-      confirmPassword:['',Validators.required ]
-     }, { 
+      //,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")
+       password: ['',[Validators.required]],
+       contact_no:['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      utype:['',[Validators.required]],
+      confirmPassword:['',[Validators.required] ]
+     },
+      { 
       validator: this.ConfirmedValidator('password', 'confirmPassword')
+   
           });
  
-  password: new FormControl('', Validators.minLength(5));
-  password: new FormControl('', Validators.maxLength(10));
+          password: new FormControl('', Validators.minLength(5));
+          password: new FormControl('', Validators.maxLength(10));
 
   }
 
@@ -93,15 +95,14 @@ regForm : FormGroup;
  get email() {
    return this.regForm.get('email');
 } 
-get utype()
-{
-  return this.regForm.get('utype');
-}
-get contact_no()
-{
+get utype() {
+  return this.regForm.get('utypes');
+} 
+get contact_no() {
   return this.regForm.get('contact_no');
-}
-  newUser():void {
+} 
+
+  newUser():void {             
     this.user = new User();
   }
 

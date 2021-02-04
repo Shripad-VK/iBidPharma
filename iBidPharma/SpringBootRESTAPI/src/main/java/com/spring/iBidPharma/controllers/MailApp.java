@@ -28,9 +28,7 @@ public class MailApp extends HttpServlet {
 @PostMapping(value = "/maill")
 protected String mail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // TODO Auto-generated method stub
-Model model = null;
 response.setContentType("text/jsp;charset=UTF-8");
-        PrintWriter out = response.getWriter();
 
         String data = "";   
         StringBuilder builder = new StringBuilder();
@@ -53,18 +51,6 @@ response.setContentType("text/jsp;charset=UTF-8");
 
         EmailController.send(to,subject, message, user, pass);
         
-        
-        PrintWriter out1 = response.getWriter();
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        Gson json = new Gson();
-        String Json="";
-       
-       Json=json.toJson("Mail send Successfully");
-        	 out1.print(Json);
-       
-        	// model.addAttribute("Json", Json);
-        out1.println("Mail send Successfully");
 		return "success";
       
         }

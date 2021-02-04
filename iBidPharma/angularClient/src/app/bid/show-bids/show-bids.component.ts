@@ -128,13 +128,13 @@ chooseBid(bid:any,product:any,distributor:any)
   });
        
   this.bidService.updateBidById(bid.id,bid).subscribe(data=>console.log(data),error=>console.log(error));
-  this.productService.updateProduct(this.pid,this.product).subscribe(data=>console.log(data),error=>console.log(error));
+  this.productService.updateProductStock(this.pid,bid).subscribe(data=>console.log(data),error=>console.log(error));
   alert("Bid Selected Successfully...");
   this.route.navigate(['manufacturerHome']);
        this.transaction=new Transaction();
        this.transaction.mid=this.mid.mid;
        this.transaction.mname=this.mid.cname;
-       this.myDate = formatDate(new Date(), 'dd/MM/yyyy', 'en');
+       this.myDate = formatDate(new Date(), 'dd-MM-yyyy', 'en');
        this.transaction.tdate=this.myDate;
        this.transaction.dist_id=distributor.d_id;
        this.transaction.dname=distributor.cname;

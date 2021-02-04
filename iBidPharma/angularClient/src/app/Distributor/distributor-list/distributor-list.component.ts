@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Distributor } from '../../models/distributor';
 import { DistributorService } from '../../services/distributor.service';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-distributor-list',
   templateUrl: './distributor-list.component.html',
@@ -10,7 +12,7 @@ import { DistributorService } from '../../services/distributor.service';
 })
 export class DistributorListComponent implements OnInit {
   distributors:Observable<Distributor[]>
-  constructor(private distributorService:DistributorService, private router:Router) { }
+  constructor(private distributorService:DistributorService, private router:Router,private location: Location) { }
 
   ngOnInit() {
     this.reloadDistributorList();
@@ -21,15 +23,11 @@ export class DistributorListComponent implements OnInit {
     this.distributors=this.distributorService.getDistributorList();
     
   }
- 
-  delete(d_id:number)
-  {
-    this.distributorService.deleteDistributor(d_id).subscribe(data=>console.log(data),error=>console.log(error));
+  goBack() {
+    this.location.back();
   }
 
-  update(d_id:number)
-  {
-    this.router.navigate(['updateDistributor',d_id]);
+  logOut(){
+    sessionStorage.clear();
   }
-
 }

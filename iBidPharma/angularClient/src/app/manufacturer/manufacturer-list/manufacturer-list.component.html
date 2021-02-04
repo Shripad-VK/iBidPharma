@@ -1,9 +1,23 @@
-<table border="1">
-<tr *ngFor="let manufacturer of manufacturers | async">
-    <td>{{manufacturer.mid}}</td>
-    <td>{{manufacturer.cname}}</td>
-    <td></td>
-    <td> <button (click)="update(manufacturer.mid)"> Update </button></td>
-    <td> <button (click)="delete(manufacturer.mid)"> Delete </button></td>
-</tr>    
-</table>
+<div class="row container-fluid" id="nav">
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink="/distributor">Home</a></div>
+    <div class="col"><a routerLink="/distributorBids">Show Bids</a></div>
+    <div class="col"><a routerLink = "/manufacturerList"> Manufacturer List </a></div>
+    <div class="col"><a routerLink = "/distributorTransaction"> Transaction History </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
+</div>
+<div class="jumbotron" style="height: 490px;">
+    <div id="content" #content>
+        <table class="table table-bordered" id="reportsTable">
+            <thead>
+                <th>Manufacturer ID</th>
+                <th>Manufacturer Name</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let manufacturer of manufacturers | async">
+                    <td>{{manufacturer.mid}}</td>
+                    <td>{{manufacturer.cname}}</td>                </tr>
+            </tbody>    
+        </table>
+    </div>
+</div>

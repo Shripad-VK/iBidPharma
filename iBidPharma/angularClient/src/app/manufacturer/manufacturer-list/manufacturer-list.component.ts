@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Manufacturer } from 'src/app/models/manufacturer';
 import { ManufacturerService } from '../../services/manufacturer.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-manufacturer-list',
   templateUrl: './manufacturer-list.component.html',
@@ -12,7 +12,7 @@ import { ManufacturerService } from '../../services/manufacturer.service';
 export class ManufacturerListComponent implements OnInit {
 
   manufacturers:Observable<Manufacturer[]>
-  constructor(private manufacturerService:ManufacturerService, private router:Router ) { }
+  constructor(private manufacturerService:ManufacturerService, private router:Router, private location:Location ) { }
 
   ngOnInit() {
     this.reloadManufacturerList();
@@ -23,14 +23,12 @@ export class ManufacturerListComponent implements OnInit {
     this.manufacturers=this.manufacturerService.getManufacturerList();
     
   }
- 
-  delete(mid:number)
-  {
-    this.manufacturerService.deleteManufacturer(mid).subscribe(data=>console.log(data),error=>console.log(error));
-  }
 
-  update(mid:number)
-  {
-    this.router.navigate(['updateManufacturer',mid]);
+  goBack() {
+    this.location.back();
+  }
+  
+  logOut() {  
+    sessionStorage.clear();
   }
 }

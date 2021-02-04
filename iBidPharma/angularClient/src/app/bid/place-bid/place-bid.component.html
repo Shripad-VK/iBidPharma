@@ -1,5 +1,6 @@
 <div class="row container-fluid" id="nav">
     <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink="/distributor">Home</a></div>
     <div class="col"><a routerLink="/bids">Show Bids</a></div>
     <div class="col"><a routerLink = "/manufacturerList"> Manufacturer List </a></div>
     <div class="col"><a routerLink = "/distributorTransaction"> Transaction History </a></div>
@@ -7,7 +8,7 @@
 </div>
 <div class="BidForm">
     <div class="heading">
-       Place Bid
+       PLACE BID
     </div> 
         <div class="bid">
     <form (ngSubmit)="onSubmit()">
@@ -19,7 +20,8 @@
                  </div>
                  <div class="col">
                 <input type="number" class="form-control" id="stock" required [(ngModel)]="bid.stock" name="stock" />
-                  </div>
+                <span>Quantity must be Less than {{products.stock}}</span>     
+            </div>
             </div>
         </div> 
 

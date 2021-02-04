@@ -44,5 +44,8 @@ export class ProductService {
   {
     return this.http.get(`${this.baseUrl}`+'/addresses/'+ addr_id );
   }
-
+  updateProductStock(pid:number,value:any):Observable<Object> {
+    return this.http.put(`${this.baseUrl}`+'/updateProductStock/'+pid,value);
+  }
+  
 }

@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.spring.iBidPharma.models.Bid;
 import com.spring.iBidPharma.models.Manufacturer;
 import com.spring.iBidPharma.models.Product;
 import com.spring.iBidPharma.repository.ProductRepository;
@@ -72,6 +73,17 @@ public class ProductController {
 		product.setPimage(info.getPimage());
 		product.setAddr_id(info.getAddr_id());
 		product.setMid(info.getMid());
+		return productRepository.save(product);
+	}
+	
+	@PutMapping("/updateProductStock/{id}")
+	public Product updateProductStock(@PathVariable (value="id")Long pid,@RequestBody Bid info)
+	{
+		Product product=productRepository.findById(pid).orElse(null);
+		if(product.getStock()-info.getStock() < 0)
+			product.setStock(0);
+		else
+			product.setStock(product.getStock()-info.getStock());
 		return productRepository.save(product);
 	}
 	

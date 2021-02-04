@@ -1,10 +1,25 @@
-<p>distributor-list works!</p>
-<table border="1">
-    <tr *ngFor="let distributor of distributors | async">
-        <td>{{distributor.d_id}}</td>
-        <td>{{distributor.cname}}</td>
-        <td></td>
-        <td> <button (click)="update(distributor.mid)"> Update </button></td>
-        <td> <button (click)="delete(distributor.mid)"> Delete </button></td>
-    </tr>    
-    </table>
+<div class="row container-fluid" id="nav">
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink="/manufacturer">Home</a></div>
+    <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
+    <div class="col"><a routerLink = "/addProduct"> Create Product</a></div>
+    <div class="col"><a routerLink = "/reportManufacturer"> Report Generation </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
+</div>
+
+<div class="jumbotron" style="height: 500px;">
+    <div id="content" #content>
+        <table class="table table-bordered" id="reportsTable">
+            <thead>
+                <th>Distributor ID</th>
+                <th>Distributor Name</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let distributor of distributors | async">
+                    <td>{{distributor.d_id}}</td>
+                    <td>{{distributor.cname}}</td>            
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+</div>

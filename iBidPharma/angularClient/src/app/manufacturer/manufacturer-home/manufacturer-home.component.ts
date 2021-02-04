@@ -31,7 +31,17 @@ export class ManufacturerHomeComponent implements OnInit {
     this.bvalue = null;
     this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
     this.getMid(this.currentUser.uid);   
+    this.setManufacturer();
   } 
+
+  setManufacturer() {
+    this.manufacturerService.getManufactureObjectByuid(this.currentUser.uid)
+    .subscribe(data=>{
+              this.currentManufacturer = JSON.stringify(data);
+              sessionStorage.setItem('currentManufacturer', this.currentManufacturer);
+            },
+      error=>console.log(error));
+  }
       
   ProductByManufacturerId(mid:number) {
     this.products = this.productService.getProductByManufacturerId(mid);

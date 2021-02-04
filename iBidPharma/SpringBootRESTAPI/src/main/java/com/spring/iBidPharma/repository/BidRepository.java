@@ -17,4 +17,6 @@ public interface BidRepository extends JpaRepository<Bid, Long> {
 	
 	@Query(value = "SELECT * FROM bid WHERE pid = :pid", nativeQuery = true)
 	public List<Bid> showManufacturerBids(@Param("pid") long pid);
+
+
 }

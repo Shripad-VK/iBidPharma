@@ -13,6 +13,11 @@ export class ProductService {
     return this.http.get(`${this.baseUrl}`+'/products');
   }
 
+  getAvailableProductList():Observable<any> {
+    return this.http.get(`${this.baseUrl}`+'/availableProducts');
+  }
+
+
   createProduct(product:Object):Observable<Object> {
     return this.http.post(`${this.baseUrl}`+'/products',product);
   }
@@ -38,5 +43,8 @@ export class ProductService {
   getAddresObjectByaddId(addr_id:number):Observable<any>
   {
     return this.http.get(`${this.baseUrl}`+'/addresses/'+ addr_id );
+  }
+  setProductState(pid:number, state:string){
+    this.http.get(`${this.baseUrl}`+'/products/'+ pid + '/' + state);
   }
 }

@@ -29,7 +29,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DistributorHomeComponent } from './distributor/distributor-home/distributor-home.component';
 import { MailComponent } from './mail/mail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { TableFilterPipe } from './models/table-filter.pipe';
+import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
 import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';

@@ -40,4 +40,7 @@ export class DistributorService {
   getDistributorById(uid:number):Observable<any>{
     return this.http.get(`${this.baseUrl}`+'/distributorsbyid/'+uid);
   }
+  getDistributorBids(d_id:number):Observable<any> {
+    return this.http.get(`${this.baseUrl}`+'/distributorBids/'+d_id);
+  }
 }

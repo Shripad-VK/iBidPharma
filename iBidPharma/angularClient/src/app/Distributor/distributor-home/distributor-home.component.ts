@@ -37,7 +37,7 @@ export class DistributorHomeComponent implements OnInit {
     this.setDistributor();
   }
   reloadProductList() {
-    this.products = this.productService.getProductList();
+    this.products = this.productService.getAvailableProductList();
     //this.products.subscribe((v) => console.log('Product List: ', v));
   }
   

@@ -42,6 +42,11 @@ public class ProductController {
 		return productRepository.findAll();
 	}
 
+	@GetMapping("/availableProducts")
+	public List<Product> getAllAvailableProducts(){
+		return productRepository.getAvailableProductList();
+	}
+
 	@PostMapping("/products")
 	public Product createProduct(@RequestBody Product product)
 	{
@@ -107,7 +112,7 @@ public class ProductController {
 	public ResponseEntity<Resource> getProductImg( @RequestParam("name") String name)
 			throws IOException {
     	Path root = Paths.get("src/main/resources/static/images/");
-		Path f = root.resolve(name + ".jpg");
+		Path f = root.resolve(name);
 		Resource resource = new UrlResource(f.toUri());
 		Resource file = resource;
 		return ResponseEntity.ok()
@@ -120,6 +125,5 @@ public class ProductController {
 	public List<Product> getManufacturerProductsList(@PathVariable(value="mid") Long mid, @PathVariable(value="bvalue") Long bvalue) {
 		return productRepository.getManufacturerProductsWithBidValue(mid, bvalue);
 	}
-	
-	
+
 }

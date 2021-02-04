@@ -28,5 +28,6 @@ import com.spring.iBidPharma.models.User;
 				
 		@Query(value = "SELECT * FROM product WHERE stock > 0", nativeQuery = true)
 		public List<Product> getAvailableProductList();
+
 	}
 

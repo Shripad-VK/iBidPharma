@@ -35,8 +35,12 @@ export class AdminReportComponent implements OnInit {
 
   download() {
     let doc = new jsPDF();
-    //var doc = new jsPDF();
-   
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0'); //add padding of Zeros at start for single digit date
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is starts from Zero so + 1
+    var yyyy = today.getFullYear();
+    doc.setFontSize(12);
+    doc.text('Report Date : ' + dd + '/' + mm + '/' + yyyy, 150, 10);    doc.setFontSize(20);
     doc.setFontSize(20);
     doc.text('Report Generation', 30, 20);
     doc.setFontSize(14);

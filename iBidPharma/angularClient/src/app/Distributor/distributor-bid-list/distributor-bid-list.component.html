@@ -5,13 +5,13 @@
     <div class="col"><a routerLink = "/distributorTransaction"> Transaction History </a></div>
     <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
 </div>
-<div class="row jumbotron" style="height: 700px;">
+<div class="jumbotron" style="height: 700px;">
     <div id="content" #content>
         <table class="table table-bordered" id="reportsTable">
             <thead>
                 <th>Bid ID</th>
-                <!-- <th>Product Name</th>
-                <th>Product Category</th> -->
+                <th>Product Name</th>
+                <th>Product Category</th>
                 <th>Bid Value</th>
                 <th>Quantity</th>
                 <th>Location</th>
@@ -20,17 +20,15 @@
             </thead>
             <tbody>
                 <tr *ngFor="let bid of bids">
-                    <td>{{bid.id}}</td>
-                    <!-- <ng-container *ngFor="let product of products" >
-                        <td *ngIf="product.visible">{{ product?.name }}</td>
-                        <td *ngIf="product.visible">{{ product?.name }}</td>
-                    </ng-container> -->
-                    <td>{{bid.bvalue}}</td>
-                    <td>{{bid.stock}}</td>
-                    <td>{{bid.state}}</td>
-                    <td *ngIf="bid.status === 1; else elseBlock"> Approved </td>
+                    <td>{{bid[0]}}</td>
+                    <td>{{bid[1]}}</td>
+                    <td>{{bid[2]}}</td>
+                    <td>{{bid[3]}}</td>
+                    <td>{{bid[4]}}</td>
+                    <td>{{bid[5]}}</td>
+                    <td *ngIf="bid[6] === 1; else elseBlock"> Approved </td>
                     <ng-template #elseBlock> <td> Pending </td> </ng-template>
-                    <td>{{bid.bid_date}}</td>
+                    <td>{{bid[7]}}</td>
                 </tr>
             </tbody>    
         </table>

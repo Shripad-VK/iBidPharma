@@ -43,4 +43,7 @@ export class DistributorService {
   getDistributorBids(d_id:number):Observable<any> {
     return this.http.get(`${this.baseUrl}`+'/distributorBids/'+d_id);
   }
+  getDistributorTransactionById(dist_id:number):Observable<Object> {
+    return this.http.get(`${this.baseUrl}`+'/transactionDistributor/'+dist_id);
+  }
 }

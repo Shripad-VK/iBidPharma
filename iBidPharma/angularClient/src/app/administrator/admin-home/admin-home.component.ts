@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, RouteConfigLoadEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
-
+import { Location } from '@angular/common';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class AdminHomeComponent implements OnInit {
   readonly APP_URL = '/api';
   myresponse: any;
   users:Observable<User[]>
-  constructor(private http:HttpClient,private userService:UserService,private router:ActivatedRoute,private route:Router) { }
+  constructor(private http:HttpClient,private userService:UserService,private router:ActivatedRoute,private route:Router,private location:Location) { }
 
   ngOnInit() {
    this.getUsers();
@@ -31,13 +31,17 @@ valid(user:object)
     var data1={to:user["email"],subject:"iBidPharma - Account successfully created",message:"Thank you for registering with us... You can use your account for online bidding."};
     this.http.post(this.APP_URL +'/maill', JSON.stringify(data1))
         .subscribe(res => {console.log(res);
-          this.ngOnInit();          
-            });
- 
+    });
+    alert("Account Authorized Successfully...");
+    this.getUsers();
 }
 ,error=>console.log(error));
 }
 logOut() {  
   sessionStorage.clear();
+}
+goBack(){
+  this.logOut();
+  this.location.back();  
 }
 }

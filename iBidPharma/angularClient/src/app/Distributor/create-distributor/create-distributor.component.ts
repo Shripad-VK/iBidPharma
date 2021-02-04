@@ -55,7 +55,7 @@ export class CreateDistributorComponent implements OnInit {
   {
     this.isSubmitted=true;
     this.distributor.uid=this.currentUser.uid;
-    alert(this.currentUser.uid);
+    //alert(this.currentUser.uid);
     this.distributorService.createDistributor(this.distributor).subscribe(data=>{this.distributor=data;
       this.router.navigate(['addAddress',this.distributor.d_id]);
     },error=>console.log(error));

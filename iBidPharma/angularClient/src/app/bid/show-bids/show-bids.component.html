@@ -1,23 +1,32 @@
+<div class="row container-fluid" id="nav">
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink = "/distributorsList"> Distributor List </a></div>
+    <div class="col"><a routerLink = "/addProduct"> Create Product</a></div>
+    <div class="col"><a routerLink = "/reportManufacturer"> Report Generation </a></div>
+    <div class="col"><a routerLink = "/login"> Log Out </a></div>
+</div>
 
-<div>
-    <table border="1">
-    <tr><th>DistributorName</th><th>ProductCategory</th><th>ProductName</th><th>BidValue</th><th>Quantity</th><th>Date</th><th>Action</th></tr>
-   <!-- <tr *ngFor="let bid of currentList ">
-        <td>{{bid.cname}}</td> 
-    </tr> -->
-    
-    <tr *ngFor="let bid of currentList" >
+<div class="jumbotron" style="height: 500px;">
+  <table class="table table-bordered" id="reportsTable">
+    <thead>
+        <th>DistributorName</th>
+        <th>Product Category</th>
+        <th>Product Name</th>
+        <th>BidValue</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Action</th>
+    </thead>    
+    <tbody *ngFor="let bid of currentList" >
         <!-- <td>{{distributor.cname}}</td> -->
        
-        <td >{{disObject.cname}}</td>
+        <td>{{disObject.cname}}</td>
         <td>{{product.category}}</td>
-         <td>{{product.pname}}</td>
+        <td>{{product.pname}}</td>
         <td>{{bid.bvalue}}</td>
         <td>{{bid.stock}}</td>
         <td>{{bid.bid_date}}</td>
-        <td> <button (click)="chooseBid(bid)"> ChoosBid </button></td>
-    
-    </tr>    
-</table>
-<br/>
+        <td> <button class="btn btn-primary" (click)="chooseBid(bid)"> Choose Bid </button></td>
+    </tbody>    
+  </table>
 </div>

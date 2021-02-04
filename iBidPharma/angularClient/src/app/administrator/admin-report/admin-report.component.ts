@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { jsPDF } from 'jspdf';
 import { AdminService } from 'src/app/services/admin.service';
 import { BidService } from 'src/app/services/bid.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-report',
@@ -13,7 +14,7 @@ export class AdminReportComponent implements OnInit {
 
   currentList:any;
 
-  constructor(private adminService:AdminService,private bidservice:BidService,private router:ActivatedRoute,private route:Router) { }
+  constructor(private adminService:AdminService,private bidservice:BidService,private router:ActivatedRoute,private route:Router,private location:Location) { }
   ngOnInit() {
     this.getTransactions();
   }
@@ -25,7 +26,7 @@ export class AdminReportComponent implements OnInit {
   }
 
   goBack() {
-    this.route.navigate([sessionStorage.getItem('previousURL')]);
+    this.location.back();
   }
 
   setPreviousURL() {
@@ -69,4 +70,5 @@ export class AdminReportComponent implements OnInit {
   logOut() {  
     sessionStorage.clear();
   }
+
 }

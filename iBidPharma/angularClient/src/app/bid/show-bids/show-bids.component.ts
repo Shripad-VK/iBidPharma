@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
 import { Manufacturer } from 'src/app/models/manufacturer';
 import { DistributorService } from 'src/app/services/distributor.service';
-
+import { Location } from '@angular/common';
 import * as _ from "lodash"
 import { ProductService } from '../../services/product.service';
 import { Distributor } from 'src/app/models/distributor';
@@ -19,7 +19,6 @@ import { User } from 'src/app/models/user';
 export class ShowBidsComponent implements OnInit {
   readonly APP_URL = '/api';
   myresponse: any;
-  constructor(private userService:UserService,private http: HttpClient,private bidService:BidService,private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router) { }
   currentUser:any;
   product : any;
   currentManufacturer:any;
@@ -35,6 +34,7 @@ export class ShowBidsComponent implements OnInit {
   disObject:any;
   disObjectUid:any;
   userObject:any;
+  constructor(private userService:UserService,private http: HttpClient,private bidService:BidService,private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router,private location:Location) { }
   ngOnInit() {
         this.pid=this.router.snapshot.params['pid'];
         this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
@@ -113,11 +113,18 @@ chooseBid(bid:any)
  
   },error=>console.log(error));
  
-  })
+  });
        
   this.bidService.updateBidById(bid.id,bid).subscribe(data=>console.log(data),error=>console.log(error));
+  this.productService.updateProduct(this.pid,this.product).subscribe(data=>console.log(data),error=>console.log(error));
+  alert("Bid Selected Successfully...");
   this.route.navigate(['manufacturerHome']);
 }
+goBack() {
+  this.location.back();
+}
 
- 
+logOut(){
+  sessionStorage.clear();
+}
 }

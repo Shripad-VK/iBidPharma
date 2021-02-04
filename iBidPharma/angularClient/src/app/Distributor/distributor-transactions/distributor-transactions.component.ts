@@ -3,10 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { bid } from 'src/app/models/bid';
 import { BidService } from 'src/app/services/bid.service';
 import { Distributor } from 'src/app/models/distributor';
-import { DistributorService } from 'src/app/services/distributor.service';
+
 import { Location } from '@angular/common';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { DistributorService } from 'src/app/services/distributor.service';
 
 @Component({
   selector: 'app-distributor-transactions',

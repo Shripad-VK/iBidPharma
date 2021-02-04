@@ -25,9 +25,8 @@ import com.spring.iBidPharma.models.User;
 		
 		@Query(value = "SELECT * FROM product WHERE mid = :mid AND min_bvalue <= :bvalue AND max_bvalue >= :bvalue", nativeQuery = true)
 		public List<Product> getManufacturerProductsWithBidValue(@Param("mid") Long mid, @Param("bvalue") Long bvalue);
-		
-		@Query(value = "UPDATE product SET state = :state WHERE pid = :pid", nativeQuery = true)
-		public void setProductAddress(@Param("pid") Long pid, @Param("state") String state);
-		
+				
+		@Query(value = "SELECT * FROM product WHERE stock > 0", nativeQuery = true)
+		public List<Product> getAvailableProductList();
 	}
 

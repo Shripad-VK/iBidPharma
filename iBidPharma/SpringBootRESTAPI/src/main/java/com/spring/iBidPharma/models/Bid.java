@@ -36,12 +36,15 @@ public class Bid {
 	@Column
 	private String state;
 	
+	@Column
+	private long status;
+
 	public Bid() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Bid(long pid, long d_id, long bvalue, String bid_date, long addr_id, long stock,String state) {
+	public Bid(long pid, long d_id, long bvalue, String bid_date, long addr_id, long stock, String state, long status) {
 		super();
 		this.pid = pid;
 		this.d_id = d_id;
@@ -49,7 +52,8 @@ public class Bid {
 		this.bid_date = bid_date;
 		this.addr_id = addr_id;
 		this.stock = stock;
-		this.state=state;
+		this.state = state;
+		this.status = status;
 	}
 
 	public long getId() {
@@ -103,7 +107,6 @@ public class Bid {
 	public void setStock(long stock) {
 		this.stock = stock;
 	}
-	
 
 	public String getState() {
 		return state;
@@ -113,12 +116,12 @@ public class Bid {
 		this.state = state;
 	}
 
-	@Override
-	public String toString() {
-		return "Bid [id=" + id + ", pid=" + pid + ", d_id=" + d_id + ", bvalue=" + bvalue + ", bid_date=" + bid_date
-				+ ", addr_id=" + addr_id + ", stock=" + stock + ", state=" + state + "]";
+	public long getStatus() {
+		return status;
 	}
 
-	
-	
+	public void setStatus(long status) {
+		this.status = status;
+	}
+		
 }

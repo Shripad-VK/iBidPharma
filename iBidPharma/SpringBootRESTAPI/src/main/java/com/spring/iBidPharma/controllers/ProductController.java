@@ -42,6 +42,11 @@ public class ProductController {
 		return productRepository.findAll();
 	}
 
+	@GetMapping("/availableProducts")
+	public List<Product> getAllAvailableProducts(){
+		return productRepository.getAvailableProductList();
+	}
+
 	@PostMapping("/products")
 	public Product createProduct(@RequestBody Product product)
 	{
@@ -120,10 +125,5 @@ public class ProductController {
 	public List<Product> getManufacturerProductsList(@PathVariable(value="mid") Long mid, @PathVariable(value="bvalue") Long bvalue) {
 		return productRepository.getManufacturerProductsWithBidValue(mid, bvalue);
 	}
-	
-	@PutMapping("/products/{pid}/{state}")
-	public void updateProduct(@PathVariable (value="pid")Long pid,@PathVariable (value="state") String state)
-	{
-		productRepository.setProductAddress(pid, state);
-	}
+
 }

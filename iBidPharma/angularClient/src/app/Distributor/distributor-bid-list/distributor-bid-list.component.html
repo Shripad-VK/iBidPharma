@@ -1,1 +1,36 @@
-<p>distributor-bid-list works!</p>
+<div class="row container-fluid" id="nav">
+    <div class="col"><button type="button" class="btn btn-danger" (click)="goBack()" id="backButton"><b>Go Back</b></button></div>
+    <div class="col"><a routerLink="/distributorBids">Show Bids</a></div>
+    <div class="col"><a routerLink = "/manufacturerList"> Manufacturer List </a></div>
+    <div class="col"><a routerLink = "/distributorTransaction"> Transaction History </a></div>
+    <div class="col"><a routerLink = "/login" (click)="logOut()"> Log Out </a></div>
+</div>
+<div class="row jumbotron" style="height: 700px;">
+    <div id="content" #content>
+        <table class="table table-bordered" id="reportsTable">
+            <thead>
+                <th>Bid ID</th>
+                <!-- <th>Product Name</th>
+                <th>Product Category</th> -->
+                <th>Bid Value</th>
+                <th>Quantity</th>
+                <th>Location</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bid of bids">
+                    <td>{{bid.id}}</td>
+                    <!-- <ng-container *ngFor="let product of products" >
+                        <td *ngIf="product.visible">{{ product?.name }}</td>
+                        <td *ngIf="product.visible">{{ product?.name }}</td>
+                    </ng-container> -->
+                    <td>{{bid.bvalue}}</td>
+                    <td>{{bid.stock}}</td>
+                    <td>{{bid.state}}</td>
+                    <td *ngIf="bid.status === 1; else elseBlock"> Approved </td>
+                    <ng-template #elseBlock> <td> Pending </td> </ng-template>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+</div>

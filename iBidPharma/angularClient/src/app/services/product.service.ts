@@ -13,6 +13,11 @@ export class ProductService {
     return this.http.get(`${this.baseUrl}`+'/products');
   }
 
+  getAvailableProductList():Observable<any> {
+    return this.http.get(`${this.baseUrl}`+'/availableProducts');
+  }
+
+
   createProduct(product:Object):Observable<Object> {
     return this.http.post(`${this.baseUrl}`+'/products',product);
   }

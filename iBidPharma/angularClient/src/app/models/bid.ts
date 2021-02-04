@@ -8,4 +8,5 @@ export class bid
     addr_id:string;
     stock:number;
     state:string;
+    status:number;
 }

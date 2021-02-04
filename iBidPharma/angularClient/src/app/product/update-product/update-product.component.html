@@ -1,21 +1,61 @@
-<form (ngSubmit)="onUpdate()">
-    <div class="form-group">
-        <label for="pname"> Product Name </label>
-        <input type="text" class="form-control" id="pname" required [(ngModel)]="product.pname" name="pname" />
+<div class="updateForm">
+    <div class="heading">
+        UPDATE Product
+    </div> 
+    <div class="another">
+
+    <form (ngSubmit)="onUpdate()">
+        <div  class="form-group">
+            <div class="form-row">
+                <div class="col">
+                 <label for="pname"> Product Name </label>
+                 </div>
+                 <div class="col"> 
+                  <input type="text" class="form-control" id="pname" required [(ngModel)]="product.pname" name="pname" />
+                </div> 
+            </div>
+        </div>
+   
+        <div  class="form-group">
+            <div class="form-row">
+                <div class="col">
+                 <label for="stock"> Product Stock </label>
+                </div>
+             <div class="col"> 
+                <input type="number" class="form-control" id="stock" required [(ngModel)]="product.stock" name="stock" />
+             </div> 
+        </div>
+    </div>
+
+
+    <div  class="form-group">
+        <div class="form-row">
+            <div class="col">
+             <label for="min_bvalue"> Minimum Bid Value </label>
+             </div>
+             <div class="col"> 
+             <input type="number" class="form-control" id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
+             </div>
+         </div>
+    </div>
+
+
+   <div  class="form-group">
+        <div class="form-row">
+            <div class="col">
+            <label for="max_bvalue"> Maximum Bid Value </label>
+            </div>
+            <div class="col"> 
+            <input type="number" class="form-control" id="max_bvalue" required [(ngModel)]="product.max_bvalue" name="max_bvalue" />
+            </div>
+        </div>
     </div>
    
-    <div class="form-group">
-        <label for="stock"> Product Stock </label>
-        <input type="number" class="form-control" id="stock" required [(ngModel)]="product.stock" name="stock" />
+    <div class="form-row">
+        <div class="col">
+         <button type="submit" class="btn btn-success"> Submit </button> 
+        </div>
     </div>
-    <div class="form-group">
-        <label for="min_bvalue"> Minimum Bid Value </label>
-        <input type="number" class="form-control" id="min_bvalue" required [(ngModel)]="product.min_bvalue" name="min_bvalue" />
-    </div>
-    <div class="form-group">
-        <label for="max_bvalue"> Maximum Bid Value </label>
-        <input type="number" class="form-control" id="max_bvalue" required [(ngModel)]="product.max_bvalue" name="max_bvalue" />
-    </div>
-   
-    <button type="submit" class="btn btn-success"> Submit </button> 
 </form>
+</div>
+</div>

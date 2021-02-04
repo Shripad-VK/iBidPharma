@@ -11,7 +11,7 @@ import { ProductService } from '../../services/product.service';
 export class UpdateProductComponent implements OnInit {
   pid:number;
   product:any;
-
+  categories = ["Vaccine", "Syrup", "Tablet", "Drops", "Injection", "Capsule"];
   constructor(private productService:ProductService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -28,13 +28,12 @@ onUpdate(){
 
 this.productService.updateProduct(this.pid,this.product).subscribe(data=>{console.log(data)
 this.product=data;
-this.product=new this.product();
 this.goToList();
 },
 error=>console.log(error));
 }
 goToList()
 {
-  this.router.navigate(['/products']);
+  this.router.navigate(['/manufacturer']);
 }
 }

@@ -91,7 +91,6 @@ public class BidController {
 	public void deleteBid(@PathVariable (value="id")Long id)
 	{
 		Bid bid =bidRepository.getOne(id);
-	
 		bidRepository.delete(bid);
 		
 	}

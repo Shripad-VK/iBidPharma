@@ -53,10 +53,13 @@ export class ViewOrderHistoryComponent implements OnInit {
 
   download() {
     let doc = new jsPDF();
-    //var doc = new jsPDF();
-   
-    doc.setFontSize(20);
-    doc.text('Transaction Details', 30, 20);
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0'); //add padding of Zeros at start for single digit date
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is starts from Zero so + 1
+    var yyyy = today.getFullYear();
+    doc.setFontSize(12);
+    doc.text('Report Date : ' + dd + '/' + mm + '/' + yyyy, 150, 10);    doc.setFontSize(20);
+    doc.text('Manufacturer Transaction Details', 30, 20);
     doc.setFontSize(14);
     doc.setTextColor(100);
 

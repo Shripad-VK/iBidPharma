@@ -79,8 +79,8 @@ public class BidController {
 	}
 	
 	@GetMapping("/distributorBids/{d_id}")
-	public List<Bid> getBidsByDestributorrid(@PathVariable (value="d_id") Long d_id)
+	public List<Object> getBidsByDestributorrid(@PathVariable (value="d_id") Long d_id)
 	{
-		return  bidRepository.getBid(d_id);	
+		return  bidRepository.getBidDetails(d_id);	
 	}
 }

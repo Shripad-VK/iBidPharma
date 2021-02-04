@@ -4,6 +4,7 @@ import { Distributor } from 'src/app/models/distributor';
 import { BidService } from 'src/app/services/bid.service';
 import { DistributorService } from 'src/app/services/distributor.service';
 import { Location } from '@angular/common';
+import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-distributor-bid-list',
   templateUrl: './distributor-bid-list.component.html',
@@ -11,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class DistributorBidListComponent implements OnInit {
 
-  constructor(private distributorService:DistributorService,private bidservice:BidService,private router:ActivatedRoute,private route:Router,private location: Location) { }
+  constructor(private distributorService:DistributorService,private bidservice:BidService,private productService:ProductService,private router:ActivatedRoute,private route:Router,private location: Location) { }
   currentUser:any;
   currentDistributor:any;
   currentList:any;

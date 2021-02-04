@@ -54,8 +54,8 @@ public class ProductController {
 		return productRepository.save(product);
 	}
 	
-	@GetMapping("/products/{id}")
-	public Product getProductById(@PathVariable(value="id")Long pid)
+	@GetMapping("/products/{pid}")
+	public Product getProductById(@PathVariable(value="pid")Long pid)
 	{
 		return productRepository.findById(pid).orElse(null);
 	}
@@ -126,4 +126,5 @@ public class ProductController {
 		return productRepository.getManufacturerProductsWithBidValue(mid, bvalue);
 	}
 
+	
 }

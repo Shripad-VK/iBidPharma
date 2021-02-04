@@ -11,6 +11,9 @@ import { BidService } from 'src/app/services/bid.service';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { Transaction } from 'src/app/models/transaction';
+import { TransactionService } from 'src/app/transaction.service';
+import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-show-bids',
   templateUrl: './show-bids.component.html',
@@ -23,7 +26,7 @@ export class ShowBidsComponent implements OnInit {
   product : any;
   currentManufacturer:any;
   currentList:any;
-  mid:number;
+  mid:any;
   distributor:any;
   pid:number;
   d_id:number;
@@ -34,11 +37,20 @@ export class ShowBidsComponent implements OnInit {
   disObject:any;
   disObjectUid:any;
   userObject:any;
-  constructor(private userService:UserService,private http: HttpClient,private bidService:BidService,private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router,private location:Location) { }
+  transaction:any;
+  myDate:any;
+  constructor(private userService:UserService,private http: HttpClient,private bidService:BidService,private productService:ProductService,private distributorService:DistributorService,private manufacturerService:ManufacturerService,private router:ActivatedRoute,private route:Router,private location:Location,private transactionService:TransactionService) { }
   ngOnInit() {
         this.pid=this.router.snapshot.params['pid'];
         this.currentUser=JSON.parse(sessionStorage.getItem('currentUser'));
-        this.getMid(this.currentUser.uid);
+       // this.getMid(this.currentUser.uid);
+       this.manufacturerService.getManufactureObjectByuid(this.currentUser.uid).subscribe(data=> {
+        //alert(data);
+        this.mid=new Manufacturer();
+        this.mid=data;
+       // this.getManufacturerBids(data);
+       this.getManufacturerBids();
+      });
         this.getProductsById(this.pid);
 }
 
@@ -93,7 +105,7 @@ getProductsById(pid:number)
 
 // }
 
-chooseBid(bid:any)
+chooseBid(bid:any,product:any,distributor:any)
 {
     this.userObject=new User();
     this.disObjectUid=new Distributor();
@@ -119,6 +131,26 @@ chooseBid(bid:any)
   this.productService.updateProduct(this.pid,this.product).subscribe(data=>console.log(data),error=>console.log(error));
   alert("Bid Selected Successfully...");
   this.route.navigate(['manufacturerHome']);
+       this.transaction=new Transaction();
+       this.transaction.mid=this.mid.mid;
+       this.transaction.mname=this.mid.cname;
+       this.myDate = formatDate(new Date(), 'dd/MM/yyyy', 'en');
+       this.transaction.tdate=this.myDate;
+       this.transaction.dist_id=distributor.d_id;
+       this.transaction.dname=distributor.cname;
+       this.transaction.pid=product.pid;
+       this.transaction.pname=product.pname;
+       this.transaction.quantity=bid.stock;
+       this.transaction.category=product.category;
+       this.transaction.state=product.state;
+       this.transaction.bvalue=bid.bvalue;
+       this.transaction.bid=bid.id;
+       console.log(this.transaction);
+       this.transactionService.createTransaction(this.transaction).subscribe(data=>{console.log(data)},error=>console.log(error));
+  
+       this.bidService.updateBidById(bid.id,bid).subscribe(data=>console.log(data),error=>console.log(error));
+  
+       this.route.navigate(['manufacturerHome']);
 }
 goBack() {
   this.location.back();

@@ -62,7 +62,10 @@ export class ManufacturerHomeComponent implements OnInit {
   handleBidInput() {
     this.products = this.productService.getManufacturerProductsWithBidValue(this.mid, this.bvalue);
   }
-
+  update(pid:number)
+  {
+    this.router.navigate(['updateProduct',pid] );
+  }
   // showBids(pid:number)
   // {
   //  this.currentManufacturer=JSON.parse(sessionStorage.getItem('currentDistributor'));
@@ -79,5 +82,11 @@ export class ManufacturerHomeComponent implements OnInit {
 
   logOut() {  
     sessionStorage.clear();
+  }
+  delete(pid:number)
+  {
+    console.log(pid);
+    this.manufacturerService.deleteManufacturer(pid).subscribe(data=>console.log(data));
+    this.router.navigate(['/manufacturer']);
   }
 }

@@ -37,7 +37,7 @@ export class PlaceBidComponent implements OnInit {
       this.router.queryParams.subscribe(params=>{this.products=JSON.parse(params['products'])});
       console.log(this.products.pid);
 
-      this.myDate = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+      this.myDate = formatDate(new Date(), 'dd/MM/yyyy', 'en');
      
   }
 

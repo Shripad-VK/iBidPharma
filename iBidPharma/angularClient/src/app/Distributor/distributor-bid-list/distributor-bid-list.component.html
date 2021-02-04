@@ -16,6 +16,7 @@
                 <th>Quantity</th>
                 <th>Location</th>
                 <th>Status</th>
+                <th>Date</th>
             </thead>
             <tbody>
                 <tr *ngFor="let bid of bids">
@@ -29,6 +30,7 @@
                     <td>{{bid.state}}</td>
                     <td *ngIf="bid.status === 1; else elseBlock"> Approved </td>
                     <ng-template #elseBlock> <td> Pending </td> </ng-template>
+                    <td>{{bid.bid_date}}</td>
                 </tr>
             </tbody>    
         </table>

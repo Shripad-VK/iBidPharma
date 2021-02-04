@@ -54,7 +54,9 @@ export class CreateProductComponent implements OnInit {
 
   }
 
- 
+  goBack() {
+    this.location.back();
+  }
 
   newProduct():void {
     this.product = new Product();

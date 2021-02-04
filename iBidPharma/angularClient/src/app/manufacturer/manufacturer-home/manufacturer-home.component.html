@@ -31,6 +31,7 @@
               <!-- <th>Location</th> -->
               <th>Product Image</th>
               <th>Update Product</th>
+              <th>Delete Product</th>
               <th>Show Bids</th>
             </thead>
       
@@ -44,6 +45,7 @@
                         <!-- <td> {{product.state}} </td> -->
                         <td><img src="http://localhost:8080/api/products/image?name={{product.pimage}}" width="100" height="100"></td>
                         <td> <button (click)="update(product.pid)"> Update </button></td>
+                        <td> <button (click)="delete(product.pid)"> Delete </button></td>
                         <td> <button (click)="showBids(product.pid)"> ShowBids </button></td>
 
                 </tr>

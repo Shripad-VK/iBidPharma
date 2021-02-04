@@ -52,7 +52,7 @@ export class ShowBidsComponent implements OnInit {
   }
 
   getManufacturerBids(){
-   alert(this.pid);
+  // alert(this.pid);
   this.currentManufacturer=JSON.parse(sessionStorage.getItem('currentDistributor'));
   this.manufacturerService.showManufacturerBids(this.pid).subscribe(
     (data:any)=>{
@@ -115,7 +115,7 @@ chooseBid(bid:any)
  
   })
        
-  //this.bidService.deleteBidById(bid.id).subscribe(data=>console.log(data),error=>console.log(error));
+  this.bidService.updateBidById(bid.id,bid).subscribe(data=>console.log(data),error=>console.log(error));
   this.route.navigate(['manufacturerHome']);
 }
 

@@ -18,4 +18,8 @@ export class BidService {
   deleteBidById(id:number):Observable<any>{
     return this.http.delete(`${this.baseUrl}`+'/bid/'+id);
   }
+  updateBidById(id:number,value:any):Observable<object>
+  {
+    return this.http.put(`${this.baseUrl}`+'/bid/'+id,value);
+  }
 }

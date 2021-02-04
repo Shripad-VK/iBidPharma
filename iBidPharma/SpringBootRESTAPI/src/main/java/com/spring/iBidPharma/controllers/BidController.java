@@ -34,6 +34,7 @@ public class BidController {
 	public Bid createProduct(@RequestBody Bid bid)
 	{
 		System.out.println(bid);
+		bid.setStatus(0);
 		return bidRepository.save(bid);
 	}
 	
@@ -48,12 +49,41 @@ public class BidController {
 	public Bid updateProduct(@PathVariable (value="id")Long id,@RequestBody Bid info)
 	{
 		Bid bid=bidRepository.findById(id).orElse(null);
+		if(bid.getPid()==0)
 		bid.setPid(info.getPid());
+		else
+			bid.setPid(bid.getPid());
+		
+		if(bid.getD_id()==0)
 		bid.setD_id(info.getD_id());
+		else
+			bid.setD_id(bid.getD_id());
+		
+		if(bid.getBvalue()==0)
 		bid.setBvalue(info.getBvalue());
+		else
+			bid.setBvalue(bid.getBvalue());
+		
+		if(bid.getBid_date()==null)
 		bid.setBid_date(info.getBid_date());
+		else
+			bid.setBid_date(bid.getBid_date());
+		
+		if(bid.getAddr_id()==0)
 		bid.setAddr_id(info.getAddr_id());
+		else
+			bid.setAddr_id(bid.getAddr_id());
+		
+		if(bid.getStatus()==0)
+			bid.setStatus(1);
+		else
+			bid.setStatus(bid.getStatus());
+		
+		if(bid.getStock()==0)
 		bid.setStock(info.getStock());
+		else
+			bid.setStock(bid.getStock());
+		
 		return bidRepository.save(bid);
 	}
 	
@@ -61,6 +91,7 @@ public class BidController {
 	public void deleteBid(@PathVariable (value="id")Long id)
 	{
 		Bid bid =bidRepository.getOne(id);
+	
 		bidRepository.delete(bid);
 		
 	}

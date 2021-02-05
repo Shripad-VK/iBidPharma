@@ -16,11 +16,6 @@ import { AddressListComponent } from './address/address-list/address-list.compon
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
 import { DistributorListComponent } from './distributor/distributor-list/distributor-list.component';
 import { CreateDistributorComponent } from './distributor/create-distributor/create-distributor.component';
-
-import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
-
-import { SearchManufacturerComponent } from './distributor/search-manufacturer/search-manufacturer.component';
-import { SearchProductComponent } from './distributor/search-product/search-product.component';
 import { ViewTransactionHistoryComponent } from './distributor/view-transaction-history/view-transaction-history.component';
 import { ViewOrderHistoryComponent } from './manufacturer/view-order-history/view-order-history.component';
 import { ManufacturerHomeComponent } from './manufacturer/manufacturer-home/manufacturer-home.component';
@@ -59,10 +54,6 @@ import { AdminHomeComponent } from './administrator/admin-home/admin-home.compon
     DistributorListComponent,
     CreateDistributorComponent,
     AdminHomeComponent,
-    ReportGenerationComponent,
-
-    SearchManufacturerComponent,
-    SearchProductComponent,
     ViewTransactionHistoryComponent,
     HeaderComponent,
     FooterComponent,

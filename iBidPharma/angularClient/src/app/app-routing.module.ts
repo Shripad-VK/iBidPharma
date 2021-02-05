@@ -15,7 +15,6 @@ import { UpdateManufacturerComponent } from './manufacturer/update-manufacturer/
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { ReportGenerationComponent } from './Distributor/report-generation/report-generation.component';
 import { MaufacturerProductListComponent } from './manufacturer/maufacturer-product-list/maufacturer-product-list.component';
 import { PlaceBidComponent } from './bid/place-bid/place-bid.component';
 import { ShowBidsComponent } from './bid/show-bids/show-bids.component';
@@ -47,10 +46,8 @@ const routes: Routes = [
   {path: 'register',component:UserRegisterComponent},
   {path: 'manufacturer',component:ManufacturerHomeComponent},
   {path: 'distributor',component:DistributorHomeComponent},
-  {path: 'reportDistributor',component:ReportGenerationComponent},
   {path: 'maufacturerProductList',component:MaufacturerProductListComponent},
   {path: 'distributorBidList',component:DistributorBidListComponent},
-  {path: 'reportMaufacturer',component:ReportGenerationComponent},
   {path: 'bids/:pid',component:ShowBidsComponent},
   {path: 'distributorBids',component:DistributorBidListComponent},
   {path: 'distributorTransaction',component:DistributorTransactionsComponent},

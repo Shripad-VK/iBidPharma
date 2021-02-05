@@ -1,0 +1,51 @@
+add dependancy in pom.xml
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+
+----------------------------------------------------------------------------------
+//add in service
+@Autowired
+	private JavaMailSender mailSender;
+	
+	public void sendMyMail(CarpenterHiring co, Carpenter carpenter) {
+		
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(carpenter.getEmail());
+		message.setSubject("Hiring Request From Customer");
+		Customer customer = customerService.getCustomer(co.getCustomerId());
+		message.setText("Dear " + carpenter.getFirstName() + " " + carpenter.getLastName() + ",\n\n"
+				+ "You Got Hiring Order From Customer " + customer.getFirstName() + " " + customer.getLastName()
+				+ "Please Confirm It" + "\nRegards,\n\n");
+		mailSender.send(message);
+
+	}
+	
+-------------------------------------------------------------------------------------
+OTP generation and emailed to register user --->
+
+@Override
+	public void sendOtp(String email, int otp) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(email);
+		message.setSubject("Otp from Creative Homes");
+		message.setText("Dear Customer\n\n" + "Your Otp : " + otp);
+		mailSender.send(message);
+
+--------------------------------------------------------------------------------
+//call above method when new user is created-->
+
+@Override
+	public int newCarpenter(String email) {
+		Carpenter carpenter = carpenterRepository.findByEmail(email);
+		if (carpenter == null) {
+			int otp = new Random().nextInt((999999 - 100000) + 1) + 100000;
+			//sendotp() defined above
+			mailService.sendOtp(email, otp);
+			return otp;
+		} else {
+			return 0;
+		}
+	}

@@ -81,7 +81,7 @@ public class ProductController {
 	{
 		Product product=productRepository.findById(pid).orElse(null);
 		if(product.getStock()-info.getStock() < 0)
-			product.setStock(0);
+			product.setStock(product.getStock());
 		else
 			product.setStock(product.getStock()-info.getStock());
 		return productRepository.save(product);

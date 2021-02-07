@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import { Transaction } from 'src/app/models/transaction';
-import { TransactionService } from 'src/app/transaction.service';
+import { TransactionService } from 'src/app/services/transaction.service';
 import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-show-bids',
